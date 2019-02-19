@@ -1,0 +1,3 @@
+[submodule ".config/fish/functions/Bash2FishAliasesSync"]
+	path = .config/fish/functions/Bash2FishAliasesSync
+	url = https://github.com/d0riven/Bash2FishAliasesSync.git
