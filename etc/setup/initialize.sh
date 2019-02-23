@@ -11,17 +11,11 @@ has() {
 ln -s $HOME/Library/Mobile\ Documents/com~apple~CloudDocs $HOME/iCloudDrive
 has brew || brew.sh && formula.sh && cask.sh
 
-# set solarized color scheme to terminal
-git clone https://github.com/tomislav/osx-terminal.app-colors-solarized.git $TMPDIR/Solarized
-open $TMPDIR/Solarized/Solarized\ Dark.terminal
-
 # fish setting
 mkdir -p $XDG_CONFIG_HOME/fish/functions
 cp -i src/config.fish $XDG_CONFIG_HOME/fish
 cp -i src/fisher.fish $XDG_CONFIG_HOME/fish/functions
 # curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-git clone https://github.com/powerline/fonts.git $TMPDIR/Powerline
-$TMPDIR/Powerline/install.sh
 
 # not working below command on shell script, please execute manually
 # 3.x.x fisher add fisherman/pyenv fisherman/rbenv oh-my-fish/theme-bobthefish
