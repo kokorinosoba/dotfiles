@@ -13,7 +13,7 @@ elif [ "$var1" == "-f" ]; then
     echo "-------------------"
     var2=$2
     # name=${var2%.*}
-    c++ $var2 -o ${var2%.*}.o && ./${var2%.*}.o
+    g++ $var2 -o ${var2%.*}.o && ./${var2%.*}.o
 # オプション無しなら.oが存在するか確認して、あるなら.oのみを実行
 elif [ -f "${var1%.*}.o" ]; then
     echo ".o already exists"
@@ -23,5 +23,5 @@ elif [ -f "${var1%.*}.o" ]; then
 else
     echo ".o does not exist"
     echo "-----------------"
-    c++ $var1 -o ${var1%.*}.o && ./${var1%.*}.o
+    g++ $var1 -o ${var1%.*}.o && ./${var1%.*}.o
 fi
