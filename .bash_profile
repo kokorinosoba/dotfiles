@@ -43,3 +43,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # display welcome message
 figlet WELCOME TO BASH
+
+# display todo list
+todo

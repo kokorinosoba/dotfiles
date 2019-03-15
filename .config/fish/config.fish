@@ -26,3 +26,6 @@ alias relogin="exec /usr/local/bin/fish -l"
 
 # display welcome message
 toilet -f future WELCOME TO FISH
+
+# display todo list
+todo
