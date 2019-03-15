@@ -34,3 +34,4 @@ bash powerline.sh
 
 has fish && fish fish.sh
 has fish && fish fisher.sh
+has fisher && bash fisherPyenvInit.sh
