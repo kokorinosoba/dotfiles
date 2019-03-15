@@ -10,6 +10,7 @@ FORMULAE=(coreutils
           git
           gnu-sed
           neovim
+          npm
           pyenv
           pyenv-virtualenv
           python

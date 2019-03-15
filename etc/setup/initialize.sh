@@ -26,6 +26,7 @@ git submodule -i update
 has brew || bash brew.sh
 has brew && bash formula.sh
 has brew && bash cask.sh
+has npm && bash npm.sh
 has /usr/local/bin/pip3 && bash nvim.sh
 
 bash solarized.sh
