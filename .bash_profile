@@ -38,6 +38,9 @@ export RBENV_ROOT="$HOME/.rbenv"
 export PATH="$RBENV_ROOT/bin:$PATH"
 eval "$(rbenv init -)"
 
+# path to dotfiles/bin
+export PATH="$HOME/dotfiles/bin:$PATH"
+
 # cask install option
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
