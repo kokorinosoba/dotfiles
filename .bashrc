@@ -12,10 +12,10 @@ alias vim="nvim"
 alias brew="env PATH=${PATH/\/Users\/Kokorin\/\.pyenv\/shims:/} brew"
 
 # java compile alias
-alias juice="$HOME/dotfiles/bin/./juice.sh"
+# alias juice="$HOME/dotfiles/bin/./juice.sh"
 
 # c compile alias
-alias coke="$HOME/dotfiles/bin/./coke.sh"
+# alias coke="$HOME/dotfiles/bin/./coke.sh"
 
 # c++ compile alias
-alias calpis="$HOME/dotfiles/bin/./calpis.sh"
+# alias calpis="$HOME/dotfiles/bin/./calpis.sh"
