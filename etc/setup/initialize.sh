@@ -21,7 +21,7 @@ case $ANSWER in
 esac
 
 echo $SCRIPT_DIR
-git submodule -i update
+git submodule update -i
 [[ -e $HOME/iCloudDrive ]] || bash icloud.sh
 has brew || bash brew.sh
 has brew && bash formula.sh
