@@ -1,9 +1,9 @@
 #!/bin/bash
 var1=$1
 
-# Java Compile and Execute Shell
-# chmod +x juiceで実行権限を与える
-# ./juiceで実行可能
+# C# Compile and Execute Shell
+# chmod +x cassisで実行権限を与える
+# ./cassisで実行可能
 
 if [ "$var1" == "" ]; then
   echo "No input file"
@@ -13,15 +13,15 @@ elif [ "$var1" == "-f" ]; then
   echo "-------------------"
   var2=$2
   # name=${var2%.*}
-  javac ${var2%.*}.java && java ${var2%.*}
+  mcs $var2 && mono ${var2%.*}.exe
 # オプション無しならclassが存在するか確認して、あるならclassのみを実行
-elif [ -f "${var1%.*}.class" ]; then
-  echo ".class already exists"
-  echo "---------------------"
-  java ${var1%.*}
+elif [ -f "${var1%.*}.exe" ]; then
+  echo ".exe already exists"
+  echo "-------------------"
+  mono ${var1%.*}.exe
 # classがないならコンパイルと実行を行う
 else
-  echo ".class does not exist"
-  echo "---------------------"
-  javac ${var1%.*}.java && java ${var1%.*}
+  echo ".exe does not exist"
+  echo "-------------------"
+  mcs $var1 && mono ${var1%.*}.exe
 fi
