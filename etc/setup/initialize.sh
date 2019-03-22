@@ -20,8 +20,9 @@ case $ANSWER in
     exit 1;;
 esac
 
-echo $SCRIPT_DIR
 git submodule update -i
+bash symlink.sh
+
 [[ -e $HOME/iCloudDrive ]] || bash icloud.sh
 has brew || bash brew.sh
 has brew && bash formula.sh
