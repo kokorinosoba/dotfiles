@@ -8,14 +8,8 @@ alias trash="rmtrash"
 alias vimo="/usr/bin/vim"
 alias vim="nvim"
 
+# git shortened alias
+alias g="git"
+
 # make brew doctor wornings coming from using pyenv invisible
 alias brew="env PATH=${PATH/\/Users\/Kokorin\/\.pyenv\/shims:/} brew"
-
-# java compile alias
-# alias juice="$HOME/dotfiles/bin/./juice.sh"
-
-# c compile alias
-# alias coke="$HOME/dotfiles/bin/./coke.sh"
-
-# c++ compile alias
-# alias calpis="$HOME/dotfiles/bin/./calpis.sh"
