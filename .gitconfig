@@ -5,7 +5,7 @@
 	editor = nvim
 [alias]
 	a = add
-	b = branch -a
+	b = branch --all
 	br = browse-remote
 	c = commit
 	cm = commit --message
