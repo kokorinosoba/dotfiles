@@ -1,6 +1,7 @@
 #!/bin/bash
 
-FORMULAE=(coreutils
+FORMULAE=(bash
+          coreutils
           emacs
           figlet
           findutils

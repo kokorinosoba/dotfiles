@@ -7,9 +7,14 @@
 PS1=" \W \[\033[35m\]$\[\033[0m\]"
 
 # call .bashrc
-if [ -f $HOME/.bashrc ]; then
+if [[ -f $HOME/.bashrc ]]; then
   source $HOME/.bashrc
 fi
+
+if [[ $BASH_VERSINFO -ge 4 ]]; then
+  shopt -s autocd
+fi
+shopt -s cdspell
 
 # path to coreutils, findutils and gnu-sed
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
