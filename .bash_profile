@@ -53,4 +53,4 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 figlet WELCOME TO BASH
 
 # display todo list
-todo
+todo ls --all
