@@ -42,3 +42,10 @@ alias ll="ls -lh"
 
 # make brew doctor wornings coming from using pyenv invisible
 alias brew="env PATH=${PATH/\/Users\/Kokorin\/\.pyenv\/shims:/} brew"
+
+# For Competitive Programming
+alias cd-=". cd-"
+alias rla=". roll 1"
+alias rlb=". roll 2"
+alias rlc=". roll 3"
+alias rld=". roll 4"

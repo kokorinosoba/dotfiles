@@ -11,6 +11,7 @@ CASKS=(appcleaner
        processing
        qlmarkdown
        shiftit
+       slack
        texshop
        visual-studio-code
        wireshark
