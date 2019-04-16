@@ -1,0 +1,22 @@
+#!/bin/bash
+
+mkfile () {
+  [[ -e $1 ]] || touch $1
+}
+
+N=${1:-4}
+
+if [[ $N -gt 25 ]]; then
+  N=25
+fi
+
+ext=${2:-cpp}
+
+ARRAY=(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+ARRAY=(${ARRAY[@]::$N})
+
+mkfile sample_input
+
+for e in ${ARRAY[@]}; do
+  mkfile $e.$ext
+done
