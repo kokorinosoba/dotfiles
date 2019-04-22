@@ -27,6 +27,7 @@ bash symlink.sh
 has brew || bash brew.sh
 has brew && bash formula.sh
 has brew && bash cask.sh
+bash shells.sh
 bash bash.sh
 has apm && apm stars --install
 has npm && bash npm.sh
