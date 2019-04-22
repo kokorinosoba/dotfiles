@@ -7,12 +7,10 @@
 # shell relogin alias
 alias relogin='exec $SHELL -l'
 
-# use trash instead of rm
-alias trash='rmtrash'
-
-# vim and nvim alias
-alias vimo='/usr/bin/vim'
-alias vim='nvim'
+# external command aliases
+[[ -x `which rmtrash` ]] && alias trash='rmtrash' # use trash instead of rm
+[[ -x `which nvim` ]] && alias vim='nvim' && alias vi='nvim'
+[[ -x `which colordiff` ]] && alias diff='colordiff -u' || alias diff='diff -u'
 
 # python alias to use python3 instead of python2
 alias python='python3'
