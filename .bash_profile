@@ -30,6 +30,9 @@ export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 
+# make less avarable for colordiff
+export LESS='-R'
+
 # path to pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
