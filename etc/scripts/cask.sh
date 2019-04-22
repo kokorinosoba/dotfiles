@@ -4,6 +4,7 @@ CASKS=(appcleaner
        atom
        cheatsheet
        chromedriver
+       coteditor
        google-chrome
        google-japanese-ime
        iterm2

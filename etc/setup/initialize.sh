@@ -20,7 +20,7 @@ case $ANSWER in
     exit 1;;
 esac
 
-git submodule update -i
+git submodule update --init
 bash symlink.sh
 
 [[ -e $HOME/iCloudDrive ]] || bash icloud.sh
@@ -30,9 +30,12 @@ has brew && bash cask.sh
 bash bash.sh
 has apm && apm stars --install
 has npm && bash npm.sh
+has pyenv && bash pyenv.bash
 has /usr/local/bin/pip3 && bash nvim.sh
+has gcc-8 && bash c++.bash
 
 bash solarized.sh
+bash japanesque.sh
 bash powerline.sh
 
 has fish && fish fish.sh
