@@ -21,6 +21,7 @@ FORMULAE=(bash
           rbenv
           rmtrash
           toilet
-          tree)
+          tree
+          zsh)
 
 brew install ${FORMULAE[@]}
