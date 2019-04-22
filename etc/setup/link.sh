@@ -10,10 +10,9 @@ echo "Continue creating symlink? [Y/n]"
 read ANSWER
 
 case $ANSWER in
- "" | "Y" | "y" | "yes" | "Yes" | "YES" );;
- * )
-   echo "Canceled."
-   exit 1;;
+  "" | "Y" | "y" | "yes" | "Yes" | "YES" ) ;;
+  * ) echo "Canceled."
+      exit 1 ;;
 esac
 
 bash symlink.sh
