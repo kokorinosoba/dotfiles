@@ -7,14 +7,10 @@
 PS1=" \W \[\033[35m\]$\[\033[0m\]"
 
 # call .bashrc
-if [[ -f $HOME/.bashrc ]]; then
-  source $HOME/.bashrc
-fi
+[[ -f $HOME/.bashrc ]] && source $HOME/.bashrc
 
-if [[ $BASH_VERSINFO -ge 4 ]]; then
-  shopt -s autocd
-fi
-shopt -s cdspell
+# enable autocd
+[[ $BASH_VERSINFO -ge 4 ]] && shopt -s autocd
 
 # path to coreutils, findutils and gnu-sed
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
@@ -53,7 +49,7 @@ export PATH="$HOME/dotfiles/bin:$PATH"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # display welcome message
-figlet WELCOME TO BASH
+[[ -n $BASH ]] && figlet WELCOME TO BASH
 
 # display todo list
 todo ls --all
