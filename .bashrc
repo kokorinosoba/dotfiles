@@ -18,6 +18,7 @@ alias python='python3'
 # git shortened alias
 alias g='git'
 alias ga='git add'
+alias ga.='git add .'
 alias gb='git branch -a'
 alias gbr='git browse-remote'
 alias gc='git commit'
