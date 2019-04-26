@@ -1,6 +1,3 @@
-# call .bash_profile
-[[ -e $HOME/.bash_profile ]] && source $HOME/.bash_profile
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -86,9 +83,14 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# call .bash_profile
+[[ -e $HOME/.bash_profile ]] && source $HOME/.bash_profile
+
+# autocomplete setting
 autoload -U compinit
 compinit
 
+# zsh-completions setting
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # display welcome message
