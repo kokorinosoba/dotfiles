@@ -6,6 +6,9 @@
 # change display of prompt
 PS1=" \W \[\033[35m\]$\[\033[0m\]"
 
+# call .bash_it_profile
+[[ -n $BASH ]] && [[ -f $HOME/.bash_it_profile ]] && source $HOME/.bash_it_profile
+
 # call .bashrc
 [[ -f $HOME/.bashrc ]] && source $HOME/.bashrc
 
@@ -49,7 +52,7 @@ export PATH="$HOME/dotfiles/bin:$PATH"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # display welcome message
-[[ -n $BASH ]] && figlet WELCOME TO BASH
+[[ -n $BASH ]] && figlet -f smslant WELCOME TO BASH
 
 # display todo list
 todo ls --all
