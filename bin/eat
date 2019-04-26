@@ -1,0 +1,33 @@
+#!/bin/bash
+
+declare -i argc=0
+declare -a argv=()
+
+while (( $# > 0 ))
+do
+  case $1 in
+    -* )
+      if [[ $1 =~ 'f' ]]; then
+        FORCE=1
+      fi
+      shift ;;
+    * )
+      argv+=($1) # argv=("${argv[@]}" "$1")
+      argc+=1 # ((++argc))
+      shift ;;
+  esac
+done
+
+if [[ $argc -lt 1 ]]; then
+  echo "No input file"
+  exit 1
+elif [[ $argc -gt 1 ]]; then
+  echo "Too many files"
+  exit 1
+fi
+
+if [[ -n $FORCE ]]; then
+  calpis -f $argv
+else
+  calpis $argv
+fi
