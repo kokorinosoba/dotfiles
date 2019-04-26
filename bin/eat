@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Multifile Compile and Execute Shell
+# chmod +x eatで実行権限を与える
+# ./eatで実行可能
+
 declare -i argc=0
 declare -a argv=()
 
@@ -27,7 +31,19 @@ elif [[ $argc -gt 1 ]]; then
 fi
 
 if [[ -n $FORCE ]]; then
-  calpis -f $argv
-else
-  calpis $argv
+  opt=-f
 fi
+
+case ${argv##*.} in
+  cpp )
+    calpis $opt $argv ;;
+  cs )
+    cassis $opt $argv ;;
+  c )
+    coke $opt $argv ;;
+  java )
+    juice $opt $argv ;;
+  * )
+    echo "eat: Unrecognized .${argv##*.} file"
+    exit 1 ;;
+esac
