@@ -20,7 +20,7 @@ case $ANSWER in
     exit 1;;
 esac
 
-git submodule update --init
+git submodule update --init --depth=1
 bash symlink.sh
 
 [[ -e $HOME/iCloudDrive ]] || bash icloud.sh
