@@ -6,11 +6,11 @@ CURRENT_DIR=$(basename $(pwd))
 NAME=$(echo $CURRENT_DIR | sed -E "s/[0-9]*$//")
 NUM=$(echo $CURRENT_DIR | sed -E "s/^[^0-9]*//")
 
-NUM=$(printf %0${#NUM}d $(($NUM + JUMP_N)))
+NUM=$(printf %0${#NUM}d $(expr $NUM + $JUMP_N))
 
 if [[ -d ../$NAME$NUM ]]; then
   cd ../$NAME$NUM
 else
   [[ $JUMP_N -eq -1 ]] && JUMP_N=
-  echo "You cannot use \"cd- $JUMP_N\" because $NAME$NUM does not exist"
+  echo "You cannot use \"red $JUMP_N\" because $NAME$NUM does not exist"
 fi
