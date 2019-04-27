@@ -1,4 +1,4 @@
 #!/bin/bash
 
-. red
+. red -1
 mkabc $1
