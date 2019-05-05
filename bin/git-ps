@@ -1,0 +1,64 @@
+#!/bin/bash
+
+set -euC
+
+status() {
+  local flags=''
+  # Modified
+  if ! git diff --no-ext-diff --quiet; then
+    flags="*$flags"
+  fi
+
+  # Cached
+  if ! git diff --no-ext-diff --cached --quiet; then
+    flags="~$flags"
+  fi
+
+  # Stash
+  if git rev-parse --verify --quiet refs/stash >/dev/null; then
+    flags="\$$flags"
+  fi
+
+  # Untracked
+  if git ls-files --others --exclude-standard --directory --no-empty-directory --error-unmatch -- ':/*' >/dev/null 2>/dev/null; then
+    flags="…$flags"
+  fi
+
+  echo "$flags"
+}
+
+branch() {
+  local branch=$(git describe --contains --all HEAD)
+  echo $branch
+}
+
+hash() {
+  git log --pretty=format:'%h' -n 1
+}
+
+prompt() {
+  local b=" $(branch)"
+  local s=$(status); s=${s:+ $s}
+  # local h=$(hash)
+  local colorcode=42
+  if [[ $s =~ .*\*.* ]]; then
+    colorcode=41
+  elif [[ $s =~ .*~.* ]]; then
+    colorcode=43
+  fi
+  echo -e -n "\033[37;${colorcode}m"
+  echo -e -n "\033[1m $b$s \033[0m"
+  echo -e -n "\033[$(($colorcode - 10));49m\033[0m "
+}
+
+git_ps() {
+  if git rev-parse &>/dev/null; then
+    prompt
+  else
+    echo -e -n "\033[37;49m\033[0m "
+  fi
+}
+
+if [[ ${BASH_SOURCE[0]} == $0 ]]; then
+  git_ps
+fi
