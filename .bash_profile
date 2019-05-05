@@ -28,6 +28,11 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 PS1='\[\033[1;32m\]\u\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
 PS1="\[\033[1;32m\]\$(date +%Y/%m/%d_%H:%M:%S)\[\033[0m\] \[\033[33m\]\H:\w\n\[\033[0m\][\u@ \W]\[\033[36m\]\$(__git_ps1)\[\033[00m\]\$ "
+PS1='$(date) $ '
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+# call .pathrc
+[[ -f $HOME/.pathrc ]] && source $HOME/.pathrc
 
 # call .bashrc
 [[ -f $HOME/.bashrc ]] && source $HOME/.bashrc
@@ -35,44 +40,8 @@ PS1="\[\033[1;32m\]\$(date +%Y/%m/%d_%H:%M:%S)\[\033[0m\] \[\033[33m\]\H:\w\n\[\
 # enable autocd
 [[ $BASH_VERSINFO -ge 4 ]] && shopt -s autocd
 
-# path to coreutils, findutils and gnu-sed
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-
-export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
-
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
-
-# XDG Base Directory Setting
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-
-# make less avarable for colordiff
-export LESS='-R'
-
-# path to pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# pyenv-virtualenv auto activation
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
-# path to ruby
-export RBENV_ROOT="$HOME/.rbenv"
-export PATH="$RBENV_ROOT/bin:$PATH"
-eval "$(rbenv init -)"
-
-# path to dotfiles/bin
-export PATH="$HOME/dotfiles/bin:$PATH"
-
-# cask install option
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
 # display welcome message
-[[ -n $BASH ]] && figlet -f smslant WELCOME TO BASH
+figlet -f smslant WELCOME TO BASH
 
 # display todo list
 todo ls --all
