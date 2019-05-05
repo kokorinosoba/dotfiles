@@ -6,8 +6,28 @@
 # change display of prompt
 # PS1=" \W \[\033[35m\]$\[\033[0m\]"
 
-# call .bash_it_profile
-[[ -n $BASH ]] && [[ -f $HOME/.bash_it_profile ]] && source $HOME/.bash_it_profile
+# PROMPT_COMMANDで指定するfunction
+function __command_rprompt() {
+  # 右プロンプトに表示させる内容。今回はタイムスタンプ。
+  local rprompt=$(date "+%Y/%m/%d %H:%M:%S")
+
+  # 右プロンプトを表示するために必要となる幅
+  local num=$(($COLUMNS - ${#rprompt} - 2))
+
+  # 右プロンプトの表示(\rがないとうまく動作しないので注意)
+  printf "%${num}s$rprompt\r" ''
+}
+PROMPT_COMMAND=__command_rprompt
+
+# substitute for bash-it
+[[ -f $HOME/.git-completion.bash ]] &&  source $HOME/.git-completion.bash
+[[ -f $HOME/.git-prompt.sh ]] && source $HOME/.git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWSTASHSTATE=true
+GIT_PS1_SHOWUPSTREAM=auto
+PS1='\[\033[1;32m\]\u\[\033[00m\]:\[\033[1;34m\]\w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] \$ '
+PS1="\[\033[1;32m\]\$(date +%Y/%m/%d_%H:%M:%S)\[\033[0m\] \[\033[33m\]\H:\w\n\[\033[0m\][\u@ \W]\[\033[36m\]\$(__git_ps1)\[\033[00m\]\$ "
 
 # call .bashrc
 [[ -f $HOME/.bashrc ]] && source $HOME/.bashrc
