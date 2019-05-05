@@ -1,8 +1,7 @@
 #!/bin/bash
 
-cd `dirname $0`
-cd ../..
-DOTFILES_DIR=$(pwd)
+DOTDIR=$(dirname $0 | sed -e 's/\(.*dotfiles\).*/\1/')
+cd $DOTDIR
 
 usage_exit() {
   echo "Usage: $0 [-d] [-f] [-i]" 1>&2
@@ -11,10 +10,10 @@ usage_exit() {
 
 mklink() {
   local dotfile=$1
-  if [[ -e "$HOME/$dotfile" ]]; then
+  if [[ -e $HOME/$dotfile ]]; then
     echo "Failed to create symlink to \$HOME/$dotfile"
   else
-    ln -s $DOTFILES_DIR/$dotfile $HOME &&
+    ln -s $DOTDIR/$dotfile $HOME &&
     echo "Created symlink to \$HOME/$dotfile"
   fi
 }
@@ -22,13 +21,13 @@ mklink() {
 oplink() {
   local opt=$1
   local dotfile=$2
-  ln -s $opt $DOTFILES_DIR/$dotfile $HOME &&
+  ln -s $opt $DOTDIR/$dotfile $HOME &&
   [[ $opt = -f ]] && echo "Created symlink to \$HOME/$dotfile"
 }
 
 rmlink() {
   local dotfile=$1
-  if [[ -e "$HOME/$dotfile" ]]; then
+  if [[ -e $HOME/$dotfile ]]; then
     unlink $HOME/$dotfile &&
     echo "Deleted symlink \$HOME/$dotfile"
   fi
@@ -50,10 +49,10 @@ shift $((OPTIND - 1))
 
 for dotfile in .??*
 do
-  [[ "$dotfile" == ".git" ]] && continue
-  [[ "$dotfile" == ".gitignore" ]] && continue
-  [[ "$dotfile" == ".gitmodules" ]] && continue
-  [[ "$dotfile" == ".DS_Store" ]] && continue
+  [[ $dotfile == .git ]] && continue
+  [[ $dotfile == .gitignore ]] && continue
+  [[ $dotfile == .gitmodules ]] && continue
+  [[ $dotfile == .DS_Store ]] && continue
 
   $FUNC $dotfile
 done
