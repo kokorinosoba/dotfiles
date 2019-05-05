@@ -84,7 +84,10 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # call .bash_profile
-[[ -e $HOME/.bash_profile ]] && source $HOME/.bash_profile
+[[ -f $HOME/.pathrc ]] && source $HOME/.pathrc
+
+# call .bashrc
+[[ -f $HOME/.bashrc ]] && source $HOME/.bashrc
 
 # autocomplete setting
 autoload -U compinit
@@ -95,3 +98,6 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # display welcome message
 toilet -f pagga WELCOME TO ZSH
+
+# display todo list
+todo ls --all
