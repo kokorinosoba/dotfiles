@@ -102,6 +102,10 @@ alias ll='ls -lh'
 alias grep='grep --color=auto'
 alias df='df -h'
 
+# shortened alias
+alias md='mkdir'
+alias rd='rmdir'
+
 # shortcut to dotfiles
 alias dotfiles='cd $HOME/dotfiles'
 
@@ -114,3 +118,4 @@ alias rla='. roll 1'
 alias rlb='. roll 2'
 alias rlc='. roll 3'
 alias rld='. roll 4'
+alias mkcd='. mkcd'
