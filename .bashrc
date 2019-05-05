@@ -20,21 +20,21 @@ alias g='git'
 
 alias ga='git add'
 alias ga.='git add .'
-alias gaa='git add --all'
-alias gap='git add --patch'
-alias gau='git add --update'
+alias gaa='git add --all' # (-A)
+alias gap='git add --patch' # (-p)
+alias gau='git add --update' # (-u)
 
 alias gb='git branch'
-alias gba='git branch --all' # include remote branch
-alias gbr='git branch --remotes'
-alias gbd='git branch --delete' # delete merged branch
+alias gba='git branch --all' # include remote branch (-a)
+alias gbr='git branch --remotes' # (-r)
+alias gbd='git branch --delete' # delete merged branch (-d)
 alias gbD='git branch -D' # delete branch by force
 
-alias gc='git commit --verbose' # show diff in commit message editor
-alias 'gc!'='git commit --verbose --amend'
-alias gca='git commit --verbose --all'
+alias gc='git commit --verbose' # show diff in commit message editor (-v)
+alias 'gc!'='git commit --verbose --amend' # (-v --amend)
+alias gca='git commit --verbose --all' # (-v -a)
 alias 'gca!'='git commit --verbose --all --amend'
-alias gcam='git commit --all -message'
+alias gcam='git commit --all -message' # (-a -m)
 alias gcm='git commit --message'
 alias 'gcm!'='git commit --amend --message'
 alias gcinit='git commit --allow-empty -m "initial commit"'
@@ -45,7 +45,10 @@ alias gcom='git checkout master'
 
 alias gd='git diff'
 alias gds='git diff --staged'
-alias gdc='git diff --cached'
+alias gdst='git diff --stat'
+alias gdsts='git diff --stat --staged'
+alias gdc='git diff --cached' # same meaning to (--staged)
+alias gdstc='git diff --stat --cached'
 
 alias gf='git fetch'
 alias gfa='git fetch --all --prune'
@@ -65,6 +68,10 @@ alias gpl='git pull'
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias 'gpf!'='git push --force'
+
+alias gr='git reset'
+alias grh='git reset --hard'
+alias grs='git reset --soft'
 
 alias gs='git status'
 alias gss='git status --short'

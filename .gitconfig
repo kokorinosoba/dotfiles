@@ -3,23 +3,3 @@
 	email = 34607448+kokorinosoba@users.noreply.github.com
 [core]
 	editor = nvim
-[alias]
-	a = add
-	b = branch --all
-	br = browse-remote
-	c = commit
-	cm = commit --message
-	co = checkout
-	d = diff
-	ds = diff --staged
-	dc = diff --cached
-	l = log
-	lo = log --oneline
-	lg = log --oneline --graph
-	ls = log --stat
-	lf = ls-files
-	lr = ls-remote
-	s = status --short --branch
-	st = status
-	ss = status --short
-	su = submodule update
