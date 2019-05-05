@@ -28,7 +28,7 @@ status() {
 }
 
 branch() {
-  local branch=$(git describe --contains --all HEAD)
+  local branch=$(git rev-parse --abbrev-ref HEAD)
   echo $branch
 }
 
