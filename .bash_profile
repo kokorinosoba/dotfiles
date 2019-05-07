@@ -13,7 +13,7 @@ PROMPT_COMMAND=__command_rprompt
 
 # prompt setting
 # PS1=' \W \[\033[35m\]$\[\033[0m\]'
-PS1='\[\e[30;47m\] \w $(git-ps)'
+PS1='$(if [[ $? -ne 0 ]]; then echo "\[\e[30;46m\] ! \[\e[36;47m\]"; fi)\[\e[30;47m\] \w $(git-ps)'
 
 # call .pathrc
 [[ -f $HOME/.pathrc ]] && source $HOME/.pathrc
