@@ -65,11 +65,20 @@ alias gls='git log --stat'
 alias glf='git ls-files'
 alias glr='git ls-remote'
 
+alias gm='git merge'
+alias gma='git merge --abort'
+alias gmom='git merge origin/master'
+
 alias gpl='git pull'
+alias gup='git pull --rebase'
+alias gupa='git pull --rebase --autostash'
+alias gupav='git pull --rebase --autostash --verbose'
+alias gupv='git pull --rebase --verbose'
 
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias 'gpf!'='git push --force'
+alias gpv='git push --verbose'
 
 alias gr='git reset'
 alias grh='git reset --hard'
