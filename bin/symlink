@@ -1,9 +1,9 @@
 #!/bin/bash
 
-DOTDIR=$(dirname $0 | sed -e 's/\(.*dotfiles\).*/\1/')
+DOTDIR=$(readlink -f $0 | sed -e 's/\(.*dotfiles\).*/\1/')
 cd $DOTDIR
 
-usage_exit() {
+usage() {
   echo "Usage: $0 [-d] [-f] [-i]" 1>&2
   exit 1
 }
@@ -40,8 +40,8 @@ do
     d ) FUNC="rmlink" ;;
     f ) FUNC="oplink -f" ;;
     i ) FUNC="oplink -i" ;;
-    h ) usage_exit ;;
-    \? ) usage_exit ;;
+    h ) usage ;;
+    \? ) usage ;;
   esac
 done
 
