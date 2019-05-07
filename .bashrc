@@ -109,13 +109,16 @@ alias rd='rmdir'
 # shortcut to dotfiles
 alias dotfiles='cd $HOME/dotfiles'
 
+# for PS1 setting
+alias cps='source cps'
+
 # make brew doctor wornings coming from using pyenv invisible
 alias brew="env PATH=${PATH/\/Users\/Kokorin\/\.pyenv\/shims:/} brew"
 
 # For Competitive Programming
-alias red='. red'
-alias rla='. roll 1'
-alias rlb='. roll 2'
-alias rlc='. roll 3'
-alias rld='. roll 4'
-alias mkcd='. mkcd'
+alias red='source red'
+alias rla='source roll 1'
+alias rlb='source roll 2'
+alias rlc='source roll 3'
+alias rld='source roll 4'
+alias mkcd='source mkcd'
