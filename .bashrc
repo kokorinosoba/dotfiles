@@ -41,7 +41,9 @@ alias gcinit='git commit --allow-empty -m "initial commit"'
 
 alias gco='git checkout'
 alias gcob='git checkout -b'
+alias gcoB='git checkout -B'
 alias gcom='git checkout master'
+alias gcod='git checkout develop'
 
 alias gd='git diff'
 alias gds='git diff --staged'
