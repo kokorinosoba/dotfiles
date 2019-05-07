@@ -41,7 +41,9 @@ alias gcinit='git commit --allow-empty -m "initial commit"'
 
 alias gco='git checkout'
 alias gcob='git checkout -b'
+alias gcoB='git checkout -B'
 alias gcom='git checkout master'
+alias gcod='git checkout develop'
 
 alias gd='git diff'
 alias gds='git diff --staged'
@@ -63,11 +65,20 @@ alias gls='git log --stat'
 alias glf='git ls-files'
 alias glr='git ls-remote'
 
+alias gm='git merge'
+alias gma='git merge --abort'
+alias gmom='git merge origin/master'
+
 alias gpl='git pull'
+alias gup='git pull --rebase'
+alias gupa='git pull --rebase --autostash'
+alias gupav='git pull --rebase --autostash --verbose'
+alias gupv='git pull --rebase --verbose'
 
 alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias 'gpf!'='git push --force'
+alias gpv='git push --verbose'
 
 alias gr='git reset'
 alias grh='git reset --hard'
