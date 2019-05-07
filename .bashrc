@@ -79,6 +79,8 @@ alias gp='git push'
 alias gpf='git push --force-with-lease'
 alias 'gpf!'='git push --force'
 alias gpv='git push --verbose'
+alias gpu='git push -u' # --set-upstream
+alias gpsup='git push -u' # same as above
 
 alias gr='git reset'
 alias grh='git reset --hard'
