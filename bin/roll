@@ -1,4 +1,4 @@
 #!/bin/bash
 
-. red -1
+source red -1 # source is equal to .
 mkabc $1
