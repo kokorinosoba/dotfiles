@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly DOTDIR=$(readlink -f $0 | sed -e 's/\(.*dotfiles\).*/\1/')
+readonly DOTDIR=$(realpath $0 | sed -e 's/\(.*dotfiles\).*/\1/')
 cd $DOTDIR
 
 usage() {
