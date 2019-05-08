@@ -15,13 +15,13 @@ echo "Continue initializing? [Y/n]"
 read ANSWER
 
 case $ANSWER in
-  "Y" | "y" | "yes" | "Yes" | "YES" );;
+  "Y" | "y" | "yes" | "Yes" | "YES" ) ;;
   * )
     echo "Canceled."
-    exit 1;;
+    exit 1 ;;
 esac
 
-git submodule update --init --depth=1
+# git submodule update --init --depth=1
 ./icloud.sh
 $BIN_DIR/symlink
 has brew || ./brew.sh
