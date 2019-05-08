@@ -53,8 +53,10 @@ alias gds='git diff --staged' # same meaning to (--cached)
 alias gdsts='git diff --stat --staged'
 
 alias gf='git fetch'
-alias gfa='git fetch -a -p' # --all --prune
-alias gfo='git fetch origin'
+alias gfa='git fetch -a' # --all
+alias gfap='git fetch -a -p' # --all --prune
+alias gfp='git fetch -p' # --prune
+alias gfo='git fetch origin' # gfo [master]: possible to choose fetching remote branch
 
 alias gl='git log'
 alias glo='git log --oneline'
