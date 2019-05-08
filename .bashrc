@@ -29,6 +29,8 @@ alias gba='git branch -a' # include remote branch (--all)
 alias gbr='git branch -r' # only remote branch (--remotes)
 alias gbd='git branch -d' # delete merged branch (--delete)
 alias gbD='git branch -D' # delete branch by force
+alias gbv='git branch -v' # show branches commits' SHA-1 (-vv, --verbose)
+alias gbuup='git branch --unset-upstream'
 
 alias gbs='git bisect'
 alias gbsb='git bisect bad'
@@ -39,12 +41,12 @@ alias gbss='git bisect start'
 alias gbl='git blame -b -w' # show boundary commits' SHA-1 (-b) and white space (-w)
 
 alias gc='git commit -v' # show diff in commit message editor (--verbose)
-alias 'gc!'='git commit -v --amend' # --verbose --amend
-alias gca='git commit -v -a' # --verbose --all
+alias 'gc!'='git commit -v --amend'     # --verbose --amend
+alias gca='git commit -v -a'            # --verbose --all
 alias 'gca!'='git commit -v -a --amend' # --verbose --all --amend
-alias gcam='git commit -a -m' # --all --message
-alias gcm='git commit -m' # --message
-alias 'gcm!'='git commit --amend -m' # --amend --message
+alias gcam='git commit -a -m'           # --all --message
+alias gcm='git commit -m'               # --message
+alias 'gcm!'='git commit --amend -m'    # --amend --message
 alias gcinit='git commit --allow-empty -m "initial commit"'
 
 alias gco='git checkout'
@@ -61,10 +63,10 @@ alias gds='git diff --staged' # same meaning to (--cached)
 alias gdsts='git diff --stat --staged'
 
 alias gf='git fetch'
-alias gfa='git fetch -a' # --all
+alias gfa='git fetch -a'     # --all
 alias gfap='git fetch -a -p' # --all --prune
-alias gfp='git fetch -p' # --prune
-alias gfo='git fetch origin' # gfo [master]: possible to choose fetching remote branch
+alias gfp='git fetch -p'     # --prune
+alias gfo='git fetch origin' # gfo <branch>: possible to choose fetching remote branch
 
 alias gl='git log'
 alias glo='git log --oneline'
@@ -82,16 +84,16 @@ alias gma='git merge --abort'
 alias gmom='git merge origin/master'
 
 alias gpl='git pull'
-alias gup='git pull -r' # --rebase
-alias gupa='git pull -r --autostash' # --rebase --autostash
+alias gup='git pull -r'                  # --rebase
+alias gupa='git pull -r --autostash'     # --rebase --autostash
 alias gupav='git pull -r --autostash -v' # --rebase  --autostash --verbose
-alias gupv='git pull -r -v' # --rebase --verbose
+alias gupv='git pull -r -v'              # --rebase --verbose
 
 alias gp='git push'
 alias gpf='git push --force-with-lease' # possible to push when the local is the newest
-alias 'gpf!'='git push -f' # --force
-alias gpv='git push -v' # --verbose
-alias gpu='git push -u' # --set-upstream
+alias 'gpf!'='git push -f'              # --force
+alias gpv='git push -v'                 # --verbose
+alias gpu='git push -u'                 # --set-upstream
 alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref @)' # same as above
 
 alias gr='git reset'
@@ -99,7 +101,7 @@ alias grh='git reset --hard'
 alias grs='git reset --soft'
 
 alias gs='git status'
-alias gss='git status -s' # --short
+alias gss='git status -s'     # --short
 alias gssb='git status -s -b' # --short --branch
 
 alias gsh='git show'
