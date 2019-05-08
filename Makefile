@@ -19,7 +19,7 @@ deploy: ## Create symlink to home directory
 
 init: ## Setup environment settings
 	@#DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/init/init.sh
-	@./etc/setup/initialize.sh
+	@./etc/init/initialize.sh
 
 test: ## Test dotfiles and init scripts
 	@#DOTPATH=$(DOTPATH) bash $(DOTPATH)/etc/test/test.sh
