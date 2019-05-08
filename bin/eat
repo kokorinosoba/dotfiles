@@ -4,6 +4,12 @@
 # chmod +x eatで実行権限を与える
 # ./eatで実行可能
 
+usage() {
+  echo "Usage: ${0##*/} [-f --force] file"
+  echo "Avairable file extensions are [.c .cpp .cs .java]"
+  exit 1
+}
+
 declare -i argc=0
 declare -a argv=()
 
@@ -11,8 +17,10 @@ while (( $# > 0 ))
 do
   case $1 in
     -* )
-      if [[ $1 =~ 'f' ]]; then
-        FORCE=1
+      if [[ $1 == "-f" || $1 == "--force" ]]; then
+        force=true
+      else
+        usage
       fi
       shift ;;
     * )
@@ -24,13 +32,13 @@ done
 
 if [[ $argc -lt 1 ]]; then
   echo "No input file"
-  exit 1
+  usage
 elif [[ $argc -gt 1 ]]; then
   echo "Too many files"
-  exit 1
+  usage
 fi
 
-if [[ -n $FORCE ]]; then
+if [[ -n $force ]]; then
   opt=-f
 fi
 
@@ -44,6 +52,10 @@ case ${argv##*.} in
   java )
     juice $opt $argv ;;
   * )
-    echo "eat: Unrecognized .${argv##*.} file"
-    exit 1 ;;
+    if ! [[ -e $argv ]]; then
+      echo "$argv does not exist"
+    else
+      echo "Unrecognized $(if [[ $argv != ${argv##*.} ]]; then echo "extension "; fi)file"
+    fi
+    usage
 esac

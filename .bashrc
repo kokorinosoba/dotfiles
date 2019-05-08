@@ -30,6 +30,14 @@ alias gbr='git branch -r' # only remote branch (--remotes)
 alias gbd='git branch -d' # delete merged branch (--delete)
 alias gbD='git branch -D' # delete branch by force
 
+alias gbs='git bisect'
+alias gbsb='git bisect bad'
+alias gbsg='git bisect good'
+alias gbsr='git bisect reset'
+alias gbss='git bisect start'
+
+alias gbl='git blame -b -w' # show boundary commits' SHA-1 (-b) and white space (-w)
+
 alias gc='git commit -v' # show diff in commit message editor (--verbose)
 alias 'gc!'='git commit -v --amend' # --verbose --amend
 alias gca='git commit -v -a' # --verbose --all
@@ -53,14 +61,18 @@ alias gds='git diff --staged' # same meaning to (--cached)
 alias gdsts='git diff --stat --staged'
 
 alias gf='git fetch'
-alias gfa='git fetch -a -p' # --all --prune
-alias gfo='git fetch origin'
+alias gfa='git fetch -a' # --all
+alias gfap='git fetch -a -p' # --all --prune
+alias gfp='git fetch -p' # --prune
+alias gfo='git fetch origin' # gfo [master]: possible to choose fetching remote branch
 
 alias gl='git log'
 alias glo='git log --oneline'
 alias glg='git log --graph'
 alias glgo='git log --graph --oneline'
 alias gls='git log --stat'
+alias glS='git log -S' # differences log search with string 'slS "string" file'
+alias glG='git log -G' # differences log search with regexp 'slG "regexp" file'
 
 alias glf='git ls-files'
 alias glr='git ls-remote'
@@ -80,7 +92,7 @@ alias gpf='git push --force-with-lease' # possible to push when the local is the
 alias 'gpf!'='git push -f' # --force
 alias gpv='git push -v' # --verbose
 alias gpu='git push -u' # --set-upstream
-alias gpsup='git push -u' # same as above
+alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref @)' # same as above
 
 alias gr='git reset'
 alias grh='git reset --hard'
@@ -89,6 +101,9 @@ alias grs='git reset --soft'
 alias gs='git status'
 alias gss='git status -s' # --short
 alias gssb='git status -s -b' # --short --branch
+
+alias gsh='git show'
+alias gshps='git show --pretty=short --show-signature'
 
 alias gst='git stash push'
 alias gsta='git stash apply'

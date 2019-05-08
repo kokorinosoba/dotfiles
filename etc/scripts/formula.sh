@@ -22,6 +22,7 @@ FORMULAE=(bash
           rmtrash
           toilet
           tree
+          wget
           zsh)
 
 brew install ${FORMULAE[@]}
