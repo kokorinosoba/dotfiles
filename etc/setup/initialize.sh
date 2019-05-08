@@ -2,7 +2,7 @@
 
 set -eu
 
-DOTDIR=$(readlink -f $0 | sed -e 's/\(.*dotfiles\).*/\1/')
+readonly DOTDIR=$(realpath $0 | sed -e 's/\(.*dotfiles\).*/\1/')
 BIN_DIR=$DOTDIR/bin
 SCRIPT_DIR=$DOTDIR/etc/scripts
 cd $SCRIPT_DIR
