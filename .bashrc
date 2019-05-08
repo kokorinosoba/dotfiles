@@ -82,7 +82,7 @@ alias gpf='git push --force-with-lease' # possible to push when the local is the
 alias 'gpf!'='git push -f' # --force
 alias gpv='git push -v' # --verbose
 alias gpu='git push -u' # --set-upstream
-alias gpsup='git push -u' # same as above
+alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref @)' # same as above
 
 alias gr='git reset'
 alias grh='git reset --hard'
