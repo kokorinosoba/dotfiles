@@ -23,14 +23,17 @@ alias ga.='git add .'
 alias gaa='git add -A' # --all
 alias gap='git add -p' # --patch
 alias gau='git add -u' # --update
+alias gav='git add -v' # --verbose
 
 alias gb='git branch'     # make branch
 alias gba='git branch -a' # include remote branch (--all)
-alias gbr='git branch -r' # only remote branch (--remotes)
 alias gbd='git branch -d' # delete merged branch (--delete)
 alias gbD='git branch -D' # delete branch by force
+alias gbr='git branch -r' # only remote branch (--remotes)
 alias gbv='git branch -v' # show branches commits' SHA-1 (-vv, --verbose)
+alias gbnm='git branch --no-merged'
 alias gbuup='git branch --unset-upstream'
+alias gbsup='git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref @)'
 
 alias gbs='git bisect'
 alias gbsb='git bisect bad'
@@ -42,12 +45,20 @@ alias gbl='git blame -b -w' # show boundary commits' SHA-1 (-b) and white space 
 
 alias gc='git commit -v' # show diff in commit message editor (--verbose)
 alias 'gc!'='git commit -v --amend'     # --verbose --amend
-alias gca='git commit -v -a'            # --verbose --all
+alias gca='git commit -v -a'            # --verbose --all: auto add midified files
 alias 'gca!'='git commit -v -a --amend' # --verbose --all --amend
-alias gcam='git commit -a -m'           # --all --message
 alias gcm='git commit -m'               # --message
 alias 'gcm!'='git commit --amend -m'    # --amend --message
+alias gcam='git commit -a -m'           # --all --message
 alias gcinit='git commit --allow-empty -m "initial commit"'
+
+alias gcf='git config --list' # show config
+
+alias gcl='git clone'
+alias gclr='git clone --recurse-submodules'
+
+alias gclean='git clean -id' # include directories + (--interactive)
+alias gpristine='git reset --hard && git clean -dfx' # pristine=fresh?
 
 alias gco='git checkout'
 alias gcob='git checkout -b' # make and checkout branch
@@ -55,18 +66,29 @@ alias gcoB='git checkout -B' # make and checkout branch by force
 alias gcom='git checkout master'
 alias gcod='git checkout develop'
 
+alias gcp='git cherry-pick'
+alias gcpa='git cherry-pick --abort'
+alias gcpc='git cherry-pick --continue'
+
 alias gd='git diff'
 alias gdst='git diff --stat'
 alias gdc='git diff --cached'
-alias gdstc='git diff --stat --cached'
+alias gdcst='git diff --cached --stat'
+alias gdcw='git diff --cached --word-diff'
 alias gds='git diff --staged' # same meaning to (--cached)
-alias gdsts='git diff --stat --staged'
+alias gdsst='git diff --staged --stat'
+alias gdsw='git diff --staged --word-diff'
+alias gdt='git diff-tree --no-commit-id --name-only -r' # show modified files
+alias gdw='git diff --word-diff'
 
 alias gf='git fetch'
 alias gfa='git fetch -a'     # --all
 alias gfap='git fetch -a -p' # --all --prune
 alias gfp='git fetch -p'     # --prune
 alias gfo='git fetch origin' # gfo <branch>: possible to choose fetching remote branch
+
+alias gg='git gui citool'
+alias 'gg!'='git gui citool --amend'
 
 alias gl='git log'
 alias glo='git log --oneline'
@@ -77,28 +99,56 @@ alias glS='git log -S' # differences log search with string 'slS "string" file'
 alias glG='git log -G' # differences log search with regexp 'slG "regexp" file'
 
 alias glf='git ls-files'
+alias glfv='git ls-files -v'
 alias glr='git ls-remote'
 
 alias gm='git merge'
 alias gma='git merge --abort'
 alias gmom='git merge origin/master'
+alias gmum='git merge upstream/master'
+
+alias gmt='git mergetool --no-prompt'
+alias gmtvim='git mergetool --no-prompt --tool=vimdiff'
 
 alias gpl='git pull'
+alias gplup='git pull origin $(git rev-parse --abbrev-ref @)'
 alias gup='git pull -r'                  # --rebase
 alias gupa='git pull -r --autostash'     # --rebase --autostash
-alias gupav='git pull -r --autostash -v' # --rebase  --autostash --verbose
+alias gupav='git pull -r --autostash -v' # --rebase --autostash --verbose
 alias gupv='git pull -r -v'              # --rebase --verbose
 
 alias gp='git push'
+alias gpd='git push -n'                 # --dry-run
 alias gpf='git push --force-with-lease' # possible to push when the local is the newest
 alias 'gpf!'='git push -f'              # --force
 alias gpv='git push -v'                 # --verbose
+# alias gpu='git push upstream'
 alias gpu='git push -u'                 # --set-upstream
 alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref @)' # same as above
 
+alias grb='git rebase'
+alias grba='git rebase --abort'
+alias grbc='git rebase --continue'
+alias grbd='git rebase develop'
+alias grbi='git rebase -i' # --interactive
+alias grbm='git rebase master'
+alias grbs='git rebase --skip'
+
+alias grmt='git remote'
+alias grma='git remote add'
+alias grmn='git remote rename'
+alias grmrm='git remote remove'
+alias grmset='git remote set-url'
+alias grmu='git remote update'
+alias grmv='git remote -v' # --verbose
+
 alias gr='git reset'
-alias grh='git reset --hard'
 alias grs='git reset --soft'
+alias grh='git reset --hard'
+alias groh='git reset origin/$(git rev-parse --abbrev-ref @) --hard'
+
+alias grm='git rm'
+alias grmc='git rm --cached'
 
 alias gs='git status'
 alias gss='git status -s'     # --short
@@ -106,6 +156,8 @@ alias gssb='git status -s -b' # --short --branch
 
 alias gsh='git show'
 alias gshps='git show --pretty=short --show-signature'
+
+alias gsl='git shortlog -sn'
 
 alias gst='git stash push'
 alias gsta='git stash apply'
@@ -117,7 +169,10 @@ alias gstp='git stash pop'
 alias gstpi='git stash pop --index'
 alias gsts='git stash show --text'
 
-alias gsu='git submodule update'
+alias gsmi='git submodule init'
+alias gsmu='git submodule update'
+
+alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 
 # basic safe commands
 alias cp='cp -i'
