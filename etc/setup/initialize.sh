@@ -3,11 +3,12 @@
 set -eu
 
 DOTDIR=$(readlink -f $0 | sed -e 's/\(.*dotfiles\).*/\1/')
+BIN_DIR=$DOTDIR/bin
 SCRIPT_DIR=$DOTDIR/etc/scripts
 cd $SCRIPT_DIR
 
 has() {
-  type "$1" > /dev/null 2>&1
+  type $1 > /dev/null 2>&1
 }
 
 echo "Continue initializing? [Y/n]"
@@ -21,24 +22,23 @@ case $ANSWER in
 esac
 
 git submodule update --init --depth=1
-bash symlink
-
-[[ -e $HOME/iCloudDrive ]] || bash icloud.sh
-has brew || bash brew.sh
-has brew && bash formula.sh
-has brew && bash cask.sh
-bash shells.sh
-bash bash.sh
+./icloud.sh
+$BIN_DIR/symlink
+has brew || ./brew.sh
+has brew && ./formula.sh
+has brew && ./cask.sh
+./shells.sh
+./bash.sh
 has apm && apm stars --install
-has npm && bash npm.sh
-has pyenv && bash pyenv.bash
-has /usr/local/bin/pip3 && bash nvim.sh
-has gcc-8 && bash c++.bash
+has npm && ./npm.sh
+has pyenv && ./pyenv.bash
+has /usr/local/bin/pip3 && ./nvim.sh
+has gcc-8 && ./c++.sh
 
-bash solarized.sh
-bash japanesque.sh
-bash powerline.sh
+./solarized.sh
+./japanesque.sh
+./powerline.sh
 
-has fish && fish fish.sh
-has fish && fish fisher.sh
-has fisher && bash fisherPyenvInit.sh
+has fish && ./fish.sh
+has fish && ./fisher.sh
+has fisher && ./fisherPyenvInit.sh
