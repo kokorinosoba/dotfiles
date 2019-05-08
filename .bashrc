@@ -30,6 +30,14 @@ alias gbr='git branch -r' # only remote branch (--remotes)
 alias gbd='git branch -d' # delete merged branch (--delete)
 alias gbD='git branch -D' # delete branch by force
 
+alias gbs='git bisect'
+alias gbsb='git bisect bad'
+alias gbsg='git bisect good'
+alias gbsr='git bisect reset'
+alias gbss='git bisect start'
+
+alias gbl='git blame -b -w' # show boundary commits' SHA-1 (-b) and white space (-w)
+
 alias gc='git commit -v' # show diff in commit message editor (--verbose)
 alias 'gc!'='git commit -v --amend' # --verbose --amend
 alias gca='git commit -v -a' # --verbose --all
@@ -63,6 +71,8 @@ alias glo='git log --oneline'
 alias glg='git log --graph'
 alias glgo='git log --graph --oneline'
 alias gls='git log --stat'
+alias glS='git log -S' # differences log search with string 'slS "string" file'
+alias glG='git log -G' # differences log search with regexp 'slG "regexp" file'
 
 alias glf='git ls-files'
 alias glr='git ls-remote'
@@ -91,6 +101,9 @@ alias grs='git reset --soft'
 alias gs='git status'
 alias gss='git status -s' # --short
 alias gssb='git status -s -b' # --short --branch
+
+alias gsh='git show'
+alias gshps='git show --pretty=short --show-signature'
 
 alias gst='git stash push'
 alias gsta='git stash apply'
