@@ -3,24 +3,20 @@
 usage() {
   echo "Usage: cps <option>"
   echo "Options:"
-  echo "    -o                        Set original PS1."
-  echo "    -s                        Set simple PS1."
-  echo "    -p                        Set powerline PS1."
+  echo "    -o                        Set original PS1"
+  echo "    -s                        Set simple PS1"
+  echo "    -p                        Set powerline PS1"
+  echo ""
 }
 
-while getopts osph OPT
-do
-  case $OPT in
-    o ) PS1='\h:\W \u\$' ;;
-    s ) PS1=' \W \[\033[35m\]$\[\033[0m\]' ;;
-    p ) PS1='$(if [[ $? -ne 0 ]]; then echo "\[\e[30;46m\] ! \[\e[36;47m\]"; fi)\[\e[30;47m\] \w $(git-ps)' ;;
-    h ) usage ;;
-    \? ) usage ;;
-  esac
-done
+OPTIND=1
+getopts osph opt &> /dev/null
+case $opt in
+  o ) PS1='\h:\W \u\$' ;;
+  s ) PS1=' \W \[\033[35m\]$\[\033[0m\]' ;;
+  p ) PS1='$(if [[ $? -ne 0 ]]; then echo "\[\e[30;46m\] ! \[\e[36;47m\]"; fi)\[\e[30;47m\] \w $(git-ps)' ;;
+  h ) usage ;;
+  \? ) usage ;;
+esac
 
 shift $((OPTIND - 1))
-
-if [[ $OPTIND -eq 1 ]]; then
-  usage
-fi
