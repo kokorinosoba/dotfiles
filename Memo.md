@@ -22,3 +22,28 @@
       * `ls &> ls.txt`は同じ意味
   * `1>&2`: 標準出力を標準エラー出力に切り替える
     * 1は省略できるので`>&2`と書いても同じ
+
+# .bashrc
+* 多すぎて拾えないもの
+  * git commit
+  * git log
+* よくわからないもの
+  * git bisect
+  * git describe
+  * git mergetool
+  * git pull --autostash
+  * git push --dry-run
+  * git svn
+  * git tag
+  * git update-index
+  * git whatchanged
+* 他にもありそう
+  * git ls-files
+  * git shortlog
+
+# git
+* わかったこと
+  * abbrev
+    * abbreviation: 省略 -> SHA-1を省略して表示
+  * pretty
+    * 別のフォーマットで表示する
