@@ -47,3 +47,13 @@
     * abbreviation: 省略 -> SHA-1を省略して表示
   * pretty
     * 別のフォーマットで表示する
+
+# pip
+* ml
+  * jupyter
+  * jupyterlab
+  * matplotlib
+  * pandas
+  * scikit-learn
+  * jupyter labextension install @lckr/jupyterlab_variableinspectorjupyter
+  * jupyter labextension install @jupyterlab/toc
