@@ -1,18 +1,19 @@
 #!/bin/bash
 
 usage() {
-  echo "funter - show/hide hidden files configuration script"
+  echo "${0##*/} - show/hide hidden files configuration script"
   echo ""
   echo "Usage: ${0##*/} <command>"
   echo ""
   echo "Commands:"
   echo "    on                        set to show hidden files"
   echo "    off                       set to hide hidden files"
-  echo "    info                      print status"
-  echo "    help                      print help"
+  echo "    info                      show status"
+  echo "    help                      show help"
   echo ""
   exit 1
 }
+
 if [[ $# -ne 1 ]]; then
   usage
 fi
