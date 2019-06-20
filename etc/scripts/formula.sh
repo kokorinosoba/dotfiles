@@ -1,6 +1,7 @@
 #!/bin/bash
 
 FORMULAE=(bash
+          colordiff
           coreutils
           emacs
           figlet
@@ -14,6 +15,7 @@ FORMULAE=(bash
           id3v2
           mono
           neovim
+          nkf
           npm
           pyenv
           pyenv-virtualenv
