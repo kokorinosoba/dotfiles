@@ -151,6 +151,7 @@ alias grm='git rm'
 alias grmc='git rm --cached'
 
 alias gs='git status'
+alias gsi='git status --ignored'
 alias gss='git status -s'     # --short
 alias gssb='git status -s -b' # --short --branch
 
@@ -169,6 +170,7 @@ alias gstp='git stash pop'
 alias gstpi='git stash pop --index'
 alias gsts='git stash show --text'
 
+alias gsm='git submodule'
 alias gsmi='git submodule init'
 alias gsmu='git submodule update'
 
