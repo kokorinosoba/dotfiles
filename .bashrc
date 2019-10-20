@@ -109,6 +109,8 @@ alias gmum='git merge upstream/master'
 alias gmt='git mergetool --no-prompt'
 alias gmtvim='git mergetool --no-prompt --tool=vimdiff'
 
+alias gmv='git mv'
+
 alias gpl='git pull'
 alias gplup='git pull origin $(git rev-parse --abbrev-ref @)'
 alias gplr='git pull -r'                  # --rebase
