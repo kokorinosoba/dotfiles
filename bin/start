@@ -1,0 +1,64 @@
+#!/bin/bash
+
+readonly DOTDIR=$(realpath $0 | sed -e 's/\(.*dotfiles\).*/\1/')
+cd $DOTDIR
+
+usage() {
+  echo "${0##*/} - easy getting started script"
+  echo ""
+  echo "Usage: ${0##*/} <command>"
+  echo ""
+  echo "Commands:"
+  echo "    all                       execute all commands"
+  echo "    nec                       open necessary applications"
+  echo "    study                     start study"
+  echo "    atc                       start atcoder"
+  echo "    dot                       start editting dotfiles"
+  echo "    help                      show help"
+  echo ""
+  exit 1
+}
+
+necessities() {
+  open /Applications/LINE.app
+  open /Applications/Slack.app
+  open /Applications/iTunes.app
+  open https://trello.com
+}
+
+study() {
+  open /Applications/Zotero.app
+}
+
+atcoder() {
+  open https://kenkoooo.com/atcoder/#/table/kokorinosoba
+  atom $HOME/Documents/contests
+}
+
+dotfiles() {
+  atom $DOTDIR
+}
+
+if [[ $# -ne 1 ]]; then
+  usage
+fi
+
+case $1 in
+  all )
+    necessities
+    study
+    atcoder
+    dotfiles ;;
+  nec )
+    necessities ;;
+  study )
+    necessities
+    study ;;
+  atc )
+    atcoder ;;
+  dot )
+    necessities
+    dotfiles ;;
+  * )
+    usage ;;
+esac

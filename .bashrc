@@ -14,10 +14,9 @@ alias relogin='exec $SHELL -l'
 
 # python alias to use python3 instead of python2
 alias python='python3'
+alias pip='pip3'
 
 # git shortened alias
-alias g='git'
-
 alias ga='git add'
 alias ga.='git add .'
 alias gaa='git add -A' # --all
@@ -110,12 +109,14 @@ alias gmum='git merge upstream/master'
 alias gmt='git mergetool --no-prompt'
 alias gmtvim='git mergetool --no-prompt --tool=vimdiff'
 
+alias gmv='git mv'
+
 alias gpl='git pull'
 alias gplup='git pull origin $(git rev-parse --abbrev-ref @)'
-alias gup='git pull -r'                  # --rebase
-alias gupa='git pull -r --autostash'     # --rebase --autostash
-alias gupav='git pull -r --autostash -v' # --rebase --autostash --verbose
-alias gupv='git pull -r -v'              # --rebase --verbose
+alias gplr='git pull -r'                  # --rebase
+alias gplrv='git pull -r -v'              # --rebase --verbose
+alias gplras='git pull -r --autostash'     # --rebase --autostash
+alias gplrasv='git pull -r --autostash -v' # --rebase --autostash --verbose
 
 alias gp='git push'
 alias gpd='git push -n'                 # --dry-run
@@ -128,6 +129,7 @@ alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref @)' # s
 
 alias grb='git rebase'
 alias grba='git rebase --abort'
+alias grbas='git rebase --autostash'
 alias grbc='git rebase --continue'
 alias grbd='git rebase develop'
 alias grbi='git rebase -i' # --interactive
@@ -151,6 +153,7 @@ alias grm='git rm'
 alias grmc='git rm --cached'
 
 alias gs='git status'
+alias gsi='git status --ignored'
 alias gss='git status -s'     # --short
 alias gssb='git status -s -b' # --short --branch
 
@@ -169,6 +172,7 @@ alias gstp='git stash pop'
 alias gstpi='git stash pop --index'
 alias gsts='git stash show --text'
 
+alias gsm='git submodule'
 alias gsmi='git submodule init'
 alias gsmu='git submodule update'
 
