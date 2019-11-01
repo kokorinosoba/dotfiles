@@ -1,6 +1,7 @@
 #!/bin/bash
 
 LIST=(todo
-      run)
+      run
+      vue-cli)
 
 npm install ${LIST[@]} -g
