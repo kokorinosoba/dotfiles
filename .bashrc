@@ -137,17 +137,19 @@ alias grbm='git rebase master'
 alias grbs='git rebase --skip'
 
 alias grmt='git remote'
-alias grma='git remote add'
-alias grmn='git remote rename'
-alias grmrm='git remote remove'
-alias grmset='git remote set-url'
-alias grmu='git remote update'
-alias grmv='git remote -v' # --verbose
+alias grmta='git remote add'
+alias grmtn='git remote rename'
+alias grmtrm='git remote remove'
+alias grmtset='git remote set-url'
+alias grmtu='git remote update'
+alias grmtv='git remote -v' # --verbose
 
 alias gr='git reset'
 alias grs='git reset --soft'
 alias grh='git reset --hard'
 alias groh='git reset origin/$(git rev-parse --abbrev-ref @) --hard'
+
+alias grl='git reflog'
 
 alias grm='git rm'
 alias grmc='git rm --cached'
@@ -173,6 +175,7 @@ alias gstpi='git stash pop --index'
 alias gsts='git stash show --text'
 
 alias gsm='git submodule'
+alias gsma='git submodule add'
 alias gsmi='git submodule init'
 alias gsmu='git submodule update'
 
