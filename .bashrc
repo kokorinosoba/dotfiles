@@ -179,6 +179,11 @@ alias gsma='git submodule add'
 alias gsmi='git submodule init'
 alias gsmu='git submodule update'
 
+alias guisw='git update-index --skip-worktree'
+alias guinsw='git update-index --no-skip-worktree'
+alias guiau='git update-index --assume-unchanged'
+alias guinau='git update-index --no-assume-unchanged'
+
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 
 # basic safe commands
