@@ -89,6 +89,8 @@ alias gfo='git fetch origin' # gfo <branch>: possible to choose fetching remote 
 alias gg='git gui citool'
 alias 'gg!'='git gui citool --amend'
 
+alias gi='git init'
+
 alias gl='git log'
 alias glo='git log --oneline'
 alias glg='git log --graph'
