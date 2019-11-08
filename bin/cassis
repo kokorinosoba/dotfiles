@@ -10,7 +10,7 @@ usage() {
 }
 
 compile() {
-  mcs $1 && mono ${1%.*}.exe
+  mcs $1 -out:${1%.*}.o && mono ${1%.*}.o
 }
 
 force_compile() {
@@ -20,15 +20,15 @@ force_compile() {
 }
 
 check_compile() {
-  # オプション無しなら.exeが存在するか確認して、あるなら.exeのみを実行
-  if [[ -f ${1%.*}.exe ]]; then
-    echo ".exe already exists"
-    echo "-------------------"
-    mono ${1%.*}.exe
-  # .exeがないならコンパイルと実行を行う
+  # オプション無しなら.oが存在するか確認して、あるなら.oのみを実行
+  if [[ -f ${1%.*}.o ]]; then
+    echo ".o already exists"
+    echo "-----------------"
+    mono ${1%.*}.o
+  # .oがないならコンパイルと実行を行う
   else
-    echo ".exe does not exist"
-    echo "-------------------"
+    echo ".o does not exist"
+    echo "-----------------"
     compile $1
   fi
 }
