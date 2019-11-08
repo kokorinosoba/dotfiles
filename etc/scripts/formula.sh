@@ -16,6 +16,7 @@ FORMULAE=(bash
           mono
           neovim
           nkf
+          nodebrew
           npm
           pyenv
           pyenv-virtualenv
