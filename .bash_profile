@@ -34,7 +34,9 @@ GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUPSTREAM=auto
 
 # display welcome message
+type figlet > /dev/null 2>&1 &&
 figlet -f smslant WELCOME TO BASH
 
 # display todo list
+type todo > /dev/null 2>&1 &&
 todo ls --all
