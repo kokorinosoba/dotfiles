@@ -1,0 +1,1 @@
+/Users/Kokorin/.zprezto/runcoms/zlogin
