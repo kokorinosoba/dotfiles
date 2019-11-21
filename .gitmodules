@@ -4,9 +4,6 @@
 [submodule ".config/fish/functions/Fisher"]
 	path = .config/fish/functions/Fisher
 	url = https://github.com/jorgebucaran/fisher.git
-[submodule ".oh-my-zsh"]
-	path = .oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/sorin-ionescu/prezto.git
