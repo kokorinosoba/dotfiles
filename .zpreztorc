@@ -1,1 +1,5 @@
-/Users/Kokorin/.zprezto/runcoms/zpreztorc
+# call Prezto zpreztorc
+[[ -f $HOME/.zprezto/runcoms/zpreztorc ]] && source $HOME/.zprezto/runcoms/zpreztorc
+
+# Prezto theme
+zstyle ':prezto:module:prompt' theme 'agnoster'
