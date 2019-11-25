@@ -2,6 +2,7 @@
 
 LIST=(todo
       run
-      vue-cli)
+      vue-cli
+      gitmoji-cli)
 
 npm install ${LIST[@]} -g
