@@ -12,8 +12,7 @@ function __command_rprompt() {
 PROMPT_COMMAND=__command_rprompt
 
 # prompt setting
-# PS1=' \W \[\033[35m\]$\[\033[0m\]'
-source $HOME/dotfiles/bin/git-ps
+[[ -f $HOME/.bob-the-bash.sh ]] && source $HOME/.bob-the-bash.sh
 
 # call .pathrc
 [[ -f $HOME/.pathrc ]] && source $HOME/.pathrc
