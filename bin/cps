@@ -5,16 +5,16 @@ usage() {
   echo "Options:"
   echo "    -o                        Set original PS1"
   echo "    -s                        Set simple PS1"
-  echo "    -p                        Set powerline PS1"
+  echo "    -b                        Set bob-the-bash PS1"
   echo ""
 }
 
 OPTIND=1
-getopts osph opt &> /dev/null
+getopts osbh opt &> /dev/null
 case $opt in
   o ) PS1='\h:\W \u\$' ;;
   s ) PS1=' \W \[\033[35m\]$\[\033[0m\]' ;;
-  p ) PS1='$(if [[ $? -ne 0 ]]; then echo "\[\e[30;46m\] ! \[\e[36;47m\]"; fi)\[\e[30;47m\] \w $(git-ps)' ;;
+  b ) source $HOME/dotfiles/.bob-the-bash.sh ;;
   h ) usage ;;
   \? ) usage ;;
 esac
