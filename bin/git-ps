@@ -2,15 +2,15 @@
 
 set -euC
 
-status() {
+function get_status_str() {
   local flags=''
   # Modified
   if ! git diff --no-ext-diff --quiet; then
     flags="*$flags"
   fi
 
-  # Cached
-  if ! git diff --no-ext-diff --cached --quiet; then
+  # Staged
+  if ! git diff --no-ext-diff --staged --quiet; then
     flags="~$flags"
   fi
 
@@ -27,31 +27,40 @@ status() {
   echo "$flags"
 }
 
-branch() {
-  local branch=$(git rev-parse --abbrev-ref HEAD)
-  echo $branch
+function get_branch_name() {
+  local branch_name=$(git rev-parse --abbrev-ref HEAD)
+  echo $branch_name
 }
 
-hash() {
-  git log --pretty=format:'%h' -n 1
+function get_hash() {
+  local hash=$(git log --pretty=format:'%h' -n 1)
+  echo $hash
 }
 
-prompt() {
-  local b=" $(branch)"
-  local s=$(status); s=${s:+ $s}
-  # local h=$(hash)
-  local colorcode=42
-  if [[ $s =~ .*\*.* ]]; then
-    colorcode=41
-  elif [[ $s =~ .*~.* ]]; then
-    colorcode=43
+function prompt() {
+  # branch_nameの前にブランチのアイコンみたいなのを入れる
+  local branch_name=" $(get_branch_name)"
+  # status_strが空文字列でなければ、status_strの前にスペースを1個だけ入れる
+  local status_str=$(get_status_str); status_str=${status_str:+ $status_str}
+  # local h=$(get_hash)
+
+  # デフォルトのカラーは緑色
+  local color_code=42
+
+  if [[ $status_str =~ .*\*.* ]]; then
+    # Modifiedがあったら赤色にする
+    color_code=41
+  elif [[ $status_str =~ .*~.* ]]; then
+    # Stagedがあったら黄色にする
+    color_code=43
   fi
-  echo -e -n "\033[37;${colorcode}m"
-  echo -e -n "\033[1m $b$s \033[0m"
-  echo -e -n "\033[$(($colorcode - 10));49m\033[0m "
+  echo -e -n "\033[37;${color_code}m"
+  echo -e -n "\033[1m ${branch_name}${status_str} \033[0m"
+  echo -e -n "\033[$(($color_code - 10));49m\033[0m "
 }
 
-git_ps() {
+function git_ps() {
+  # カレントディレクトリがgitリポジトリならprompt関数を実行
   if git rev-parse &>/dev/null; then
     prompt
   else
