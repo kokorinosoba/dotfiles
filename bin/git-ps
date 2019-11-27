@@ -1,7 +1,3 @@
-#!/bin/bash
-
-set -euC
-
 function get_status_str() {
   local flags=''
   # Modified
@@ -72,6 +68,4 @@ function git_ps() {
   fi
 }
 
-if [[ ${BASH_SOURCE[0]} == $0 ]]; then
-  git_ps
-fi
+PS1='$(if [[ $? -ne 0 ]]; then echo "\[\e[30;46m\] ! \[\e[36;47m\]"; fi)\[\e[30;47m\] \w $(git_ps)'
