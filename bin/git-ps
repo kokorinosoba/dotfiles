@@ -38,10 +38,14 @@ function get_hash() {
 }
 
 function prompt() {
+  local branch_name=$(get_branch_name)
+  # branch_nameがmasterだったらmasterと表示しない
+  [[ $branch_name = "master" ]] && branch_name=""
   # branch_nameの前にブランチのアイコンみたいなのを入れる
-  local branch_name=" $(get_branch_name)"
+  branch_name="  ${branch_name:+$branch_name }"
+
   # status_strが空文字列でなければ、status_strの前にスペースを1個だけ入れる
-  local status_str=$(get_status_str); status_str=${status_str:+ $status_str}
+  local status_str=$(get_status_str); status_str=${status_str:+$status_str }
   # local h=$(get_hash)
 
   # デフォルトのカラーは緑色
@@ -55,7 +59,7 @@ function prompt() {
     color_code=43
   fi
   echo -e -n "\033[37;${color_code}m"
-  echo -e -n "\033[1m ${branch_name}${status_str} \033[0m"
+  echo -e -n "\033[1m${branch_name}${status_str}\033[0m"
   echo -e -n "\033[$(($color_code - 10));49m\033[0m "
 }
 
