@@ -2,7 +2,7 @@ function get_flags() {
   local flags=''
   # Modified
   if ! git diff --no-ext-diff --quiet; then
-    flags="*$flags"
+    flags="\u002A$flags"
   fi
 
   # Staged
@@ -101,7 +101,7 @@ $(
     git_prompt_str=$(git_prompt $branch_name $flags)
 
     echo -n "\[\e[37;${color_code}m\]"
-    echo -n "\[\e[1m\] $git_prompt_str \[\e[0m\]"
+    echo -n -e "\[\e[1m\] $git_prompt_str \[\e[0m\]"
     echo -n "\[\e[$(($color_code - 10));49m\]\[\e[0m\] "
   else
     echo "\[\e[37;49m\]\[\e[0m\] "
