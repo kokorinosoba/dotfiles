@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
+# set shells to /etc/shells script
 has() {
-  type "$1" > /dev/null 2>&1
+  type $1 > /dev/null 2>&1
 }
 
 addshell() {

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-FORMULAE=(bash
+# brew packages install script
+packages=(bash
           colordiff
           coreutils
           emacs
@@ -28,4 +29,4 @@ FORMULAE=(bash
           wget
           zsh)
 
-brew install ${FORMULAE[@]}
+brew install ${packages[@]}
