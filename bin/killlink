@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+for arg in ${@:-$HOME}
+do
+  # Remove the hidden files and the regular files
+  for file in "$arg"/.??* "$arg"/*
+  do
+    if [ -L $file ]; then
+      /usr/local/bin/gunlink $file
+      echo "Deleted symlink $file"
+    fi
+  done
+done
