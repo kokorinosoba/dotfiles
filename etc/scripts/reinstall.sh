@@ -10,5 +10,5 @@ cd $DOTDIR/..
 rm -rf $DOTDIR
 git clone --recurse-submodules https://github.com/kokorinosoba/dotfiles.git
 $BINDIR/symlink -f
-$DOTDIR/etc/scripts/fisher-packages.sh
-$DOTDIR/etc/scripts/fisher-pyenv.sh
+$DOTDIR/etc/init/setup/fisher-packages.sh
+$DOTDIR/etc/init/setup/fisher-pyenv.sh

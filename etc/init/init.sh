@@ -4,43 +4,42 @@ set -eu
 
 readonly DOTDIR=$(realpath $0 | sed -e 's/\(.*dotfiles\).*/\1/')
 BINDIR=$DOTDIR/bin
-SCRIPTDIR=$DOTDIR/etc/scripts
-cd $SCRIPTDIR
+SETUPDIR=$DOTDIR/etc/scripts
 
 has() {
   type $1 > /dev/null 2>&1
 }
 
 echo "Continue initializing? [Y/n]"
-read ANSWER
+read answer
 
-case $ANSWER in
+case $answer in
   "Y" | "y" | "yes" | "Yes" | "YES" ) ;;
   * )
     echo "Canceled."
     exit 1 ;;
 esac
 
-# git submodule update --init --depth=1
-$SCRIPTDIR/icloud.sh
+$SETUPDIR/icloud.sh
 $BINDIR/symlink
-has brew || $SCRIPTDIR/homebrew.sh
-has brew && $SCRIPTDIR/brew-packages.sh
-has brew && $SCRIPTDIR/cask-packages.sh
 
-$SCRIPTDIR/loginshells.sh
-$SCRIPTDIR/defaultshell.sh
+has brew || $SETUPDIR/homebrew.sh
+has brew && $SETUPDIR/brew-packages.sh
+has brew && $SETUPDIR/cask-packages.sh
+
+$SETUPDIR/loginshells.sh
+$SETUPDIR/defaultshell.sh
 
 has apm && apm stars --install
-has npm && $SCRIPTDIR/npm-packages.sh
-has pyenv && $SCRIPTDIR/pyenv.sh
-has /usr/local/bin/pip3 && $SCRIPTDIR/nvim.sh
-has gcc-8 && $SCRIPTDIR/c++.sh
+has npm && $SETUPDIR/npm-packages.sh
+has pyenv && $SETUPDIR/pyenv.sh
+has /usr/local/bin/pip3 && $SETUPDIR/nvim.sh
+has gcc-8 && $SETUPDIR/c++.sh
 
-$SCRIPTDIR/terminal-solarized.sh
-$SCRIPTDIR/iterm-japanesque.sh
-$SCRIPTDIR/font-powerline.sh
+$SETUPDIR/terminal-solarized.sh
+$SETUPDIR/iterm-japanesque.sh
+$SETUPDIR/font-powerline.sh
 
-has fish && $SCRIPTDIR/fish.sh
-has fish && $SCRIPTDIR/fisher-packages.sh
-has fisher && $SCRIPTDIR/fisher-pyenv.sh
+has fish && $SETUPDIR/fish.sh
+has fish && $SETUPDIR/fisher-packages.sh
+has fisher && $SETUPDIR/fisher-pyenv.sh
