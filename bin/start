@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+set -eu
+trap usage ERR
+
 readonly DOTDIR=$(realpath $0 | sed -e 's/\(.*dotfiles\).*/\1/')
-cd $DOTDIR
 
 usage() {
   echo "${0##*/} - easy getting started script"
@@ -9,24 +11,35 @@ usage() {
   echo "Usage: ${0##*/} <command>"
   echo ""
   echo "Commands:"
-  echo "    all                       execute all commands"
-  echo "    nec                       open necessary applications"
-  echo "    study                     start study"
-  echo "    atc                       start atcoder"
-  echo "    dot                       start editting dotfiles"
-  echo "    help                      show help"
+  echo "    line      /Applications/LINE.app"
+  echo "    slack     /Applications/Slack.app"
+  echo "    music     /System/Applications/Music.app"
+  echo "    trello    https://trello.com"
+  echo "    zotero    /Applications/Zotero.app"
+  echo "    atcoder   https://kenkoooo.com/atcoder/ and atcoder dir"
+  echo "    dotfiles  dotfiles dir"
+  echo "    help      show help"
   echo ""
   exit 1
 }
 
-necessities() {
+line() {
   open /Applications/LINE.app
+}
+
+slack() {
   open /Applications/Slack.app
-  open /Applications/iTunes.app
+}
+
+music() {
+  open /System/Applications/Music.app
+}
+
+trello() {
   open https://trello.com
 }
 
-study() {
+zotero() {
   open /Applications/Zotero.app
 }
 
@@ -39,26 +52,8 @@ dotfiles() {
   atom $DOTDIR
 }
 
-if [[ $# -ne 1 ]]; then
+if [[ $# -ne 1 ]] || [[ $1 = "help" ]]; then
   usage
 fi
 
-case $1 in
-  all )
-    necessities
-    study
-    atcoder
-    dotfiles ;;
-  nec )
-    necessities ;;
-  study )
-    necessities
-    study ;;
-  atc )
-    atcoder ;;
-  dot )
-    necessities
-    dotfiles ;;
-  * )
-    usage ;;
-esac
+$1 2>/dev/null

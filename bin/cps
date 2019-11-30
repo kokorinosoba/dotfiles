@@ -14,7 +14,7 @@ getopts osbh opt &> /dev/null
 case $opt in
   o ) PS1='\h:\W \u\$' ;;
   s ) PS1=' \W \[\033[35m\]$\[\033[0m\]' ;;
-  b ) source $HOME/dotfiles/.bob-the-bash.sh ;;
+  b ) source $HOME/.bob-the-bash.sh ;;
   h ) usage ;;
   \? ) usage ;;
 esac
