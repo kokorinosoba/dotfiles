@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # C Compile and Execute Shell
 # chmod +x cokeで実行権限を与える

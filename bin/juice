@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Java Compile and Execute Shell
 # chmod +x juiceで実行権限を与える

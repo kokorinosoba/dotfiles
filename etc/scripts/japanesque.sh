@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # install japanesque color scheme to iTerm
 # set Japanesque scheme to iterm2 app after installing

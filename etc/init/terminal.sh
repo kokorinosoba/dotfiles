@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Solarized Darkをデフォルトのテーマにする
 defaults write com.apple.Terminal Default\ Window\ Settings -string "Solarized Dark"

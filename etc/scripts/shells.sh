@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 has() {
   type "$1" > /dev/null 2>&1

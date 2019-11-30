@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 defaults write org.shiftitapp.ShiftIt leftModifiers -int 9961472
 defaults write org.shiftitapp.ShiftIt rightModifiers -int 9961472

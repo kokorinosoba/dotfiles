@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 mkfile () {
   [[ -e $1 ]] || touch $1

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # 拡張子の表示
 defaults write -globalDomain AppleShowAllExtensions -bool true

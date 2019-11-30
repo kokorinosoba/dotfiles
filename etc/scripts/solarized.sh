@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # set solarized color scheme to terminal
 TMPDIR=${TMPDIR%/}

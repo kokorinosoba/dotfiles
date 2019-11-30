@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Multifile Compile and Execute Shell
 # chmod +x eatで実行権限を与える

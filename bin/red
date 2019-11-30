@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 JUMP_N=${1:--1}
 CURRENT_DIR=$(basename $(pwd))

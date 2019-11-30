@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # install powerline font
 # set "Liberation Mono for Powerline font" to iterm2 app after installing

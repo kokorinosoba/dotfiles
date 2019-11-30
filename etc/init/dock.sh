@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Dockの位置を左側にする
 defaults write com.apple.dock orientation -string left
