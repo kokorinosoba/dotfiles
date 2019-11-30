@@ -1,4 +1,4 @@
-#!/usr/local/bin/fish
+#!/usr/bin/env fish
 
-# use "fish_config" command to set fish color skin
+# setting for fish color skin
 fish_config
