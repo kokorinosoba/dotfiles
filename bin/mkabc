@@ -7,7 +7,7 @@ mkfile () {
 declare -i N=${1:-4}
 
 if [[ $N -gt 26 ]]; then
-  echo "Optional number out of range"
+  echo "Optional number out of range" 1>&2
   exit 1
 fi
 

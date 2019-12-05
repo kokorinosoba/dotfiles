@@ -14,6 +14,7 @@ packages=(bash
           git
           gnu-sed
           id3v2
+          imagemagick
           mono
           neovim
           nkf

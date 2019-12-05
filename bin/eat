@@ -5,8 +5,8 @@
 # ./eatで実行可能
 
 usage() {
-  echo "Usage: ${0##*/} [-f --force] file"
-  echo "Avairable file extensions are [.c .cpp .cs .java]"
+  echo "Usage: ${0##*/} [-f --force] file"                 1>&2
+  echo "Avairable file extensions are [.c .cpp .cs .java]" 1>&2
   exit 1
 }
 
@@ -31,10 +31,10 @@ do
 done
 
 if [[ $argc -lt 1 ]]; then
-  echo "No input file"
+  echo "No input file" 1>&2
   usage
 elif [[ $argc -gt 1 ]]; then
-  echo "Too many files"
+  echo "Too many files" 1>&2
   usage
 fi
 

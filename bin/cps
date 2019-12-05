@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 usage() {
-  echo "Usage: cps <option>"
-  echo "Options:"
-  echo "    -o                        Set original PS1"
-  echo "    -s                        Set simple PS1"
-  echo "    -b                        Set bob-the-bash PS1"
-  echo ""
+  echo "Usage: cps <option>"                                1>&2
+  echo "Options:"                                           1>&2
+  echo "    -o                        Set original PS1"     1>&2
+  echo "    -s                        Set simple PS1"       1>&2
+  echo "    -b                        Set bob-the-bash PS1" 1>&2
+  echo ""                                                   1>&2
 }
 
 OPTIND=1

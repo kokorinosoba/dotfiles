@@ -5,7 +5,7 @@
 # ./calpisで実行可能
 
 usage() {
-  echo "Usage: ${0##*/} [-f] file"
+  echo "Usage: ${0##*/} [-f] file" 1>&2
   exit 1
 }
 

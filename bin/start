@@ -6,20 +6,20 @@ trap usage ERR
 readonly DOTDIR=$(realpath $0 | sed -e 's/\(.*dotfiles\).*/\1/')
 
 usage() {
-  echo "${0##*/} - easy getting started script"
-  echo ""
-  echo "Usage: ${0##*/} <command>"
-  echo ""
-  echo "Commands:"
-  echo "    line      /Applications/LINE.app"
-  echo "    slack     /Applications/Slack.app"
-  echo "    music     /System/Applications/Music.app"
-  echo "    trello    https://trello.com"
-  echo "    zotero    /Applications/Zotero.app"
-  echo "    atcoder   https://kenkoooo.com/atcoder/ and atcoder dir"
-  echo "    dotfiles  dotfiles dir"
-  echo "    help      show help"
-  echo ""
+  echo "${0##*/} - easy getting started script"                      1>&2
+  echo ""                                                            1>&2
+  echo "Usage: ${0##*/} <command>"                                   1>&2
+  echo ""                                                            1>&2
+  echo "Commands:"                                                   1>&2
+  echo "    line      /Applications/LINE.app"                        1>&2
+  echo "    slack     /Applications/Slack.app"                       1>&2
+  echo "    music     /System/Applications/Music.app"                1>&2
+  echo "    trello    https://trello.com"                            1>&2
+  echo "    zotero    /Applications/Zotero.app"                      1>&2
+  echo "    atcoder   https://kenkoooo.com/atcoder/ and atcoder dir" 1>&2
+  echo "    dotfiles  dotfiles dir"                                  1>&2
+  echo "    help      show help"                                     1>&2
+  echo ""                                                            1>&2
   exit 1
 }
 

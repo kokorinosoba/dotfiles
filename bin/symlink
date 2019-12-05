@@ -4,12 +4,12 @@ readonly DOTDIR=$(realpath $0 | sed -e 's/\(.*dotfiles\).*/\1/')
 cd $DOTDIR
 
 usage() {
-  echo "Usage: ${0##*/} [<option>]"
-  echo "Options:"
-  echo '    -d         delete symlinks at $HOME dotfiles which exist in "dotfiles" dir'
-  echo '    -f         make symlinks at $HOME by force'
-  echo '    -i         make symlinks at $HOME interactively'
-  echo ""
+  echo "Usage: ${0##*/} [<option>]"                                                     1>&2
+  echo "Options:"                                                                       1>&2
+  echo '    -d         delete symlinks at $HOME dotfiles which exist in "dotfiles" dir' 1>&2
+  echo '    -f         make symlinks at $HOME by force'                                 1>&2
+  echo '    -i         make symlinks at $HOME interactively'                            1>&2
+  echo ""                                                                               1>&2
   exit 1
 }
 
