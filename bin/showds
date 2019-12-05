@@ -5,6 +5,8 @@ usage() {
   exit 1
 }
 
+delete=false
+
 while getopts dh opt
 do
   case $opt in
@@ -22,7 +24,7 @@ if [[ -n $1 ]] && ! [[ -d $1 ]]; then
   usage
 fi
 
-if [[ $delete = true ]]; then
+if $delete; then
   find $1 -name ".DS_Store" -delete 2>/dev/null
 else
   find $1 -name ".DS_Store" 2>/dev/null

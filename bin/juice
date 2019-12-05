@@ -33,11 +33,13 @@ check_compile() {
   fi
 }
 
-while getopts fh OPT
+force=false
+
+while getopts fh opt
 do
-  case $OPT in
+  case $opt in
     # -f オプションを検知したら強制的にコンパイルと実行を行う
-    f ) FORCE=1 ;;
+    f ) force=true ;;
     h ) usage ;;
     \? ) usage ;;
   esac
@@ -45,7 +47,7 @@ done
 
 shift $((OPTIND - 1))
 
-if [[ -n $FORCE ]]; then
+if $force; then
   force_compile $1
 else
   check_compile $1

@@ -27,7 +27,7 @@ oplink() {
   local opt=$1
   local dotfile=$2
   ln -s $opt $DOTDIR/$dotfile $HOME &&
-  [[ $opt = -f ]] && echo "Created symlink to \$HOME/$dotfile"
+  [[ $opt == "-f" ]] && echo "Created symlink to \$HOME/$dotfile"
 }
 
 rmlink() {

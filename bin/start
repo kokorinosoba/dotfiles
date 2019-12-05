@@ -52,7 +52,7 @@ dotfiles() {
   atom $DOTDIR
 }
 
-if [[ $# -ne 1 ]] || [[ $1 = "help" ]]; then
+if [[ $# -ne 1 ]] || [[ $1 == "help" ]]; then
   usage
 fi
 
