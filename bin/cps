@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 usage() {
+  # Do not change command name to ${0##*/} because will be used with souce cps
   echo "Usage: cps <option>"                                1>&2
   echo "Options:"                                           1>&2
   echo "    -o                        Set original PS1"     1>&2
