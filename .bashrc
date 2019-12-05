@@ -101,7 +101,12 @@ alias glG='git log -G' # differences log search with regexp 'slG "regexp" file'
 
 alias glf='git ls-files'
 alias glfv='git ls-files -v'
+
 alias glr='git ls-remote'
+alias glrgu='git ls-remote --get-url'
+alias glrh='git ls-remote --heads'
+alias glrr='git ls-remote --refs'
+alias glrt='git ls-remote --tags'
 
 alias gm='git merge'
 alias gma='git merge --abort'
@@ -119,6 +124,7 @@ alias gplr='git pull -r'                  # --rebase
 alias gplrv='git pull -r -v'              # --rebase --verbose
 alias gplras='git pull -r --autostash'     # --rebase --autostash
 alias gplrasv='git pull -r --autostash -v' # --rebase --autostash --verbose
+alias gplt='git pull --tags'
 
 alias gp='git push'
 alias gpd='git push -n'                 # --dry-run
@@ -180,6 +186,8 @@ alias gsm='git submodule'
 alias gsma='git submodule add'
 alias gsmi='git submodule init'
 alias gsmu='git submodule update'
+
+alias gt='git tag'
 
 alias guisw='git update-index --skip-worktree'
 alias guinsw='git update-index --no-skip-worktree'
