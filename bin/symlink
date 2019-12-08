@@ -40,13 +40,13 @@ rmlink() {
   fi
 }
 
-func="mklink"
+cmd="mklink"
 while getopts fdih opt &> /dev/null
 do
   case $opt in
-    d ) func="rmlink" ;;
-    f ) func="oplink -f" ;;
-    i ) func="oplink -i" ;;
+    d ) cmd="rmlink" ;;
+    f ) cmd="oplink -f" ;;
+    i ) cmd="oplink -i" ;;
     h ) usage ;;
     \? ) usage ;;
   esac
@@ -56,12 +56,12 @@ shift $((OPTIND - 1))
 
 for dotfile in .??*
 do
-  [[ $dotfile == .git ]] && continue
-  [[ $dotfile == .gitignore ]] && continue
+  [[ $dotfile == .git ]]        && continue
+  [[ $dotfile == .gitignore ]]  && continue
   [[ $dotfile == .gitmodules ]] && continue
-  [[ $dotfile == .DS_Store ]] && continue
+  [[ $dotfile == .DS_Store ]]   && continue
 
-  $func $dotfile
+  $cmd $dotfile
 done
 
 exit 0

@@ -41,7 +41,7 @@ do
   # Remove the hidden files and the regular files
   for file in "$dir"/.??* "$dir"/*
   do
-    if [ -L $file ]; then
+    if [[ -L $file ]]; then
       $cmd $file
     fi
   done
