@@ -11,17 +11,11 @@ function __command_rprompt() {
 }
 PROMPT_COMMAND=__command_rprompt
 
-# prompt setting
-[[ -f $HOME/.bob-the-bash.sh ]] && source $HOME/.bob-the-bash.sh
+# .bashrc includes prompt, alias and autocd settings
+[[ -f $HOME/.bashrc ]] && source $HOME/.bashrc
 
 # call .pathrc
 [[ -f $HOME/.pathrc ]] && source $HOME/.pathrc
-
-# call .aliasrc
-[[ -f $HOME/.aliasrc ]] && source $HOME/.aliasrc
-
-# enable autocd
-[[ $BASH_VERSINFO -ge 4 ]] && shopt -s autocd
 
 # git completion and prompt
 [[ -f $HOME/.git-completion.bash ]] &&  source $HOME/.git-completion.bash
