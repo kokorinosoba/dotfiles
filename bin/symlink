@@ -34,7 +34,7 @@ oplink() {
 
 rmlink() {
   local dotfile=$1
-  if [[ -e $HOME/$dotfile ]]; then
+  if [[ -L $HOME/$dotfile ]]; then
     /usr/local/bin/gunlink $HOME/$dotfile &&
     echo "Deleted symlink \$HOME/$dotfile"
   fi
