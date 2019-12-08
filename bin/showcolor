@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# https://qiita.com/soramugi/items/46117274419665e601fa
+
 set -eu
 
 echo -e "
