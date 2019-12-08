@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -eu
+
+usage() {
+  echo "${0##*/} - git remote url opening script" 1>&2
+  echo "Usage: ${0##*/}"                          1>&2
+  exit 1
+}
+
+if [[ $# -ge 1 ]]; then
+  usage
+fi
+
+if git rev-parse &>/dev/null; then
+  remote_url=$(git config --get remote.origin.url)
+  remote_url=${remote_url%.git}
+  open $remote_url
+else
+  exit 1
+fi
