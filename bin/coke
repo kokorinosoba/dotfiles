@@ -4,6 +4,8 @@
 # chmod +x cokeで実行権限を与える
 # ./cokeで実行可能
 
+set -eu
+
 usage() {
   echo "Usage: ${0##*/} [-f] file" 1>&2
   exit 1

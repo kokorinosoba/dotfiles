@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -eu
+
 usage() {
   echo "Usage: ${0##*/} [-d] [<directory>]" 1>&2
   exit 1

@@ -4,6 +4,8 @@
 # chmod +x eatで実行権限を与える
 # ./eatで実行可能
 
+set -eu
+
 usage() {
   echo "Usage: ${0##*/} [-f --force] file"                 1>&2
   echo "Avairable file extensions are [.c .cpp .cs .java]" 1>&2

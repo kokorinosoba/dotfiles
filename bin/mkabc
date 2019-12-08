@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -eu
+
 mkfile () {
   [[ -e $1 ]] || touch $1
 }

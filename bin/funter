@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -eu
+
 usage() {
   echo "${0##*/} - show/hide hidden files configuration script"
   echo ""

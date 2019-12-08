@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -eu
+
 readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
 cd $DOTDIR
 
