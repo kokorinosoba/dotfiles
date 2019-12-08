@@ -1,13 +1,46 @@
 #!/usr/bin/env bash
 
-for arg in ${@:-$HOME}
+usage() {
+  echo "Usage: ${0##*/} [-d] [<directory>]" 1>&2
+  exit 1
+}
+
+show_link() {
+  echo $1
+}
+
+delete_link() {
+  /usr/local/bin/gunlink $1
+  echo "Deleted symlink $1"
+}
+
+delete=false
+
+while getopts dh opt
+do
+  case $opt in
+    # d option - delete symlinks in the input directory
+    d ) delete=true ;;
+    h ) usage ;;
+    \? ) usage ;;
+  esac
+done
+
+shift $((OPTIND - 1))
+
+if ! $delete; then
+  cmd=show_link
+else
+  cmd=delete_link
+fi
+
+for dir in ${@:-$HOME}
 do
   # Remove the hidden files and the regular files
-  for file in "$arg"/.??* "$arg"/*
+  for file in "$dir"/.??* "$dir"/*
   do
     if [ -L $file ]; then
-      /usr/local/bin/gunlink $file
-      echo "Deleted symlink $file"
+      $cmd $file
     fi
   done
 done
