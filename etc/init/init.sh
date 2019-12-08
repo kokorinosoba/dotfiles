@@ -21,7 +21,7 @@ case $answer in
 esac
 
 $SETUPDIR/icloud.sh
-$BINDIR/symlink
+$BINDIR/deploy
 
 has brew || $SETUPDIR/homebrew.sh
 has brew && $SETUPDIR/brew-packages.sh

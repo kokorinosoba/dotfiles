@@ -8,7 +8,7 @@ readonly BINDIR=$DOTDIR/bin
 cd $DOTDIR
 
 # install section
-$BINDIR/symlink -i
+$BINDIR/deploy -i
 git submodule update --init .config/fish/functions/Fisher
 git submodule update --init .config/fish/functions/Bash2FishAliasesSync
 $DOTDIR/etc/init/setup/fisher-packages.sh

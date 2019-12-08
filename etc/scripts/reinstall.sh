@@ -17,12 +17,12 @@ then
 fi
 
 # uninstall section
-$BINDIR/symlink -d
+$BINDIR/deploy -d
 cd $DOTDIR/..
 rm -rf $DOTDIR
 
 # install section
 git clone --recurse-submodules https://github.com/kokorinosoba/dotfiles.git
-$BINDIR/symlink -f
+$BINDIR/deploy -f
 $DOTDIR/etc/init/setup/fisher-packages.sh
 $DOTDIR/etc/init/setup/fisher-pyenv.sh

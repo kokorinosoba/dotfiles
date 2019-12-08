@@ -14,7 +14,7 @@ list: ## Show dotfiles in this repo
 deploy: ## Create symlink to home directory
 	@echo '==> Start to deploy dotfiles to home directory.'
 	@#$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
-	@./bin/symlink -f
+	@./bin/deploy -f
 	@echo ''
 
 init: ## Setup environment settings
