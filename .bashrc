@@ -44,12 +44,13 @@ alias gbl='git blame -b -w' # show boundary commits' SHA-1 (-b) and white space 
 
 alias gc='git commit -v' # show diff in commit message editor (--verbose)
 alias 'gc!'='git commit -v --amend'     # --verbose --amend
-alias gca='git commit -v -a'            # --verbose --all: auto add midified files
+alias gca='git commit -v -a'            # --verbose --all: auto add modified files
 alias 'gca!'='git commit -v -a --amend' # --verbose --all --amend
 alias gcm='git commit -m'               # --message
 alias 'gcm!'='git commit --amend -m'    # --amend --message
 alias gcam='git commit -a -m'           # --all --message
 alias gcinit='git commit --allow-empty -m "initial commit"'
+alias gcload='git commit --amend -C HEAD'
 
 alias gcf='git config --list' # show config
 
