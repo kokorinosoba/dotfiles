@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ### alias xx='' or alias xx=""
 # ダブルクウォートだと起動時に変数展開される
 # Variables are expanded at shell startup when using a double quote

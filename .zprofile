@@ -4,8 +4,8 @@
 # call .bash_profile
 [[ -f $HOME/.pathrc ]] && source $HOME/.pathrc
 
-# call .bashrc
-[[ -f $HOME/.bashrc ]] && source $HOME/.bashrc
+# call .aliasrc
+[[ -f $HOME/.aliasrc ]] && source $HOME/.aliasrc
 
 # display welcome message
 type toilet > /dev/null 2>&1 &&

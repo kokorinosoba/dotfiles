@@ -17,8 +17,8 @@ PROMPT_COMMAND=__command_rprompt
 # call .pathrc
 [[ -f $HOME/.pathrc ]] && source $HOME/.pathrc
 
-# call .bashrc
-[[ -f $HOME/.bashrc ]] && source $HOME/.bashrc
+# call .aliasrc
+[[ -f $HOME/.aliasrc ]] && source $HOME/.aliasrc
 
 # enable autocd
 [[ $BASH_VERSINFO -ge 4 ]] && shopt -s autocd

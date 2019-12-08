@@ -10,7 +10,7 @@
 # * Install Doracula Theme into iTerm
 # * Hit fish_update_completion
 
-make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync; and source $HOME/.config/fish/b2f_aliases.fish
+make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.aliasrc; and source $HOME/.config/fish/b2f_aliases.fish
 
 # path to coreutils, findutils and gnu-sed
 set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
