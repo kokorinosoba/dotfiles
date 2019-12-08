@@ -3,16 +3,16 @@
 set -eu
 
 usage() {
-  echo "${0##*/} - show/hide hidden files configuration script"
-  echo ""
-  echo "Usage: ${0##*/} <command>"
-  echo ""
-  echo "Commands:"
-  echo "    on                        set to show hidden files"
-  echo "    off                       set to hide hidden files"
-  echo "    info                      show status"
-  echo "    help                      show help"
-  echo ""
+  echo "${0##*/} - show/hide hidden files configuration script" 1>&2
+  echo ""                                                       1>&2
+  echo "Usage: ${0##*/} <command>"                              1>&2
+  echo ""                                                       1>&2
+  echo "Commands:"                                              1>&2
+  echo "    on                        set to show hidden files" 1>&2
+  echo "    off                       set to hide hidden files" 1>&2
+  echo "    info                      show status"              1>&2
+  echo "    help                      show help"                1>&2
+  echo ""                                                       1>&2
   exit 1
 }
 
