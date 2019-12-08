@@ -3,8 +3,8 @@
 set -eu
 
 readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
-BINDIR=$DOTDIR/bin
-SETUPDIR=$DOTDIR/etc/scripts
+readonly BINDIR=$DOTDIR/bin
+readonly SETUPDIR=$DOTDIR/etc/init/setup
 
 has() {
   type $1 > /dev/null 2>&1
