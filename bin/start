@@ -3,7 +3,7 @@
 set -eu
 trap usage ERR
 
-readonly DOTDIR=$(realpath $0 | sed -e 's/\(.*dotfiles\).*/\1/')
+readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
 
 usage() {
   echo "${0##*/} - easy getting started script"                      1>&2

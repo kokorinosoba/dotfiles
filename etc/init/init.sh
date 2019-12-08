@@ -2,7 +2,7 @@
 
 set -eu
 
-readonly DOTDIR=$(realpath $0 | sed -e 's/\(.*dotfiles\).*/\1/')
+readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
 BINDIR=$DOTDIR/bin
 SETUPDIR=$DOTDIR/etc/scripts
 
