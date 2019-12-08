@@ -214,8 +214,17 @@ alias df='df -h'
 alias md='mkdir'
 alias rd='rmdir'
 
+# shortcut to directories
+alias des='cd $HOME/Desktop'
+alias dow='cd $HOME/Downloads'
+alias doc='cd $HOME/Documents'
+
 # shortcut to dotfiles
 alias dotfiles='cd $HOME/dotfiles'
+alias dotbin='cd $HOME/dotfiles/bin'
+alias dotscripts='cd $HOME/dotfiles/etc/scripts'
+alias dotsetup='cd $HOME/dotfiles/etc/init/setup'
+alias dotatom='atom $HOME/dotfiles'
 
 # make brew doctor wornings coming from using pyenv invisible
 alias brew="env PATH=${PATH/\/Users\/Kokorin\/\.pyenv\/shims:/} brew"
