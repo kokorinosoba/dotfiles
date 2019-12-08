@@ -217,11 +217,11 @@ alias rd='rmdir'
 # shortcut to dotfiles
 alias dotfiles='cd $HOME/dotfiles'
 
-# for PS1 setting
-alias cps='source cps'
-
 # make brew doctor wornings coming from using pyenv invisible
 alias brew="env PATH=${PATH/\/Users\/Kokorin\/\.pyenv\/shims:/} brew"
+
+# for PS1 setting
+alias cps='source cps'
 
 # For Competitive Programming
 alias red='source red'
