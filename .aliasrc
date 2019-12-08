@@ -52,7 +52,7 @@ alias gcm='git commit -m'               # --message
 alias 'gcm!'='git commit --amend -m'    # --amend --message
 alias gcam='git commit -a -m'           # --all --message
 alias gcinit='git commit --allow-empty -m "initial commit"'
-alias gcload='git commit --amend -C HEAD'
+alias gload='git commit --amend -C @'
 
 alias gcf='git config --list' # show config
 
@@ -159,6 +159,7 @@ alias gr='git reset'
 alias grs='git reset --soft'
 alias grh='git reset --hard'
 alias groh='git reset origin/$(git rev-parse --abbrev-ref @) --hard'
+alias gundo='git reset --soft @^'
 
 alias grl='git reflog'
 
