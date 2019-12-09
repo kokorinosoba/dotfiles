@@ -1,14 +1,9 @@
-# Done List
-# * Change Prompt
-# * Install fisherman
-# * Install pyenv rbenv using fisher
-# * Change $HOME/.config/fisherman/pyenv/conf.d/pyenv.fish
-#   >>> remove if status --is-login & end
-# * Install Bash2FishAliasesSync
-# * Install bobthefish
-# * Install powerline fonts
-# * Install Doracula Theme into iTerm
+# Todo List
+# * Hit fish_config
 # * Hit fish_update_completion
+
+# remote current directory from PATH
+set -e PATH[(echo $PATH | tr " " "\n" | awk '$1 == "." {print NR}')]
 
 make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.aliasrc; and source $HOME/.config/fish/b2f_aliases.fish
 
