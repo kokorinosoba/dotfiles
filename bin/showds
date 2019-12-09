@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eu
+set -e
 
 usage() {
   echo "Usage: ${0##*/} [-d] [<directory>]" 1>&2

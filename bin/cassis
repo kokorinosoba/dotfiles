@@ -4,7 +4,7 @@
 # chmod +x cassisで実行権限を与える
 # ./cassisで実行可能
 
-set -eu
+set -e
 
 usage() {
   echo "Usage: ${0##*/} [-f] file" 1>&2
