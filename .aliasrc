@@ -94,13 +94,26 @@ alias 'gg!'='git gui citool --amend'
 
 alias gi='git init'
 
-alias gl='git log'
-alias glo='git log --oneline'
+# alias gl='git log'
+alias gl='git log --graph --pretty=format:"%C(auto)%h%Creset %C(green ul)%an%Creset %C(cyan)%ar%Creset %s %C(auto)%d"'
+alias gln='git log --graph --pretty=format:"%C(auto)%h%Creset %C(green ul)%an%Creset %C(cyan)%ar%Creset %s %C(auto)%d%x0a"' # add newline
+alias glac='git log --abbrev-commit'
+alias gld='git log --decorate' # show branch name and tags
+alias gldo='git log --decorate --oneline'
 alias glg='git log --graph'
 alias glgo='git log --graph --oneline'
+alias glgoa='git log --graph --oneline --all' # show all branches commits
+alias gllr='git log --left-right' # show commit diff between branchs: gllr branchA..branchB
+alias glns='git log --name-status'
+alias glo='git log --oneline'
+alias glp='git log -p' # show log with diff
+alias glrd='git log --relative-date'
 alias gls='git log --stat'
 alias glS='git log -S' # differences log search with string 'slS "string" file'
 alias glG='git log -G' # differences log search with regexp 'slG "regexp" file'
+# git log --author='<author_name>'
+# git log --grep='<keyword>'
+# git log --since/--after, --untill/--before ='<date>'
 
 alias glf='git ls-files'
 alias glfv='git ls-files -v'
