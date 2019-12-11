@@ -54,7 +54,8 @@ alias gcam='git commit -a -m'           # --all --message
 alias gcinit='git commit --allow-empty -m "initial commit"'
 alias gload='git commit --amend -C @'
 
-alias gcf='git config --list' # show config
+alias gcf='git config'
+alias gcfl='git config --list' # show config
 
 alias gcl='git clone'
 alias gclr='git clone --recurse-submodules'
@@ -148,6 +149,7 @@ alias gpf='git push --force-with-lease' # possible to push when the local is the
 alias 'gpf!'='git push -f'              # --force
 alias gpv='git push -v'                 # --verbose
 # alias gpu='git push upstream'
+alias gpt='git push --tags'
 alias gpu='git push -u'                 # --set-upstream
 alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref @)' # same as above
 
@@ -210,6 +212,8 @@ alias guisw='git update-index --skip-worktree'
 alias guinsw='git update-index --no-skip-worktree'
 alias guiau='git update-index --assume-unchanged'
 alias guinau='git update-index --no-assume-unchanged'
+
+alias gur='git update-ref' # when deleting initial commit etc.
 
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 
