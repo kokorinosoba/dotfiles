@@ -1,0 +1,27 @@
+
+
+# ==================== Emojis ====================
+# 🎉 :tada: initial Commit
+# 🎨 :art: when improving the format/structure of the code
+# ✨ :sparkles: when introducing new features
+# 🐎 :racehorse: when improving performance
+# 📝 :memo: when writing docs
+# 🐛 :bug: when fixing a bug
+# ♻️ :recycle: when refactoring code
+# 🔥 :fire: when removing code or files
+# 🚚 :truck: when moving or renaming files
+# 🏗 :building_construction: when making architectural changes
+# 🔧 :wrench: when changing configuration files
+# 🚧 :construction: when working in progress
+# ✅ :white_check_mark: when adding tests
+# 🔒 :lock: when dealing with security
+# 🔖 :bookmark: when releasing / applying version tags
+# ⬆️ :arrow_up: when upgrading dependencies
+# ⬇️ :arrow_down: when downgrading dependencies
+# ➕ :heavy_plus_sign: when adding a dependency
+# ➖ :heavy_minus_sign: when removing a dependency
+
+# ==================== Format ====================
+# :emoji: Subject
+#
+# Commit body...
