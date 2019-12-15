@@ -1,5 +1,6 @@
 /.config/configstore/*
 /.config/fish/*
 !/.config/fish/config.fish
+!/.config/fish/fish_variables
 /.config/fisher/*
 test.*
