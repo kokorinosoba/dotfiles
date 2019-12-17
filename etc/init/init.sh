@@ -6,22 +6,14 @@ readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
 readonly BINDIR=$DOTDIR/bin
 readonly SETUPDIR=$DOTDIR/etc/init/setup
 
-has() {
-  type $1 > /dev/null 2>&1
-}
+source $DOTDIR/etc/library/lib.sh
 
-echo "Continue initializing? [Y/n]"
-read answer
+ask_continue deploying
 
-case $answer in
-  "Y" | "y" | "yes" | "Yes" | "YES" ) ;;
-  * )
-    echo "Canceled."
-    exit 1 ;;
-esac
+$SETUPDIR/iCloudDrive.sh
+$BINDIR/deploy -f
 
-$SETUPDIR/icloud.sh
-$BINDIR/deploy
+ask_continue initializing
 
 has brew || $SETUPDIR/homebrew.sh
 has brew && $SETUPDIR/brew-packages.sh
