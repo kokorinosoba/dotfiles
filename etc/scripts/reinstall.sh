@@ -26,3 +26,4 @@ git clone --recurse-submodules https://github.com/kokorinosoba/dotfiles.git
 $BINDIR/deploy -f
 $DOTDIR/etc/init/setup/fisher-packages.sh
 $DOTDIR/etc/init/setup/fisher-pyenv.sh
+cd $DOTDIR ; git config commit.template .commit_template
