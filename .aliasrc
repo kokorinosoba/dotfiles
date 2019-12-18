@@ -56,6 +56,7 @@ alias gload='git commit --amend -C @'
 
 alias gcf='git config'
 alias gcfl='git config --list' # show config
+alias gcfct='git config commit.template $HOME/dotfiles/.commit_template'
 
 alias gcl='git clone'
 alias gclr='git clone --recurse-submodules'
