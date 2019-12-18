@@ -3,4 +3,5 @@
 !/.config/fish/config.fish
 !/.config/fish/fish_variables
 /.config/fisher/*
+/bin/youtube-dl
 test.*

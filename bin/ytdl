@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -eu
+
+DOWNLOAD_DIR=$HOME/Movies/YouTube
+
+usage() {
+  echo "Usage: ${0##*/} <URL>" 1>&2
+  exit 1
+}
+
+if [[ $# -ne 1 ]]; then
+  usage
+fi
+
+if ! [[ -f ${0%/*}/youtube-dl ]]; then
+  echo -e "\e[34m==>\e[0m Installing youtube-dl"
+  curl -L https://yt-dl.org/downloads/latest/youtube-dl -o ${0%/*}/youtube-dl
+  chmod +x ${0%/*}/youtube-dl
+fi
+
+if ! [[ -d $DOWNLOAD_DIR ]]; then
+  mkdir -p $DOWNLOAD_DIR && echo -e "\e[34m==>\e[0m $DOWNLOAD_DIR was created!"
+fi
+
+echo -e "\e[34m==>\e[0m Downloading $1"
+${0%/*}/youtube-dl "$1" -o "$DOWNLOAD_DIR/%(title)s.%(ext)s"
