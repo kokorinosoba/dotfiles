@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+alias sprec='cd $HOME/Documents/sprec'
+alias portfolio='cd $HOME/Documents/portfolio'
+alias cw-jt='cd $HOME/Documents/cw-jt'
+alias faceart='cd $HOME/Documents/faceart'
+alias contests='cd $HOME/Documents/contests'
