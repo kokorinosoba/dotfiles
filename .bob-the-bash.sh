@@ -39,7 +39,7 @@ function get_color_code() {
   # デフォルトのカラーは緑色
   local color_code=42
 
-  if [[ $flags =~ .*\*.* ]]; then
+  if [[ $flags =~ .*\u002A.* ]]; then
     # Modifiedがあったら赤色にする
     color_code=41
   elif [[ $flags =~ .*~.* ]]; then
@@ -97,7 +97,7 @@ $(
     color_code=$(get_color_code $flags)
     git_prompt_str=$(git_prompt $branch_name $flags)
 
-    echo -n "\[\e[37;${color_code}m\]"
+    echo -n "\[\e[30;${color_code}m\]"
     echo -n -e "\[\e[1m\] $git_prompt_str \[\e[0m\]"
     echo -n "\[\e[$(($color_code - 10));49m\]\[\e[0m\] "
   else
