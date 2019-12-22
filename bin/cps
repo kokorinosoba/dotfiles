@@ -1,23 +1,20 @@
 #!/usr/bin/env bash
 
-usage() {
-  # Do not change command name to ${0##*/} because will be used with souce cps
-  echo "Usage: cps <option>"                                1>&2
-  echo "Options:"                                           1>&2
-  echo "    -o                        Set original PS1"     1>&2
-  echo "    -s                        Set simple PS1"       1>&2
-  echo "    -b                        Set bob-the-bash PS1" 1>&2
-  echo ""                                                   1>&2
-}
-
 OPTIND=1
-getopts osbh opt &> /dev/null
+getopts osb opt &> /dev/null
 case $opt in
   o ) PS1='\h:\W \u\$' ;;
   s ) PS1=' \W \[\033[35m\]$\[\033[0m\]' ;;
   b ) source $HOME/.bob-the-bash.sh ;;
-  h ) usage ;;
-  \? ) usage ;;
+  \? )
+    # Do not change command name to ${0##*/} because will be used with souce cps
+    echo "Usage: cps <option>"                                1>&2
+    echo "Options:"                                           1>&2
+    echo "    -o                        Set original PS1"     1>&2
+    echo "    -s                        Set simple PS1"       1>&2
+    echo "    -b                        Set bob-the-bash PS1" 1>&2
+    echo ""                                                   1>&2
+  ;;
 esac
 
 shift $((OPTIND - 1))
