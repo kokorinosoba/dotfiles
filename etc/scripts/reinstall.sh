@@ -18,13 +18,12 @@ fi
 
 recurse=false
 
-while getopts rh opt &> /dev/null
+while getopts r opt &> /dev/null
 do
   case $opt in
     # r option - --recurse-submodules
-    d ) recurse=true ;;
-    h ) usage ;;
-    \? ) usage ;;
+    r ) recurse=true ;;
+    \? ) echo "unknown option recognized" 1>&2 ; exit 1 ;;
   esac
 done
 
