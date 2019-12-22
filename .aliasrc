@@ -338,7 +338,7 @@ alias dt='docker tag'
 
 alias dunpause='docker unpause'
 
-alias du='docker update'
+alias dup='docker update'
 
 alias dv='docker version'
 
