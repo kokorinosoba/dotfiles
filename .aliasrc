@@ -52,7 +52,7 @@ alias gcm='git commit -m'               # --message
 alias 'gcm!'='git commit --amend -m'    # --amend --message
 alias gcam='git commit -a -m'           # --all --message
 alias gcinit='git commit --allow-empty -m "initial commit"'
-alias gload='git commit --amend -C @'
+alias gcput='git commit --amend -C @'
 
 alias gcf='git config'
 alias gcfl='git config --list' # show config
