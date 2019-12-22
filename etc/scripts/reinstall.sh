@@ -16,13 +16,33 @@ then
   exit 1
 fi
 
+recurse=false
+
+while getopts rh opt &> /dev/null
+do
+  case $opt in
+    # r option - --recurse-submodules
+    d ) recurse=true ;;
+    h ) usage ;;
+    \? ) usage ;;
+  esac
+done
+
+shift $((OPTIND - 1))
+
+
 # uninstall section
 $BINDIR/deploy -d
 cd $DOTDIR/..
 rm -rf $DOTDIR
 
 # install section
-git clone --recurse-submodules https://github.com/kokorinosoba/dotfiles.git
+if $recurse; then
+  git clone --recurse-submodules https://github.com/kokorinosoba/dotfiles.git
+else
+  git clone https://github.com/kokorinosoba/dotfiles.git
+  cd $DOTDIR ; git submodule update --init .config ; cd $DOTDIR/..
+fi
 $BINDIR/deploy -f
 $DOTDIR/etc/init/setup/fisher-packages.sh
 $DOTDIR/etc/init/setup/fisher-pyenv.sh
