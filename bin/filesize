@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -eu
+
+if [[ -f $1 ]]; then
+  [[ -L $1 ]] && echo "${1%/} is symbolic link"
+  target=$(readlink -f $1)
+  du -bh $target
+else
+  echo "${1%/} is not a file" 1>&2
+  exit 1
+fi
