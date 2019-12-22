@@ -218,6 +218,133 @@ alias gur='git update-ref' # when deleting initial commit etc.
 
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 
+
+# docker shortened alias
+alias da='docker attach'
+
+alias db='docker build'
+alias dbt='docker build -t'
+
+alias dc='docker commit'
+
+# alias dc='docker container'
+alias dca='docker container attach'
+alias dcc='docker container commit'
+alias dccp='docker container cp'
+alias dccr='docker container create'
+alias dcd='docker container diff'
+alias dcex='docker container exec'
+alias dcexp='docker container export'
+alias dcins='docker container inspect'
+alias dck='docker container kill'
+alias dcl='docker container logs'
+alias dcls='docker container ls'
+alias dclsa='docker container ls -a'
+alias dcpause='docker container pause'
+alias dcport='docker container port'
+alias dcprune='docker container prune'
+alias dcmv='docker container rename'
+alias dcrestart='docker container restart'
+alias dcrm='docker container rm'
+alias dcr='docker container run'
+alias dcstart='docker container start'
+alias dcst='docker container stats'
+alias dcstop='docker container stop'
+alias dct='docker container top'
+alias dcunpause='docker container unpause'
+alias dcu='docker container update'
+alias dcw='docker container wait'
+
+alias dcp='docker cp'
+
+alias dcr='docker create'
+
+alias dd='docker diff'
+
+alias dev='docker events'
+
+alias dex='docker exec'
+
+alias dexp='docker export'
+
+alias dh='docker history'
+
+alias di='docker images'
+
+# alias di='docker image'
+alias dib='docker image build'
+alias dih='docker image history'
+alias diimp='docker image import'
+alias diins='docker image inspect'
+alias diload='docker image load'
+alias dils='docker image ls'
+alias dilsa='docker image ls -a'
+alias diprune='docker image prune'
+alias dipl='docker image pull'
+alias dip='docker image push'
+alias dirm='docker image rm'
+alias disave='docker image save'
+alias dit='docker image tag'
+
+alias dimp='docker import'
+
+alias dinfo='docker info'
+
+alias dins='docker inspect'
+
+alias dk='docker kill'
+
+alias dload='docker load'
+
+alias dli='docker login'
+
+alias dlo='docker logout'
+
+alias dl='docker logs'
+
+alias dpause='docker pause'
+
+alias dport='docker port'
+
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias dpsn='docker ps -n' # includes all processes
+
+alias dpl='docker pull'
+
+alias dp='docker push'
+
+alias dmv='docker rename'
+
+alias drestart='docker restart'
+
+alias drm='docker rm'
+
+alias drmi='docker rmi'
+
+alias dr='docker run'
+
+alias dsave='docker save'
+
+alias dsearch='docker search'
+
+alias dstart='docker start'
+
+alias dst='docker stats'
+
+alias dstop='docker stop'
+
+alias dt='docker tag'
+
+alias dunpause='docker unpause'
+
+alias du='docker update'
+
+alias dv='docker version'
+
+alias dw='docker wait'
+
+
 # basic safe commands
 alias cp='cp -i'
 alias mv='mv -i'
