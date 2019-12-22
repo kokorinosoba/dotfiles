@@ -18,7 +18,7 @@ delete_link() {
 
 delete=false
 
-while getopts dh opt
+while getopts dh opt &> /dev/null
 do
   case $opt in
     # d option - delete symlinks in the input directory

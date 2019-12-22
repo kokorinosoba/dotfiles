@@ -37,7 +37,7 @@ check_compile() {
 
 force=false
 
-while getopts fh opt
+while getopts fh opt &> /dev/null
 do
   case $opt in
     # -f オプションを検知したら強制的にコンパイルと実行を行う
