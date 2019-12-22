@@ -36,13 +36,16 @@ cd $DOTDIR/..
 rm -rf $DOTDIR
 
 # install section
+git clone https://github.com/kokorinosoba/dotfiles.git
+cd $DOTDIR
+
 if $recurse; then
-  git clone --recurse-submodules https://github.com/kokorinosoba/dotfiles.git
+  git submodule update --init --recursive
 else
-  git clone https://github.com/kokorinosoba/dotfiles.git
-  cd $DOTDIR ; git submodule update --init .config ; cd $DOTDIR/..
+  git submodule update --init .config
 fi
+
 $BINDIR/deploy -f
 $DOTDIR/etc/init/setup/fisher-packages.sh
 $DOTDIR/etc/init/setup/fisher-pyenv.sh
-cd $DOTDIR ; git config commit.template .commit_template
+git config commit.template .commit_template
