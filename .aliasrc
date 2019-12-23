@@ -374,6 +374,28 @@ alias dotscripts='cd $HOME/dotfiles/etc/scripts'
 alias dotsetup='cd $HOME/dotfiles/etc/init/setup'
 alias dotatom='atom $HOME/dotfiles'
 
+# open application alias
+alias appstore='app "App Store"'
+alias chrome='app "Google Chrome"'
+alias coteditor='app CotEditor'
+alias dictionary='app Dictionary'
+alias finder='app Finder'
+alias iterm='app iTerm'
+alias keynote='app Keynote'
+alias kindle='app Kindle'
+alias line='app LINE'
+alias music='app Music'
+alias numbers='app Numbers'
+alias pages='app Pages'
+alias photos='app Photos'
+alias podcasts='app Podcasts'
+alias reminders='app Reminders'
+alias slack='app Slack'
+alias term='app Terminal'
+alias twitter='app Twitter'
+alias voicememos='app VoiceMemos'
+alias zotero='app Zotero'
+
 # make brew doctor wornings coming from using pyenv invisible
 alias brew="env PATH=${PATH/\/Users\/Kokorin\/\.pyenv\/shims:/} brew"
 

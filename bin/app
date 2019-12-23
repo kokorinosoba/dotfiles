@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+set -u
+
+readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
+source $DOTDIR/etc/library/lib.sh
+
+show_name() {
+  echo -n "${0##*/}: " 1>&2
+}
+
+if ! is_darwin; then
+  show_name
+  echo "this command can only be run on mac" 1>&2
+  exit 1
+fi
+
+if [[ $# -lt 1 ]]; then
+  echo "Usage: ${0##*/} <app name>" 1>&2
+  exit 1
+fi
+
+message=$(open -a "$@" 2>&1) ; status=$?
+
+if [[ $status -ne 0 ]]; then
+  show_name
+  echo $message
+  exit 1
+else
+  exit 0
+fi
