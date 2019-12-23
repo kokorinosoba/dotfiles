@@ -13,7 +13,10 @@ usage() {
   echo "Commands:"                                                   1>&2
   echo "    line      /Applications/LINE.app"                        1>&2
   echo "    slack     /Applications/Slack.app"                       1>&2
+  echo "    kindle    /Applications/Kindle.app"                      1>&2
   echo "    music     /System/Applications/Music.app"                1>&2
+  echo "    podcasts  /System/Applications/Podcasts.app"             1>&2
+  echo "    terminal  /System/Applications/Utilities/Terminal.app"   1>&2
   echo "    trello    https://trello.com"                            1>&2
   echo "    zotero    /Applications/Zotero.app"                      1>&2
   echo "    atcoder   https://kenkoooo.com/atcoder/ and atcoder dir" 1>&2
@@ -24,15 +27,27 @@ usage() {
 }
 
 line() {
-  open /Applications/LINE.app
+  open -a LINE
 }
 
 slack() {
-  open /Applications/Slack.app
+  open -a Slack
+}
+
+kindle() {
+  open -a Kindle
 }
 
 music() {
-  open /System/Applications/Music.app
+  open -a Music
+}
+
+podcasts() {
+  open -a Podcasts
+}
+
+terminal() {
+  open -a Terminal
 }
 
 trello() {
@@ -40,7 +55,7 @@ trello() {
 }
 
 zotero() {
-  open /Applications/Zotero.app
+  open -a Zotero
 }
 
 atcoder() {
