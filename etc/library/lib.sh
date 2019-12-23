@@ -15,3 +15,7 @@ ask_continue() {
       exit 1 ;;
   esac
 }
+
+is_darwin() {
+  [[ $(uname) ==  "Darwin" ]]
+}
