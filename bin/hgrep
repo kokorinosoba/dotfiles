@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# keyword highlighting command
+
+wrap=true
+
+while getopts n opt &> /dev/null
+do
+  case $opt in
+    # w option - enable wrap lines
+    w ) wrap=false ;;
+    \? ) echo "${0##*/}: unknown option recognized" 1>&2 ; exit 1 ;;
+  esac
+done
+
+shift $((OPTIND - 1))
+
+$wrap && printf '\033[?7l' # disable wrap
+grep --color -E "$1|\$"
+$wrap && printf '\033[?7h' # enable wrap
