@@ -17,6 +17,9 @@ set -x MANPATH /usr/local/opt/findutils/libexec/gnuman $MANPATH
 set -x PATH /usr/local/opt/gnu-sed/libexec/gnubin $PATH
 set -x MANPATH /usr/local/opt/gnu-sed/libexec/gnuman $MANPATH
 
+# path to tlmgr
+set -x PATH /usr/local/texlive/2019/bin/x86_64-darwin $PATH
+
 # path to dotfiles/bin
 set -x PATH $HOME/dotfiles/bin $PATH
 

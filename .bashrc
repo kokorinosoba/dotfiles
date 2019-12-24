@@ -38,6 +38,9 @@ export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/gnu-sed/libexec/gnuman:$MANPATH"
 
+# path to tlmgr
+export PATH="/usr/local/texlive/2019/bin/x86_64-darwin:$PATH"
+
 # XDG Base Directory Setting
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
