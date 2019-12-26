@@ -409,5 +409,3 @@ alias rlb='source roll 2'
 alias rlc='source roll 3'
 alias rld='source roll 4'
 alias mkcd='source mkcd'
-
-[[ -f $HOME/.kokorc ]] && [[ $(whoami) == "Kokorin" ]] && source $HOME/.kokorc
