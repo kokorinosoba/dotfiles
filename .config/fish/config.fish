@@ -3,7 +3,11 @@
 # * Hit fish_update_completion
 
 # remote current directory from PATH
-set -e PATH[(echo $PATH | tr " " "\n" | awk '$1 == "." {print NR}')]
+for path in $PATH
+  if [ $path = "." ];
+    set -e PATH[(echo $PATH | tr " " "\n" | awk '$1 == "." {print NR}')]
+  end
+end
 
 make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.aliasrc; and source $HOME/.config/fish/b2f_aliases.fish
 
