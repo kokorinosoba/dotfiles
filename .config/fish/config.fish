@@ -18,17 +18,25 @@ if [ (whoami) = "Kokorin" ];
 end
 
 # path to coreutils, findutils and gnu-sed
-set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
-set -x MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
+if [ -d /usr/local/opt/coreutils/libexec/gnubin ];
+  set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
+  set -x MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
+end
 
-set -x PATH /usr/local/opt/findutils/libexec/gnubin $PATH
-set -x MANPATH /usr/local/opt/findutils/libexec/gnuman $MANPATH
+if [ -d /usr/local/opt/findutils/libexec/gnubin ];
+  set -x PATH /usr/local/opt/findutils/libexec/gnubin $PATH
+  set -x MANPATH /usr/local/opt/findutils/libexec/gnuman $MANPATH
+end
 
-set -x PATH /usr/local/opt/gnu-sed/libexec/gnubin $PATH
-set -x MANPATH /usr/local/opt/gnu-sed/libexec/gnuman $MANPATH
+if [ -d /usr/local/opt/gnu-sed/libexec/gnubin ];
+  set -x PATH /usr/local/opt/gnu-sed/libexec/gnubin $PATH
+  set -x MANPATH /usr/local/opt/gnu-sed/libexec/gnuman $MANPATH
+end
 
 # path to tlmgr
-set -x PATH /usr/local/texlive/2019/bin/x86_64-darwin $PATH
+if [ -d /usr/local/texlive/2019/bin/x86_64-darwin ];
+  set -x PATH /usr/local/texlive/2019/bin/x86_64-darwin $PATH
+end
 
 # path to dotfiles/bin
 set -x PATH $HOME/dotfiles/bin $PATH
@@ -39,7 +47,9 @@ set -x XDG_CONFIG_HOME $HOME/.config
 set -x XDG_CACHE_HOME $HOME/.cache
 
 # path to nodebrew
-set -x PATH $HOME/.nodebrew/current/bin $PATH
+if [ -d $HOME/.nodebrew/current/bin ];
+  set -x PATH $HOME/.nodebrew/current/bin $PATH
+end
 
 # make less avarable for colordiff
 set -x LESS -R
