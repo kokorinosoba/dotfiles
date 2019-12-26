@@ -9,7 +9,13 @@ for path in $PATH
   end
 end
 
-make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.aliasrc; and source $HOME/.config/fish/b2f_aliases.fish
+# call .aliasrc
+make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.aliasrc _B2F_ALIASES_FILE=$HOME/.config/fish/b2f_aliasrc.fish; and source $HOME/.config/fish/b2f_aliasrc.fish
+
+# call .kokorc
+if [ (whoami) = "Kokorin" ];
+  make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.kokorc _B2F_ALIASES_FILE=$HOME/.config/fish/b2f_kokorc.fish; and source $HOME/.config/fish/b2f_kokorc.fish
+end
 
 # path to coreutils, findutils and gnu-sed
 set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
