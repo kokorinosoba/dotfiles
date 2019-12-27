@@ -345,16 +345,26 @@ alias dv='docker version'
 alias dw='docker wait'
 
 
-# basic safe commands
+# safety alias
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-# fish like alias
+# cd alias
 alias ..='cd ..'
-alias ls='ls --color=auto --classify'
-alias la='ls -lha'
-alias ll='ls -lh'
+
+# ls alias
+if type /usr/local/opt/coreutils/libexec/gnubin/ls > /dev/null 2>&1; then
+  alias ls='ls      --color=auto --classify'
+  alias ll='ls -lh  --color=auto --classify'
+  alias la='ls -lha --color=auto --classify'
+else
+  alias ls='ls      -GF'
+  alias ll='ls -lh  -GF'
+  alias la='ls -lha -GF'
+fi
+
+# human-readable alias
 alias grep='grep --color=auto'
 alias df='df -h'
 
@@ -396,7 +406,7 @@ alias twitter='app Twitter'
 alias voicememos='app VoiceMemos'
 alias zotero='app Zotero'
 
-# make brew doctor wornings coming from using pyenv invisible
+# make brew doctor wornings invisible coming from using pyenv
 alias brew="env PATH=${PATH/\/Users\/Kokorin\/\.pyenv\/shims:/} brew"
 
 # for PS1 setting
