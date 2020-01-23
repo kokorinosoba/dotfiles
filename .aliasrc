@@ -412,10 +412,13 @@ alias brew="env PATH=${PATH/\/Users\/Kokorin\/\.pyenv\/shims:/} brew"
 # for PS1 setting
 alias cps='source cps'
 
-# For Competitive Programming
+# for competitive programming
 alias red='source red'
 alias rla='source roll 1'
 alias rlb='source roll 2'
 alias rlc='source roll 3'
 alias rld='source roll 4'
 alias mkcd='source mkcd'
+
+# for tex image creation
+alias ps2eps='ps2eps -f --rotate=+'
