@@ -20,6 +20,7 @@ packages=(bash
           nkf
           nodebrew
           npm
+          postgresql
           pyenv
           pyenv-virtualenv
           python

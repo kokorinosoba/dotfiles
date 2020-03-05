@@ -10,6 +10,7 @@ packages=(appcleaner
           google-chrome
           google-japanese-ime
           iterm2
+          kindle
           macdown
           processing
           qlmarkdown
