@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
 default_shell="/usr/local/bin/bash"
-[[ $SHELL = $default_shell ]] || chsh -s $default_shell
+
+if ! [[ $SHELL = $default_shell ]]; then
+  chsh -s $default_shell
+fi
