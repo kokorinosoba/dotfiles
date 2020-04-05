@@ -406,6 +406,9 @@ alias twitter='app Twitter'
 alias voicememos='app VoiceMemos'
 alias zotero='app Zotero'
 
+# open trashbin alias
+alias trashbin='open $HOME/.Trash'
+
 # make brew doctor wornings invisible coming from using pyenv
 alias brew="env PATH=${PATH/\/Users\/Kokorin\/\.pyenv\/shims:/} brew"
 
