@@ -44,6 +44,8 @@ fi
 
 if $force; then
   opt=-f
+else
+  opt=
 fi
 
 case ${argv##*.} in
