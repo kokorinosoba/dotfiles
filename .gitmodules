@@ -7,3 +7,6 @@
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "etc/submodules/apm-sync"]
+	path = etc/submodules/apm-sync
+	url = https://github.com/amano41/apm-sync.git
