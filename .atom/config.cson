@@ -1,0 +1,39 @@
+"*":
+  "activate-power-mode":
+    plugins:
+      playAudio: true
+      screenShake: true
+  "autocomplete-python":
+    useKite: false
+  "browser-plus": {}
+  core:
+    disabledPackages: [
+      "activate-power-mode"
+      "vim-mode-plus"
+    ]
+    telemetryConsent: "no"
+  editor:
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "d9eb6ddc-65be-4a4f-b471-c33968e2072e"
+  "linter-ui-default": {}
+  minimap:
+    plugins:
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+      "minimap-autohide": true
+      "minimap-autohideDecorationsZIndex": 0
+  "platformio-ide-terminal":
+    ansiColors:
+      normal:
+        blue: "#0077ff"
+      zBright:
+        brightBlue: "#0099ff"
+    style:
+      fontFamily: "Liberation Mono for Powerline"
+  welcome:
+    showOnStartup: false
+".cs.source":
+  editor:
+    tabLength: 4

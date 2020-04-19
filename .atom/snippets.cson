@@ -1,0 +1,96 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+# C# snippets
+'.source.cs':
+  'Main for Contest':
+    'prefix': 'main'
+    'body':
+      """
+      using System;
+      using System.Linq;
+
+      namespace Contest
+      {
+          class Program
+          {
+              public static void Main(string[] args)
+              {
+                  $1
+              }
+          }
+      }
+      """
+  'WriteLine':
+    'prefix': 'cw'
+    'body': 'Console.WriteLine($1);'
+  'ReadLine':
+    'prefix': 'cr'
+    'body': 'Console.ReadLine()$1;'
+  'for statement':
+    'prefix': 'for'
+    'body':
+      """
+      for (var i = 0; i < $1; i++)
+      {
+          $2
+      }
+      """
+  'Reading Template':
+    'prefix': 'crt'
+    'body':
+      """
+        static string ReadSt() { return Console.ReadLine(); }
+        static int ReadInt() { return int.Parse(Console.ReadLine()); }
+        static long ReadLong() { return long.Parse(Console.ReadLine()); }
+        static double ReadDouble() { return double.Parse(Console.ReadLine()); }
+        static string[] ReadStAr(char sep = ' ') { return Console.ReadLine().Split(sep); }
+        static int[] ReadIntAr(char sep = ' ') { return Array.ConvertAll(Console.ReadLine().Split(sep), e => int.Parse(e)); }
+        static long[] ReadLongAr(char sep = ' ') { return Array.ConvertAll(Console.ReadLine().Split(sep), e => long.Parse(e)); }
+        static double[] ReadDoubleAr(char sep = ' ') { return Array.ConvertAll(Console.ReadLine().Split(sep), e => double.Parse(e)); }
+      """
+  'Read Int Array':
+    'prefix': 'cria'
+    'body': 'Console.ReadLine().Split().Select(int.Parse).ToArray();'
+  'Product':
+    'prefix': 'product'
+    'body': 'Aggregate((now, next) => now * next)'
+  'Tuple':
+    'prefix': 'tuple'
+    'body': '(${1:int} ${2:a}, ${1:int} ${3:b})'
+  'Join Array Contents':
+    'prefix': 'join'
+    'body': 'string.Join(" ", $1)'
+
+# C++ snippets
+'.source.cpp':
+  'for Contest':
+    'prefix': 'main'
+    'body':
+      """
+      #include <bits/stdc++.h>
+      using namespace std;
+
+      int main() {
+        $1
+      }
+      """
