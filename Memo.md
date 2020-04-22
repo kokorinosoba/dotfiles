@@ -49,6 +49,8 @@
     * abbreviation: 省略 -> SHA-1を省略して表示
   * pretty
     * 別のフォーマットで表示する
+* すごいわざ
+  * git commit --amend --date "`date --date '15 hours ago`"
 
 # pip
 * ml

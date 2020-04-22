@@ -9,10 +9,35 @@
   core:
     disabledPackages: [
       "activate-power-mode"
+      "git-plus"
+      "Hydrogen"
+      "imdone-atom"
+      "language-clojure"
+      "language-coffee-script"
+      "language-git"
+      "language-go"
+      "language-java"
+      "language-less"
+      "language-mustache"
+      "language-objective-c"
+      "language-perl"
+      "language-php"
+      "language-property-list"
+      "language-ruby-on-rails"
+      "language-ruby"
+      "language-rust-bundled"
+      "language-sass"
+      "language-toml"
+      "language-typescript"
+      "language-xml"
+      "language-yaml"
+      "pdf-view"
       "vim-mode-plus"
+      "welcome"
     ]
     telemetryConsent: "no"
   editor:
+    scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
   "exception-reporting":
