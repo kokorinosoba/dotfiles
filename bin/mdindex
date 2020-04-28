@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+set -eu
+
+grep -E "^#+ " $1 | sed -E "s/^#+ (.+)/\1%%\1/" | perl -i.bak -pe 's/(?<=%%)(.*)/my $x=$1; $x=~s{ }{-}g; $x/e' | sed -E "s/(.+)%%(.+)/- [\1](#\2)/"
