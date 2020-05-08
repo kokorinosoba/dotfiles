@@ -9,6 +9,7 @@ packages=(bash
           findutils
           fish
           gcc
+          ghc
           ghostscript
           gibo
           git
