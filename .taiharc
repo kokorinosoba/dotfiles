@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+alias photoback='cd $HOME/Documents/photoback'
+alias openplatform='cd $HOME/Documents/openplatform'

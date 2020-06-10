@@ -17,6 +17,11 @@ if [ (whoami) = "Kokorin" ];
   make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.kokorc _B2F_ALIASES_FILE=$HOME/.config/fish/b2f_kokorc.fish; and source $HOME/.config/fish/b2f_kokorc.fish
 end
 
+# call .taiharc
+if [ (whoami) = "taihara" ];
+  make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.taiharc _B2F_ALIASES_FILE=$HOME/.config/fish/b2f_taiharc.fish; and source $HOME/.config/fish/b2f_taiharc.fish
+end
+
 # path to coreutils, findutils and gnu-sed
 if [ -d /usr/local/opt/coreutils/libexec/gnubin ];
   set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
