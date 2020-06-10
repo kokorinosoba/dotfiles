@@ -383,6 +383,7 @@ alias dotbin='cd $HOME/dotfiles/bin'
 alias dotscripts='cd $HOME/dotfiles/etc/scripts'
 alias dotsetup='cd $HOME/dotfiles/etc/init/setup'
 alias dotatom='atom $HOME/dotfiles'
+alias dotcode='code $HOME/dotfiles'
 
 # linux open alias
 [[ $(uname) ==  "Linux" ]] && alias open='xdg-open'
