@@ -19,3 +19,7 @@ ask_continue() {
 is_darwin() {
   [[ $(uname) ==  "Darwin" ]]
 }
+
+is_linux() {
+  [[ $(uname) ==  "Linux" ]]
+}
