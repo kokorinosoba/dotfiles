@@ -384,6 +384,9 @@ alias dotscripts='cd $HOME/dotfiles/etc/scripts'
 alias dotsetup='cd $HOME/dotfiles/etc/init/setup'
 alias dotatom='atom $HOME/dotfiles'
 
+# linux open alias
+[[ $(uname) ==  "Linux" ]] && alias open='xdg-open'
+
 # open application alias
 alias appstore='app "App Store"'
 alias chrome='app "Google Chrome"'
