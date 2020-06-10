@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -eu
+
+readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
+cd $DOTDIR
+
+ln -f $DOTDIR/win/etc/settings.json $DOTDIR/../AppData/Local/Microsoft/Windows\ Terminal/settings.json
