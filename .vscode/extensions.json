@@ -1,0 +1,27 @@
+{
+    "recommendations": [
+        "akamud.vscode-theme-onedark",
+        "christian-kohler.path-intellisense",
+        "CoenraadS.bracket-pair-colorizer-2",
+        "donjayamanne.githistory",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "formulahendry.auto-rename-tag",
+        "jaspernorth.vscode-pigments",
+        "jchannon.csharpextensions",
+        "justusadam.language-haskell",
+        "Leopotam.csharpfixformat",
+        "ms-dotnettools.csharp",
+        "ms-python.python",
+        "ms-vscode.cpptools",
+        "mushan.vscode-paste-image",
+        "PKief.material-icon-theme",
+        "ritwickdey.LiveServer",
+        "SirTobi.code-clip-ring",
+        "streetsidesoftware.code-spell-checker",
+        "tomoki1207.vscode-input-sequence",
+        "UCL.haskelly",
+        "vincaslt.highlight-matching-tag",
+        "yzhang.markdown-all-in-one"
+    ]
+}

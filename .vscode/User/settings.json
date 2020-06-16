@@ -1,0 +1,22 @@
+{
+    "editor.fontSize": 13,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "git.ignoreLimitWarning": true,
+    "terminal.integrated.fontFamily": "Liberation Mono for Powerline",
+    "terminal.integrated.fontSize": 13,
+    "window.zoomLevel": 0,
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Atom One Dark",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": true,
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    }
+}

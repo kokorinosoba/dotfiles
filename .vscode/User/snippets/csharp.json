@@ -1,0 +1,107 @@
+{
+	// Place your snippets for csharp here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Main": {
+		"prefix": "main",
+		"body": [
+			"using System;",
+			"using System.Linq;",
+			"using static System.Console;",
+			"",
+			"namespace Contest",
+			"{",
+			"\tclass Program",
+			"\t{",
+			"\t\tpublic static void Main(string[] args)",
+			"\t\t{",
+			"\t\t\t$1",
+			"\t\t}",
+			"\t}",
+			"}",
+		],
+		"description": "Main function"
+	},
+	"WriteLine": {
+		"prefix": [
+			"wl",
+			"cw",
+		],
+		"body": [
+			"${1:Console.}WriteLine($2);",
+		],
+		"description": "WriteLine"
+	},
+	"Write": {
+		"prefix": "write",
+		"body": [
+			"Write($1);",
+		],
+		"description": "Write"
+	},
+	"ReadLine": {
+		"prefix": [
+			"rl",
+			"cr",
+		],
+		"body": [
+			"${1:var} ${2:a} = ${3:Console.}ReadLine()$4;",
+		],
+		"description": "ReadLine"
+	},
+	"Reading Template": {
+		"prefix": "rt",
+		"body": [
+			"static string ReadSt() { return Console.ReadLine(); }",
+			"static int ReadInt() { return int.Parse(Console.ReadLine()); }",
+			"static long ReadLong() { return long.Parse(Console.ReadLine()); }",
+			"static double ReadDouble() { return double.Parse(Console.ReadLine()); }",
+			"static string[] ReadStAr(char sep = ' ') { return Console.ReadLine().Split(sep); }",
+			"static int[] ReadIntAr(char sep = ' ') { return Array.ConvertAll(Console.ReadLine().Split(sep), e => int.Parse(e)); }",
+			"static long[] ReadLongAr(char sep = ' ') { return Array.ConvertAll(Console.ReadLine().Split(sep), e => long.Parse(e)); }",
+			"static double[] ReadDoubleAr(char sep = ' ') { return Array.ConvertAll(Console.ReadLine().Split(sep), e => double.Parse(e)); }",
+		],
+		"description": "Reading template"
+	},
+	"Read Int Array": {
+		"prefix": [
+			"rlia",
+			"cria",
+		],
+		"body": [
+			"${1:var} ${2:a} = ${3:Console.}ReadLine().Split().Select(int.Parse).ToArray()$4;",
+		],
+		"description": "Read int array"
+	},
+	"Product": {
+		"prefix": "product",
+		"body": [
+			"Aggregate((now, next) => now * next)",
+		],
+		"description": "Product"
+	},
+	"Tuple": {
+		"prefix": "tuple",
+		"body": [
+			"(${1:int} ${2:a}, ${1:int} ${3:b})",
+		],
+		"description": "Tuple"
+	},
+	"Join Array Contents": {
+		"prefix": "join",
+		"body": [
+			"string.Join(\" \", $1)",
+		],
+		"description": "Join array contents"
+	},
+}
