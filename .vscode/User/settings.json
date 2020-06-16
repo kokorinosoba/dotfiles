@@ -1,6 +1,7 @@
 {
     "editor.fontSize": 13,
     "editor.multiCursorModifier": "ctrlCmd",
+    "files.eol": "\n",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
