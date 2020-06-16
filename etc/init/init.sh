@@ -11,6 +11,7 @@ source $DOTDIR/etc/library/lib.sh
 ask_continue deploying
 
 $SETUPDIR/iCloudDrive.sh
+$SETUPDIR/vscode.sh
 $BINDIR/deploy -f
 
 ask_continue initializing
