@@ -13,6 +13,7 @@
 #     'prefix': 'log'
 #     'body': 'console.log $1'
 #
+# Press alt-cmd-p to detect selector (.source.coffee etc.).
 # Each scope (e.g. '.source.coffee' above) can only be declared once.
 #
 # This file uses CoffeeScript Object Notation (CSON).
