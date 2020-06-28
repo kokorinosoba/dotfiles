@@ -206,6 +206,10 @@ alias gsm='git submodule'
 alias gsma='git submodule add'
 alias gsmi='git submodule init'
 alias gsmu='git submodule update'
+alias gsmf='git submodule foreach'
+alias gsmr='git submodule foreach git reset'
+alias gsmplom='git submodule foreach git pull origin master'
+alias gsmploup='git submodule foreach git pull origin $(git rev-parse --abbrev-ref @)'
 
 alias gt='git tag'
 
