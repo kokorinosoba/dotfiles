@@ -19,4 +19,36 @@
 		],
 		"description": "Line Break"
 	},
+	"Schedule": {
+		"prefix": "schedule",
+		"body": [
+			"# Morning Meeting",
+			"- Yesterday",
+			"\t- Meeting",
+			"\t\t- $1",
+			"\t- Training",
+			"\t\t- $2",
+			"- Today",
+			"\t- Meeting",
+			"\t\t- $3",
+			"\t- Training",
+			"\t\t- $4",
+			"- Share",
+			"\t- $5",
+		],
+		"description": "for morning meeting"
+	},
+	"Report": {
+		"prefix": "report",
+		"body": [
+			"# Report",
+			"- Done",
+			"\t- $1",
+			"- Doing",
+			"\t- $2",
+			"- Questions",
+			"\t- $3",
+		],
+		"description": "for status reporting"
+	},
 }

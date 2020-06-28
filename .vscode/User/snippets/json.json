@@ -17,11 +17,11 @@
 		"prefix": "snippet",
 		"body": [
 			"\"${1:Display name}\": {",
-			"    \"prefix\": \"$2\",",
-			"    \"body\": [",
-			"        \"$3\",",
-			"    ],",
-			"    \"description\": \"$4\"",
+			"\t\"prefix\": \"$2\",",
+			"\t\"body\": [",
+			"\t\t\"$3\",",
+			"\t],",
+			"\t\"description\": \"$4\"",
 			"},",
 		],
 		"description": "snippet for snippet"
