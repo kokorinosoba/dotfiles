@@ -63,7 +63,11 @@ set -x LESS -R
 alias relogin="exec /usr/local/bin/fish -l"
 
 # display welcome message
-type toilet > /dev/null 2>&1; and toilet -f future WELCOME TO FISH
+if type toilet > /dev/null 2>&1;
+  toilet -f future WELCOME TO FISH
+else if type figlet > /dev/null 2>&1;
+  figlet -f smslant WELCOME TO FISH
+end
 
 # display todo list
 type todo > /dev/null 2>&1; and todo ls --all
