@@ -1,5 +1,6 @@
 {
     "editor.fontSize": 13,
+    "editor.tabSize": 2,
     "editor.minimap.renderCharacters": false,
     "editor.minimap.showSlider": "always",
     "editor.multiCursorModifier": "ctrlCmd",
@@ -24,5 +25,14 @@
         "editor.wordWrap": "on",
         "editor.quickSuggestions": true,
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[csharp]": {
+        "editor.tabSize": 4
+    },
+    "[java]": {
+        "editor.tabSize": 4
+    },
+    "[python]": {
+        "editor.tabSize": 4
     }
 }
