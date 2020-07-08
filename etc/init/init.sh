@@ -40,7 +40,7 @@ ask_continue "nvim initializing" && {
 }
 
 ask_continue "cpp initializing" && {
-  has gcc-8 && $SETUPDIR/c++.sh
+  $SETUPDIR/c++.sh
 }
 
 ask_continue "terminal initializing" && {
