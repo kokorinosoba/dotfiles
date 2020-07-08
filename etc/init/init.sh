@@ -9,8 +9,8 @@ readonly SETUPDIR=$DOTDIR/etc/init/setup
 source $DOTDIR/etc/library/lib.sh
 
 ask_continue "deploying" && {
-  $SETUPDIR/iCloudDrive.sh
   $SETUPDIR/vscode.sh
+  $SETUPDIR/iCloudDrive.sh
   $BINDIR/deploy -f
 }
 
