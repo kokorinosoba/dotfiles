@@ -12,7 +12,7 @@ ask_continue() {
     "Y" | "y" | "yes" | "Yes" | "YES" ) ;;
     * )
       echo "Canceled."
-      exit 1 ;;
+      return 1 ;;
   esac
 }
 
