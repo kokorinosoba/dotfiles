@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -eu
+
+echo -e '{\n    "recommendations": ['
+code --list-extensions | sed -e 's/^/        "/' -e 's/$/",/' -e '$s/.$//'
+echo -e '    ]\n}'
