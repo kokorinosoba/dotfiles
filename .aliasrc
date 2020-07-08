@@ -25,6 +25,7 @@ alias gaa='git add -A' # --all
 alias gap='git add -p' # --patch
 alias gau='git add -u' # --update
 alias gav='git add -v' # --verbose
+alias gan='git add $(git ls-files -o --exclude-standard)' # add all untracked files
 
 alias gb='git branch'     # make branch
 alias gba='git branch -a' # include remote branch (--all)
