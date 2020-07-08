@@ -96,7 +96,7 @@ alias 'gg!'='git gui citool --amend'
 
 alias gi='git init'
 
-# alias gl='git log'
+alias glog='git log'
 alias gl='git log --graph --pretty=format:"%C(auto)%h%Creset %C(green ul)%an%Creset %C(cyan)%ar%Creset %s %C(auto)%d"'
 alias gln='git log --graph --pretty=format:"%C(auto)%h%Creset %C(green ul)%an%Creset %C(cyan)%ar%Creset %s %C(auto)%d%x0a"' # add newline
 alias glac='git log --abbrev-commit'
@@ -177,6 +177,10 @@ alias grh='git reset --hard'
 alias groh='git reset origin/$(git rev-parse --abbrev-ref @) --hard'
 alias gundo='git reset --soft @^'
 
+alias grv='git revert'
+alias grvne='git revert --no-edit'
+alias grvnc='git revert --no-commit'
+
 alias grl='git reflog'
 
 alias grm='git rm'
@@ -207,9 +211,9 @@ alias gsma='git submodule add'
 alias gsmi='git submodule init'
 alias gsmu='git submodule update'
 alias gsmf='git submodule foreach'
-alias gsmr='git submodule foreach git reset'
-alias gsmplom='git submodule foreach git pull origin master'
-alias gsmploup='git submodule foreach git pull origin $(git rev-parse --abbrev-ref @)'
+alias gsmfgr='git submodule foreach git reset'
+alias gsmfgplom='git submodule foreach git pull origin master'
+alias gsmfgploup='git submodule foreach git pull origin $(git rev-parse --abbrev-ref @)'
 
 alias gt='git tag'
 
