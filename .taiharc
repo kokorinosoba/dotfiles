@@ -1,4 +1,18 @@
 #!/usr/bin/env bash
 
 alias photoback='cd $HOME/Documents/photoback'
-alias openplatform='cd $HOME/Documents/openplatform'
+alias plib='cd $HOME/Documents/photoback/src/Libraries'
+alias pareas='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp/Areas'
+alias peditor='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp/editor'
+
+alias biz='cd $HOME/Documents/bizphotoback'
+alias blib='cd $HOME/Documents/bizphotoback/src/Libraries'
+alias bareas='cd $HOME/Documents/bizphotoback/src/WebApplications/biz.photoback.jp/Areas'
+alias beditor='cd $HOME/Documents/bizphotoback/src/WebApplications/biz.photoback.jp/editor'
+
+alias openpf='cd $HOME/Documents/openplatform'
+alias olib='cd $HOME/Documents/openplatform/src/Libraries'
+
+alias meme='cd $HOME/Documents/memepaper'
+alias mlib='cd $HOME/Documents/memepaper/src/Libraries'
+alias mareas='cd $HOME/Documents/memepaper/src/WebApplications/www.memepaper.jp/Areas'
