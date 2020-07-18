@@ -3,3 +3,5 @@
 	email = 34607448+kokorinosoba@users.noreply.github.com
 [core]
 	editor = nvim
+[pull]
+	rebase = true
