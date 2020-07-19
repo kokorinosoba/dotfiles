@@ -18,6 +18,13 @@ type colordiff > /dev/null 2>&1 && alias diff='colordiff -u' || alias diff='diff
 alias python='python3'
 alias pip='pip3'
 
+# pip alias
+alias pi='pip install'
+alias pu='pip uninstall'
+alias pf='pip freeze'
+alias pl='pip list'
+alias piup='pip install --upgrade pip'
+
 # git shortened alias
 alias ga='git add'
 alias ga.='git add .'
