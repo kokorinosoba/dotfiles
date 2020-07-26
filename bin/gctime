@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+set -eu
+
+usage() {
+  echo "Usage: ${0##*/} [-c --commit-date] [--amend] [--no-edit] date"                 1>&2
+  echo                                                                                 1>&2
+  echo "Please see the link below to know about how to specify the date:"              1>&2
+  echo -e -n "\e[34m==>\e[0m "                                                         1>&2
+  echo "https://www.gnu.org/software/coreutils/manual/html_node/Examples-of-date.html" 1>&2
+  exit 1
+}
+
+change_commit_date=false
+amend=
+no_edit=
+
+declare -i argc=0
+declare -a argv=()
+
+while (( $# > 0 ))
+do
+  case $1 in
+    -* )
+      if [[ $1 == "-c" || $1 == "--commit-date" ]]; then
+        change_commit_date=true
+      elif [[ $1 == "--amend" ]]; then
+        amend="--amend"
+      elif [[ $1 == "--no-edit" ]]; then
+        no_edit="--no-edit"
+      else
+        usage
+      fi
+      shift ;;
+    * )
+      input_date=$(LANG=C date --date="$1")
+      argc+=1 # ((++argc))
+      shift ;;
+  esac
+done
+
+if [[ $argc -lt 1 ]]; then
+  echo "No parameter" 1>&2
+  usage
+elif [[ $argc -gt 1 ]]; then
+  echo "Too many parameters" 1>&2
+  usage
+fi
+
+if $change_commit_date; then
+  GIT_COMMITTER_DATE="$input_date" git commit $amend $no_edit --date "$input_date"
+else
+  git commit $amend $no_edit --date "$input_date"
+fi
