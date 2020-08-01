@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+echo "=== assume unchanged ==="
+git ls-files -v | grep -E "^h" | awk '{print $2}'
+
+echo "=== skip worktree ==="
+git ls-files -v | grep -E "^S" | awk '{print $2}'
+
+echo "=== both ==="
+git ls-files -v | grep -E "^s" | awk '{print $2}'
