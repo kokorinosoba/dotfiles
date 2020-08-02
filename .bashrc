@@ -64,6 +64,7 @@ fi
 
 # pipenv virtualenv location
 export PIPENV_VENV_IN_PROJECT=true
+export PIPENV_IGNORE_VIRTUALENVS=true
 
 # path to ruby
 if type rbenv &> /dev/null; then

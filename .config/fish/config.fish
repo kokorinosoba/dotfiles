@@ -40,6 +40,7 @@ end
 
 # pipenv virtualenv location
 set -x PIPENV_VENV_IN_PROJECT true
+set -x PIPENV_IGNORE_VIRTUALENVS true
 
 # path to tlmgr
 if [ -d /usr/local/texlive/2019/bin/x86_64-darwin ];
