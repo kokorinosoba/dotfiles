@@ -22,6 +22,8 @@ packages=(
   nkf
   nodebrew
   npm
+  pipenv
+  poetry
   postgresql
   pyenv
   pyenv-virtualenv
