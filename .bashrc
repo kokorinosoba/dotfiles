@@ -62,6 +62,9 @@ if type pyenv-virtualenv-init &> /dev/null; then
   eval "$(pyenv virtualenv-init -)"
 fi
 
+# pipenv virtualenv location
+export PIPENV_VENV_IN_PROJECT=true
+
 # path to ruby
 if type rbenv &> /dev/null; then
   export RBENV_ROOT="$HOME/.rbenv"

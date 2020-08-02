@@ -38,6 +38,9 @@ if [ -d /usr/local/opt/gnu-sed/libexec/gnubin ];
   set -x MANPATH /usr/local/opt/gnu-sed/libexec/gnuman $MANPATH
 end
 
+# pipenv virtualenv location
+set -x PIPENV_VENV_IN_PROJECT true
+
 # path to tlmgr
 if [ -d /usr/local/texlive/2019/bin/x86_64-darwin ];
   set -x PATH /usr/local/texlive/2019/bin/x86_64-darwin $PATH
