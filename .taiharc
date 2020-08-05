@@ -16,3 +16,5 @@ alias olib='cd $HOME/Documents/openplatform/src/Libraries'
 alias meme='cd $HOME/Documents/memepaper'
 alias mlib='cd $HOME/Documents/memepaper/src/Libraries'
 alias mareas='cd $HOME/Documents/memepaper/src/WebApplications/www.memepaper.jp/Areas'
+
+alias diary='date "+%m-%d-%Y.md" | xargs touch'
