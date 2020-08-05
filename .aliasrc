@@ -40,7 +40,9 @@ alias gbd='git branch -d' # delete merged branch (--delete)
 alias gbD='git branch -D' # delete branch by force
 alias gbr='git branch -r' # only remote branch (--remotes)
 alias gbv='git branch -v' # show branches commits' SHA-1 (-vv, --verbose)
+alias gbm='git branch --merged'
 alias gbnm='git branch --no-merged'
+alias gbdm='git branch --merged | grep -vE "^\*|^\s*master|^\s*develop|^\s*feature" | xargs git branch -d'
 alias gbuup='git branch --unset-upstream'
 alias gbsup='git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref @)'
 
