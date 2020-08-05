@@ -24,19 +24,19 @@
 		"body": [
 			"# Morning Meeting",
 			"- Yesterday",
-			"\t- Meeting",
+			"\t- Meetings",
 			"\t\t- $1",
-			"\t- Training",
+			"\t- Works",
 			"\t\t- $2",
 			"- Today",
-			"\t- Meeting",
+			"\t- Meetings",
 			"\t\t- $3",
-			"\t- Training",
+			"\t- Works",
 			"\t\t- $4",
 			"- Share",
 			"\t- $5",
 		],
-		"description": "for morning meeting"
+		"description": "For morning meeting"
 	},
 	"Report": {
 		"prefix": "report",
@@ -49,6 +49,14 @@
 			"- Questions",
 			"\t- $3",
 		],
-		"description": "for status reporting"
+		"description": "For status reporting"
+	},
+	"Routine": {
+		"prefix": "routine",
+		"body": [
+			"- [ ] Set today's goal",
+			"- [ ] Mail checking",
+		],
+		"description": "Morning routine list"
 	},
 }
