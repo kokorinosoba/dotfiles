@@ -4,15 +4,18 @@
 # chmod +x cassisで実行権限を与える
 # ./cassisで実行可能
 
-set -e
-
 usage() {
   echo "Usage: ${0##*/} [-f] file" 1>&2
   exit 1
 }
 
 compile() {
-  mcs $1 -out:${1%.*}.o && mono ${1%.*}.o
+  csc $1 -out:${1%.*}.o ; compile_status=$?
+  if [[ $compile_status == 0 ]]; then
+    echo "Compile completed"
+    echo "-----------------"
+    mono ${1%.*}.o
+  fi
 }
 
 force_compile() {
