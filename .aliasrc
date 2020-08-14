@@ -236,6 +236,11 @@ alias gur='git update-ref' # when deleting initial commit etc.
 
 alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 
+alias gwta='git worktree add'
+alias gwtl='git worktree list'
+alias gwtp='git worktree prune'
+alias gwtr='git worktree remove'
+
 
 # docker shortened alias
 alias da='docker attach'
