@@ -31,7 +31,8 @@
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
     "[csharp]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
     },
     "[java]": {
         "editor.tabSize": 4

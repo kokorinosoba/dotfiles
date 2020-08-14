@@ -19,14 +19,11 @@
 			"using System.Linq;",
 			"using static System.Console;",
 			"",
-			"namespace Contest",
+			"class P",
 			"{",
-			"\tclass Program",
+			"\tstatic void Main()",
 			"\t{",
-			"\t\tpublic static void Main(string[] args)",
-			"\t\t{",
-			"\t\t\t$1",
-			"\t\t}",
+			"\t\t$1",
 			"\t}",
 			"}",
 		],
@@ -82,6 +79,13 @@
 			"${1:var} ${2:a} = ${3:Console.}ReadLine().Split().Select(int.Parse).ToArray()$4;",
 		],
 		"description": "Read int array"
+	},
+	"Read Int List": {
+		"prefix": "cril",
+		"body": [
+			"${1:var} ${2:a} = ${3:Console.}ReadLine().Split().Select(int.Parse).ToList()$4;",
+		],
+		"description": "Read int list"
 	},
 	"Product": {
 		"prefix": "product",
