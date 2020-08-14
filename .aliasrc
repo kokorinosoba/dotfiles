@@ -72,7 +72,7 @@ alias gcl='git clone'
 alias gclr='git clone --recurse-submodules'
 
 alias gclean='git clean -id' # include directories + (--interactive)
-alias gpristine='git reset --hard && git clean -dfx' # pristine=fresh?
+alias gpristine='git reset --hard && git clean -idx' # pristine=fresh?
 
 alias gco='git checkout'
 alias gcob='git checkout -b' # make and checkout branch
