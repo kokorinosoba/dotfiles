@@ -9,6 +9,7 @@
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "editor.rulers": [80, 120],
+    "explorer.autoReveal": "focusNoScroll",
     "files.eol": "\n",
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
