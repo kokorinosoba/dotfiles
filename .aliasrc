@@ -443,11 +443,11 @@ alias brew="env PATH=${PATH/\/Users\/Kokorin\/\.pyenv\/shims:/} brew"
 alias cps='source cps'
 
 # for competitive programming
-alias red='source red'
-alias rla='source roll 1'
-alias rlb='source roll 2'
-alias rlc='source roll 3'
-alias rld='source roll 4'
+alias reduce='source reduce'
+alias rolla='source roll 1'
+alias rollb='source roll 2'
+alias rollc='source roll 3'
+alias rolld='source roll 4'
 alias mkcd='source mkcd'
 alias shorter="tr -d '\n' | sed -e 's/\([^A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g' -e 's/\([^A-Za-z0-9]\) \+\([A-Za-z0-9]\)/\1\2/g' -e 's/\([A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g' -e 's/\([^A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g'"
 

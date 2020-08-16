@@ -12,5 +12,5 @@ if [[ -d ../$NAME$NUM ]]; then
   cd ../$NAME$NUM
 else
   [[ $JUMP_N -eq -1 ]] && JUMP_N=
-  echo "You cannot use \"red $JUMP_N\" because $NAME$NUM does not exist"
+  echo "Error: $NAME$NUM does not exist"
 fi
