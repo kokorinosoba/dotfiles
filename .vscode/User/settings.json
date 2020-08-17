@@ -9,6 +9,8 @@
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "editor.rulers": [80, 120],
+    "editor.snippetSuggestions": "top",
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
     "explorer.autoReveal": "focusNoScroll",
     "files.eol": "\n",
     "files.insertFinalNewline": true,
