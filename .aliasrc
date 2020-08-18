@@ -449,7 +449,9 @@ alias rollb='source roll 2'
 alias rollc='source roll 3'
 alias rolld='source roll 4'
 alias mkcd='source mkcd'
-alias shorter="tr -d '\n' | sed -e 's/\([^A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g' -e 's/\([^A-Za-z0-9]\) \+\([A-Za-z0-9]\)/\1\2/g' -e 's/\([A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g' -e 's/\([^A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g'"
+alias short="tr -d '\n' | sed -e 's/\([^A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g' -e 's/\([^A-Za-z0-9]\) \+\([A-Za-z0-9]\)/\1\2/g' -e 's/\([A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g' -e 's/\([^A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g'"
+alias len="short | wc -m"
+alias shortcp="short | pbcopy"
 
 # for tex image creation
 alias ps2eps='ps2eps -f --rotate=+'
