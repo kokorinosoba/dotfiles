@@ -17,6 +17,7 @@
 		"body": [
 			"using System;",
 			"using System.Linq;",
+			"using System.Collections.Generic;",
 			"using static System.Console;",
 			"",
 			"class P",
@@ -29,30 +30,48 @@
 		],
 		"description": "Main function"
 	},
-	"WriteLine": {
+	"Console": {
+		"prefix": "console",
+		"body": [
+			"Console.",
+		],
+		"description": "Console"
+	},
+	"Assignment": {
+		"prefix": "var",
+		"body": [
+			"${1:var} ${2:a} = $3",
+		],
+		"description": "Value assignment"
+	},
+	"Int Parse": {
 		"prefix": [
-			"wl",
-			"cw",
+			"ip",
+			"int",
 		],
 		"body": [
-			"${1:Console.}WriteLine($2);",
+			"int.Parse($1);$2",
+		],
+		"description": "Int parse"
+	},
+	"WriteLine": {
+		"prefix": "cw",
+		"body": [
+			"${1:Console.}WriteLine($2);$3",
 		],
 		"description": "WriteLine"
 	},
 	"Write": {
 		"prefix": "write",
 		"body": [
-			"Write($1);",
+			"Write($1);$2",
 		],
 		"description": "Write"
 	},
 	"ReadLine": {
-		"prefix": [
-			"rl",
-			"cr",
-		],
+		"prefix": "cr",
 		"body": [
-			"${1:var} ${2:a} = ${3:Console.}ReadLine()$4;",
+			"${1:Console.}ReadLine();$2",
 		],
 		"description": "ReadLine"
 	},
@@ -70,20 +89,31 @@
 		],
 		"description": "Reading template"
 	},
-	"Read Int Array": {
-		"prefix": [
-			"rlia",
-			"cria",
-		],
+	"Array": {
+		"prefix": "aca",
 		"body": [
-			"${1:var} ${2:a} = ${3:Console.}ReadLine().Split().Select(int.Parse).ToArray()$4;",
+			"Array.ConvertAll(${1:Console.}ReadLine().Split(), int.Parse);$2",
+		],
+		"description": "Array convert all"
+	},
+	"Read Int Numbers": {
+		"prefix": "cri",
+		"body": [
+			"${1:Console.}ReadLine().Split().Select(int.Parse);$2",
+		],
+		"description": "Read int numbers"
+	},
+	"Read Int Array": {
+		"prefix": "cria",
+		"body": [
+			"${1:Console.}ReadLine().Split().Select(int.Parse).ToArray();$2",
 		],
 		"description": "Read int array"
 	},
 	"Read Int List": {
 		"prefix": "cril",
 		"body": [
-			"${1:var} ${2:a} = ${3:Console.}ReadLine().Split().Select(int.Parse).ToList()$4;",
+			"${1:Console.}ReadLine().Split().Select(int.Parse).ToList();$2",
 		],
 		"description": "Read int list"
 	},
@@ -97,7 +127,7 @@
 	"Tuple": {
 		"prefix": "tuple",
 		"body": [
-			"(${1:int} ${2:a}, ${1:int} ${3:b})",
+			"(${1:int }${2:a}, ${1:int }${3:b})",
 		],
 		"description": "Tuple"
 	},
