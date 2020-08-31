@@ -17,3 +17,5 @@ F13 & [::Send,{Esc}
 Ctrl & Q::Send,!{F4}
 
 RWin & BS::Send,{Delete}
+
+vkE2::Send,_
