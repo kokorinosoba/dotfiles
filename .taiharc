@@ -4,6 +4,7 @@ alias photoback='cd $HOME/Documents/photoback'
 alias plib='cd $HOME/Documents/photoback/src/Libraries'
 alias pareas='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp/Areas'
 alias peditor='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp/editor'
+alias pscripts='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp/scripts'
 
 alias biz='cd $HOME/Documents/bizphotoback'
 alias blib='cd $HOME/Documents/bizphotoback/src/Libraries'
