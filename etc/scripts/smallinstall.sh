@@ -15,5 +15,5 @@ $BINDIR/deploy
 git submodule update --init .config/fish/functions/Fisher
 git submodule update --init .config/fish/functions/Bash2FishAliasesSync
 $SETUPDIR/font-powerline.sh
-$DOTDIR/etc/init/setup/fisher-packages.sh
-$DOTDIR/etc/init/setup/fisher-pyenv.sh
+$DOTDIR/etc/init/setup/oh-my-fish.sh
+$DOTDIR/etc/init/setup/omf-packages.sh

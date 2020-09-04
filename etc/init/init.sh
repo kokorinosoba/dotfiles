@@ -51,6 +51,6 @@ ask_continue "terminal initializing" && {
 
 ask_continue "fish initializing" && {
   has fish && $SETUPDIR/fish.sh
-  has fish && $SETUPDIR/fisher-packages.sh
-  has fisher && $SETUPDIR/fisher-pyenv.sh
+  has fish && $SETUPDIR/oh-my-fish.sh
+  has fish && $SETUPDIR/omf-packages.sh
 }

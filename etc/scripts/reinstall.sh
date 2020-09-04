@@ -46,6 +46,6 @@ else
 fi
 
 $BINDIR/deploy -f
-$DOTDIR/etc/init/setup/fisher-packages.sh
-$DOTDIR/etc/init/setup/fisher-pyenv.sh
+$DOTDIR/etc/init/setup/oh-my-fish.sh
+$DOTDIR/etc/init/setup/omf-packages.sh
 git config commit.template .commit_template
