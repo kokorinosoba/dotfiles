@@ -2,7 +2,7 @@
 /.config/fish/*
 !/.config/fish/config.fish
 !/.config/fish/fish_variables
-/.config/fisher/*
+/.config/omf/
 /.config/NuGet/
 /.config/xbuild/
 /bin/youtube-dl
