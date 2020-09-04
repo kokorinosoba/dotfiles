@@ -2,13 +2,6 @@
 # * Hit fish_config
 # * Hit fish_update_completion
 
-# remote current directory from PATH
-for path in $PATH
-  if [ $path = "." ];
-    set -e PATH[(echo $PATH | tr " " "\n" | awk '$1 == "." {print NR}')]
-  end
-end
-
 # call .aliasrc
 make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.aliasrc _B2F_ALIASES_FILE=$HOME/.config/fish/b2f_aliasrc.fish; and source $HOME/.config/fish/b2f_aliasrc.fish
 
@@ -21,6 +14,9 @@ end
 if [ (whoami) = "taihara" ];
   make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.taiharc _B2F_ALIASES_FILE=$HOME/.config/fish/b2f_taiharc.fish; and source $HOME/.config/fish/b2f_taiharc.fish
 end
+
+# path to /usr/local/bin
+set -x PATH /usr/local/bin $PATH
 
 # path to coreutils, findutils and gnu-sed
 if [ -d /usr/local/opt/coreutils/libexec/gnubin ];
