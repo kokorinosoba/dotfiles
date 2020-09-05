@@ -1,27 +1,23 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python
 
-set -eu
+import os, sys, pathlib, string
 
-mkfile () {
-  [[ -e $1 ]] || touch $1
-}
+args = sys.argv
 
-declare -i N=${1:-4}
+if len(args) == 1:
+    print('Oops!', file=sys.stderr)
+    exit(1)
 
-if [[ $N -gt 26 ]]; then
-  echo "Optional number out of range" 1>&2
-  exit 1
-fi
+path = pathlib.Path('sample_input')
+path.exists() or path.touch()
 
-ext=${2:-cpp}
+until = args[1].upper()
+extension = args[2] if len(args) > 2 else 'cpp'
 
-mkfile sample_input
+for c in string.ascii_uppercase:
+    path = pathlib.Path(f'{c}.{extension}')
 
-declare -i i=0
-for name in {A..Z}; do
-  if [[ $i -eq $N ]]; then
-    break
-  fi
-  mkfile $name.$ext
-  i+=1
-done
+    path.exists() or path.touch()
+
+    if c == until:
+        exit(0)

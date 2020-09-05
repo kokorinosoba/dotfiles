@@ -444,10 +444,10 @@ alias cps='source cps'
 
 # for competitive programming
 alias reduce='cd $(minus)'
-alias rolla='cd $(minus) && mkabc 1'
-alias rollb='cd $(minus) && mkabc 2'
-alias rollc='cd $(minus) && mkabc 3'
-alias rolld='cd $(minus) && mkabc 4'
+alias rolla='cd $(minus) && mkabc a'
+alias rollb='cd $(minus) && mkabc b'
+alias rollc='cd $(minus) && mkabc c'
+alias rolld='cd $(minus) && mkabc d'
 alias mkcd='source mkcd'
 alias short="tr -d '\n' | sed -e 's/\([^A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g' -e 's/\([^A-Za-z0-9]\) \+\([A-Za-z0-9]\)/\1\2/g' -e 's/\([A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g' -e 's/\([^A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g'"
 alias len="short | wc -m"
