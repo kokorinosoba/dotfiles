@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-source red -1 # source is equal to .
-mkabc $1
