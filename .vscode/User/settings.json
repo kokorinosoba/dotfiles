@@ -19,6 +19,7 @@
     "git.ignoreLimitWarning": true,
     "plantuml.render": "PlantUMLServer",
     "plantuml.server": "http://www.plantuml.com/plantuml",
+    "tabnine.experimentalAutoImports": true,
     "terminal.integrated.fontFamily": "Liberation Mono for Powerline",
     "terminal.integrated.fontSize": 13,
     "window.zoomLevel": 0,
