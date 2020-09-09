@@ -30,6 +30,9 @@ alias -- -='cd -'
 # enable autocd
 [[ $BASH_VERSINFO -ge 4 ]] && shopt -s autocd
 
+# path to homebrew sbin
+export PATH="/usr/local/sbin:$PATH"
+
 # path to coreutils, findutils and gnu-sed
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"

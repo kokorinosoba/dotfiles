@@ -18,6 +18,9 @@ end
 # path to /usr/local/bin
 set -x PATH /usr/local/bin $PATH
 
+# path to homebrew sbin
+set -x PATH /usr/local/sbin $PATH
+
 # path to coreutils, findutils and gnu-sed
 if [ -d /usr/local/opt/coreutils/libexec/gnubin ];
   set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
