@@ -18,4 +18,5 @@ alias meme='cd $HOME/Documents/memepaper'
 alias mlib='cd $HOME/Documents/memepaper/src/Libraries'
 alias mareas='cd $HOME/Documents/memepaper/src/WebApplications/www.memepaper.jp/Areas'
 
-alias diary='date "+%m-%d-%Y.md" | xargs touch'
+alias diary='date "+%m-%d-%Y" | xargs -Idate touch date.md'
+alias gcdiary='date "+%m-%d-%Y" | xargs -Idate git commit -m ":sparkles: date.mdを追加"'
