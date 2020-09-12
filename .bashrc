@@ -5,8 +5,8 @@
 
 # right prompt setting
 function __command_rprompt() {
-  local rprompt=$(date +"%a %m/%d %H:%M:%S %Y")  # 右プロンプトに表示させる内容。今回はタイムスタンプ。
-  local num=$(($COLUMNS - ${#rprompt} - 2))  # 右プロンプトを表示するために必要となる幅
+  local rprompt=$(date +"%a %b %d %H:%M:%S %Y")  # 右プロンプトに表示させる内容。今回はタイムスタンプ。
+  local num=$(($COLUMNS - ${#rprompt}))  # 右プロンプトを表示するために必要となる幅
   printf "%${num}s$rprompt\r" ''  # 右プロンプトの表示(\rがないとうまく動作しないので注意)
 }
 PROMPT_COMMAND=__command_rprompt

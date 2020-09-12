@@ -2,6 +2,9 @@
 # * Hit fish_config
 # * Hit fish_update_completion
 
+# timezone setting
+set -g theme_date_timezone Asia/Tokyo
+
 # call .aliasrc
 make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.aliasrc _B2F_ALIASES_FILE=$HOME/.config/fish/b2f_aliasrc.fish; and source $HOME/.config/fish/b2f_aliasrc.fish
 
