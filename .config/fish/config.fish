@@ -11,7 +11,7 @@ if [ (whoami) = "Kokorin" ];
 end
 
 # call .taiharc
-if [ (whoami) = "taihara" ];
+if [ (whoami) = "taihara" -o (whoami) = "Aihara" ];
   make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.taiharc _B2F_ALIASES_FILE=$HOME/.config/fish/b2f_taiharc.fish; and source $HOME/.config/fish/b2f_taiharc.fish
 end
 
