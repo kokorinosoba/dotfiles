@@ -2,6 +2,7 @@
 
 # cask packages install script
 packages=(
+  android-studio
   appcleaner
   atom
   cheatsheet
