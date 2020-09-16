@@ -375,6 +375,7 @@ alias rm='rm -i'
 
 # cd alias
 alias ..='cd ..'
+alias gcd='cd $(git rev-parse --show-toplevel)'
 
 # ls alias
 if type /usr/local/opt/coreutils/libexec/gnubin/ls &> /dev/null; then
