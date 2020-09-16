@@ -17,6 +17,7 @@ packages=(
   gnu-sed
   id3v2
   imagemagick
+  mdbook
   mono
   neovim
   nkf
