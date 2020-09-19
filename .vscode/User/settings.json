@@ -41,6 +41,9 @@
     "[java]": {
         "editor.tabSize": 4
     },
+    "[json]": {
+        "editor.tabSize": 4
+    },
     "[python]": {
         "editor.tabSize": 4
     },
