@@ -62,6 +62,9 @@ if [ -d $HOME/.nodebrew/current/bin ];
   set -x PATH $HOME/.nodebrew/current/bin $PATH
 end
 
+# path to android sdk
+set -x PATH $HOME/Library/Android/sdk/platform-tools $PATH
+
 # make less avarable for colordiff
 set -x LESS -R
 
