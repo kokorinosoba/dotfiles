@@ -19,6 +19,7 @@ packages=(
   shiftit
   slack
   texshop
+  unity-hub
   visual-studio
   visual-studio-code
   wireshark
