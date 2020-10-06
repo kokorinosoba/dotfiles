@@ -61,3 +61,31 @@
   * scikit-learn
   * jupyter labextension install @lckr/jupyterlab_variableinspectorjupyter
   * jupyter labextension install @jupyterlab/toc
+
+# Mac initializing
+- Apple Music -> Account -> Sign in
+- System Preferences
+  - Apple ID -> Sign in
+  - Trackpad -> Check all items
+  - Sound -> Show volume in menu bar
+  - Energy Saver -> Battery -> Turn display off after 5 minutes
+  - Keyboard -> Input Sources -> Set ABC & Hiragana(Google)
+- Menu bar -> Battery -> Show Percentage
+- Iterm2 -> Preferences -> Profiles
+  - General -> Command -> Command -> /usr/local/bin/fish
+  - Colors -> Color Presets -> Japanesque
+  - Text -> Font -> Liberation Mono for Powerline 16pt.
+  - Window
+    - Transparency 75%
+    - Style -> Full Screen
+    - Screen -> No Preference
+    - Space -> Current Space
+  - Keys -> Hotkey Window
+    - Check "A hotkey opens ~"
+    - Configure Hotkey Window
+      - Hotkey -> opt-Space
+      - Check "Pin hotkey window"
+      - Check "Show this Hotkey Window"
+- Terminal -> Preferences -> Text
+  - Background -> Opacity 85%
+  - Font -> Literation Mono Powerline 16pt.
