@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+join_by() {
+  local IFS="$1"
+  shift
+  echo "$*"
+}
+
+check_status() {
+  cd "$1"
+  if git rev-parse &> /dev/null; then
+    status=()
+    if ! git diff --no-ext-diff --quiet; then
+      status+=("Modified")
+    fi
+    if ! git diff --no-ext-diff --staged --quiet; then
+      status+=("Staged")
+    fi
+    if git rev-parse --verify --quiet refs/stash > /dev/null; then
+      status+=("Stashed")
+    fi
+    if git ls-files --others --exclude-standard --directory --no-empty-directory --error-unmatch -- ':/*' &> /dev/null; then
+      status+=("Untracked")
+    fi
+
+    if [[ ${#status[@]} -ne 0 ]]; then
+      echo "Directory \"$1\" have $(join_by , ${status[@]}) files"
+    fi
+  fi
+  cd ..
+}
+
+for dir in *
+do
+  if [[ -d "$dir" ]]; then
+    check_status "$dir"
+  fi
+done
