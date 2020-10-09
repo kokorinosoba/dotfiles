@@ -10,13 +10,13 @@ function get_flags() {
     flags="~$flags"
   fi
 
-  # Stash
-  if git rev-parse --verify --quiet refs/stash >/dev/null; then
+  # Stashed
+  if git rev-parse --verify --quiet refs/stash > /dev/null; then
     flags="\$$flags"
   fi
 
   # Untracked
-  if git ls-files --others --exclude-standard --directory --no-empty-directory --error-unmatch -- ':/*' >/dev/null 2>/dev/null; then
+  if git ls-files --others --exclude-standard --directory --no-empty-directory --error-unmatch -- ':/*' &> /dev/null; then
     flags="…$flags"
   fi
 
@@ -65,7 +65,7 @@ function git_prompt() {
 
 function git_ps() {
   # カレントディレクトリがgitリポジトリならgit_prompt関数を実行
-  if git rev-parse &>/dev/null; then
+  if git rev-parse &> /dev/null; then
     git_prompt
   else
     echo -e -n "\e[37;49m\e[0m "
@@ -90,7 +90,7 @@ PS1='$(
   fi
 )\[\e[30;47m\] \w \
 $(
-  if git rev-parse &>/dev/null; then
+  if git rev-parse &> /dev/null; then
     # カレントディレクトリがgitリポジトリならブランチの情報を付加
     branch_name=$(get_branch_name)
     flags=$(get_flags)

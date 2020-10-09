@@ -23,7 +23,7 @@ if [[ $# -ge 1 ]]; then
   usage
 fi
 
-if git rev-parse &>/dev/null; then
+if git rev-parse &> /dev/null; then
   remote_url=$(git config --get remote.origin.url)
   remote_url=${remote_url%.git}
   open_url $remote_url
