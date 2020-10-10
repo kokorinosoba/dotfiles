@@ -413,7 +413,12 @@ alias dotcode='code $HOME/dotfiles'
 alias c='code .'
 
 # linux open alias
-[[ $(uname) ==  'Linux' ]] && alias open='xdg-open'
+if [[ $(uname) ==  'Linux' ]]; then
+  alias open='xdg-open'
+  alias o='xdg-open .'
+else
+  alias o='open .'
+fi
 
 # open application alias
 alias appstore='app "App Store"'
