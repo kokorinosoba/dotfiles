@@ -104,7 +104,7 @@ alias gfo='git fetch origin' # gfo <branch>: possible to choose fetching remote 
 alias gg='git gui citool'
 alias 'gg!'='git gui citool --amend'
 
-alias gi='git init'
+alias ginit='git init'
 
 alias glog='git log'
 alias gl='git log --graph --pretty=format:"%C(auto)%h%Creset %C(green ul)%an%Creset %C(cyan)%ar%Creset %s %C(auto)%d"'
