@@ -8,6 +8,8 @@ alias pscripts='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.j
 
 alias pa='cd $HOME/Documents/PhotobackApp'
 alias palib='cd $HOME/Documents/PhotobackApp/src/Libraries'
+alias cpenv='cp $HOME/Documents/PhotobackApp/environment.json'
+alias gclpa='git clone --recurse-submodules https://github.com/contentsworks/PhotobackApp.git'
 
 alias bz='cd $HOME/Documents/bizphotoback'
 alias blib='cd $HOME/Documents/bizphotoback/src/Libraries'
