@@ -7,7 +7,7 @@ alias peditor='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp
 alias pscripts='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp/scripts'
 
 alias pa='cd $HOME/Documents/PhotobackApp'
-alias palib='cd $HOME/Documents/PhotobackApp/src/Libraries'
+alias palib='cd src/Libraries'
 alias cpenv='cp $HOME/Documents/PhotobackApp/environment.json'
 alias gclpa='git clone --recurse-submodules https://github.com/contentsworks/PhotobackApp.git'
 
