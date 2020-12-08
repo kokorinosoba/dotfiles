@@ -40,6 +40,10 @@ if [ -d /usr/local/opt/gnu-sed/libexec/gnubin ];
   set -x MANPATH /usr/local/opt/gnu-sed/libexec/gnuman $MANPATH
 end
 
+# path to Xcode developer dir
+set -x DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer
+
+
 # pipenv virtualenv location
 set -x PIPENV_VENV_IN_PROJECT true
 set -x PIPENV_IGNORE_VIRTUALENVS true
