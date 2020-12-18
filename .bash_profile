@@ -6,6 +6,9 @@
 # .bashrc includes prompt, alias and autocd settings
 [[ -f $HOME/.bashrc ]] && source $HOME/.bashrc
 
+# environment variables settings
+[[ -f $HOME/.envrc ]] && source $HOME/.envrc
+
 # display welcome message
 type figlet > /dev/null 2>&1 &&
 figlet -f smslant WELCOME TO BASH
