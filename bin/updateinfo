@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -e
+
+usage() {
+  echo "Usage: ${0##*/} {{ Path/to/Info.plist }}" 1>&2
+  exit 1
+}
+
+case $1 in
+  "" | "-h" | "--help" ) usage ;;
+esac
+
+if ! type plutil &> /dev/null; then
+  echo "Error: plutilコマンドが使えません。使えるようになったら出直してきてください。" 1>&2
+  exit 1
+elif ! [[ -e $1 ]]; then
+  echo "Error: \"$1\" は存在しません。" 1>&2
+  exit 1
+elif ! [[ $1 =~ .*Info.plist$ ]]; then
+  echo "Error: \"$1\" はInfo.plistではないようです。" 1>&2
+  exit 1
+fi
+
+readonly INFO_PLIST_PATH=$1
+
+# 更新内容を取得
+read -p "バージョン: " CFBundleShortVersionString
+read -p "ビルド番号: " CFBundleVersion
+read -p "FacebookAppID: " FacebookAppID
+read -p "FacebookDisplayName: " FacebookDisplayName
+
+# 更新の確認
+read -p "上記の内容でInfo.plistを更新しますか? [Y/n]: " answer
+
+case $answer in
+  "Y" | "y" | "yes" | "Yes" | "YES" ) ;;
+  * )
+    echo "キャンセルされました"
+    return 1 ;;
+esac
+
+# 更新コマンド
+plutil -replace "CFBundleShortVersionString" -string "$CFBundleShortVersionString" $INFO_PLIST_PATH
+plutil -replace "CFBundleVersion" -string "$CFBundleVersion" $INFO_PLIST_PATH
+plutil -replace "FacebookAppID" -string "$FacebookAppID" $INFO_PLIST_PATH
+plutil -replace "FacebookDisplayName" -string "$FacebookDisplayName" $INFO_PLIST_PATH
+echo "更新が完了しました！"
