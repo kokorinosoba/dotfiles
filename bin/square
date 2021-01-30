@@ -13,16 +13,18 @@ function getAltitude() {
 
 function padding() {
   local altitude=$(getAltitude $1)
-  sips --padToHeightWidth "$altitude" "$altitude" --padColor FFFFFF "$1" &> /dev/null
+  sips --padToHeightWidth "$altitude" "$altitude" --padColor FFFFFF "$1" | head -n 1
 }
 
 function isImage() {
   [[ "$(file $1)" =~ .*image\ data.* ]]
 }
 
-for file in *
+for file in $(find . -type f)
 do
   if isImage "$file"; then
     padding "$file"
   fi
 done
+
+read -p "Press any key to continue..."
