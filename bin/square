@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+cd $(dirname $0)
+
+function getWidthAndHeight() {
+  sips --getProperty pixelWidth  "$1" | tail -n 1
+  sips --getProperty pixelHeight "$1" | tail -n 1
+}
+
+function getAltitude() {
+  getWidthAndHeight "$1" | awk '{ if (max < $2) max = $2; } END { print max; }'
+}
+
+function padding() {
+  local altitude=$(getAltitude $1)
+  sips --padToHeightWidth "$altitude" "$altitude" --padColor FFFFFF "$1" &> /dev/null
+}
+
+function isImage() {
+  [[ "$(file $1)" =~ .*image\ data.* ]]
+}
+
+for file in *
+do
+  if isImage "$file"; then
+    padding "$file"
+  fi
+done
