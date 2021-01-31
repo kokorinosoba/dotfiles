@@ -20,6 +20,16 @@ function isImage() {
   [[ "$(file $1)" =~ .*image\ data.* ]]
 }
 
+echo -e "Now at: \e[34m$(pwd)\e[0m"
+read -p "Do you want to process all images in the directory to be square? [Y/n]: " answer
+
+case $answer in
+  "Y" | "y" | "yes" | "Yes" | "YES" ) ;;
+  * )
+    read -p "Canceled. Press any key to continue..."
+    exit 1 ;;
+esac
+
 for file in $(find . -type f)
 do
   if isImage "$file"; then
