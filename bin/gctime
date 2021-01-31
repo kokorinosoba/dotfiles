@@ -14,6 +14,7 @@ usage() {
 change_commit_date=false
 amend=
 no_edit=
+commit_msg=
 
 declare -i argc=0
 declare -a argv=()
@@ -28,6 +29,9 @@ do
         amend="--amend"
       elif [[ $1 == "--no-edit" ]]; then
         no_edit="--no-edit"
+      elif [[ $1 == "-m" ]]; then
+        commit_msg="-m $2"
+        shift
       else
         usage
       fi
@@ -48,7 +52,7 @@ elif [[ $argc -gt 1 ]]; then
 fi
 
 if $change_commit_date; then
-  GIT_COMMITTER_DATE="$input_date" git commit $amend $no_edit --date "$input_date"
+  GIT_COMMITTER_DATE="$input_date" git commit $amend $no_edit --date "$input_date" "$commit_msg"
 else
-  git commit $amend $no_edit --date "$input_date"
+  git commit $amend $no_edit --date "$input_date" "$commit_msg"
 fi
