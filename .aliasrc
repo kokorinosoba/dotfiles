@@ -25,6 +25,19 @@ alias pf='pip freeze'
 alias pl='pip list'
 alias piup='pip install --upgrade pip'
 
+# pipenv aliases
+alias pe='pipenv'
+alias peg='pipenv graph'
+alias pei='pipenv install'
+alias pel='pipenv lock'
+alias pep='pipenv --python'
+alias per='pipenv run'
+alias pes='pipenv shell'
+alias pet='pipenv --three'
+alias peu='pipenv uninstall'
+alias peup='pipenv update'
+alias peupo='pipenv update --outdated'
+
 # git shortened alias
 alias ga='git add'
 alias ga.='git add .'
