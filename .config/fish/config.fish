@@ -73,7 +73,10 @@ set -x PATH $HOME/Library/Android/sdk/platform-tools $PATH
 set -x LESS -R
 
 # alias for fish
-alias relogin="exec /usr/local/bin/fish -l"
+alias relogin='exec /usr/local/bin/fish -l'
+
+# abbreviation for cd to last directory
+abbr --add --global - 'cd -'
 
 # display welcome message
 if type toilet &> /dev/null;
