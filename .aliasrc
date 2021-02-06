@@ -79,6 +79,8 @@ alias gcob='git checkout -b' # make and checkout branch
 alias gcoB='git checkout -B' # make and checkout branch by force
 alias gcom='git checkout master'
 alias gcod='git checkout develop'
+alias gcoo='git checkout --ours'
+alias gcot='git checkout --theirs'
 
 alias gcp='git cherry-pick'
 alias gcpa='git cherry-pick --abort'
@@ -89,10 +91,12 @@ alias gdst='git diff --stat'
 alias gdc='git diff --cached'
 alias gdcst='git diff --cached --stat'
 alias gdcw='git diff --cached --word-diff'
+alias gdo='git diff --ours'
 alias gds='git diff --staged' # same meaning to (--cached)
 alias gdsst='git diff --staged --stat'
 alias gdsw='git diff --staged --word-diff'
-alias gdt='git diff-tree --no-commit-id --name-only -r' # show modified files
+alias gdt='git diff --theirs'
+alias gdtree='git diff-tree --no-commit-id --name-only -r' # show modified files
 alias gdw='git diff --word-diff'
 
 alias gf='git fetch'
@@ -119,6 +123,7 @@ alias gllr='git log --left-right' # show commit diff between branchs: gllr branc
 alias glns='git log --name-status'
 alias glo='git log --oneline'
 alias glp='git log -p' # show log with diff
+alias glpf='git log --pretty=fuller'
 alias glrd='git log --relative-date'
 alias gls='git log --stat'
 alias glS='git log -S' # differences log search with string 'slS "string" file'
