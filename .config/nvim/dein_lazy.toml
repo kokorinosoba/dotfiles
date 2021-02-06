@@ -125,6 +125,3 @@ hook_add = '''
   nmap <silent> [ale]<C-P> <Plug>(ale_previous)
   nmap <silent> [ale]<C-N> <Plug>(ale_next)
 '''
-
-[[plugins]]
-repo = 'lambdalisue/vim-pyenv'

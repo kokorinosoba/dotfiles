@@ -26,8 +26,6 @@ packages=(
   pipenv
   poetry
   postgresql
-  pyenv
-  pyenv-virtualenv
   python
   rbenv
   rmtrash

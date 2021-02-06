@@ -33,8 +33,6 @@ ask_continue "npm initializing" && {
   has npm && $SETUPDIR/npm-packages.sh
 }
 
-# has pyenv && $SETUPDIR/pyenv.sh
-
 ask_continue "nvim initializing" && {
   has /usr/local/bin/pip3 && $SETUPDIR/nvim.sh
 }
