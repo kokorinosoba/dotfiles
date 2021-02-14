@@ -468,11 +468,10 @@ alias trashbin='open $HOME/.Trash'
 alias cps='source cps'
 
 # for competitive programming
-alias reduce='cd $(minus)'
-alias rolla='cd $(minus) && mkabc a'
-alias rollb='cd $(minus) && mkabc b'
-alias rollc='cd $(minus) && mkabc c'
-alias rolld='cd $(minus) && mkabc d'
+alias cdminus='cd $(minus)'
+alias abcminus='mkdir -p $(minus) && cd $(minus) && mkabc'
+alias cdplus='cd $(minus -1)'
+alias abcplus='mkdir -p $(minus -1) && cd $(minus -1) && mkabc'
 alias mkcd='source mkcd'
 alias short="tr -d '\n' | sed -e 's/\([^A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g' -e 's/\([^A-Za-z0-9]\) \+\([A-Za-z0-9]\)/\1\2/g' -e 's/\([A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g' -e 's/\([^A-Za-z0-9]\) \+\([^A-Za-z0-9]\)/\1\2/g'"
 alias len="short | wc -m"
