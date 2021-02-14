@@ -5,17 +5,17 @@ import os, sys, re
 current_dir = os.getcwd()
 n_str = re.search(r'[0-9]*$', current_dir).group()
 
-# ディレクトリの末尾に数字がついていない場合は，カレントディレクトリのパスを返して終了
+# カレントディレクトリにディレクトリナンバーがついていない場合、カレントディレクトリのパスを返して終了
 if len(n_str) == 0:
     print(current_dir)
     exit(1)
 
-# コマンドライン引数からディレクトリの数字を減らす量を指定可能(デフォルト: 1)
+# コマンドライン引数からディレクトリナンバーを減らす数を取得(デフォルト: 1)
 args = sys.argv
 step = len(args) == 1 or int(args[1])
 n_int = int(n_str) - step
 
-# カレントディレクトリの末尾の数字を取り除いたものに，末尾の数字を任意の数だけ減らした文字列を付加
+# カレントディレクトリのディレクトリナンバーを取り除いたものに、ディレクトリナンバーを任意の数だけ減らした文字列を付加
 moveing_dir = current_dir.rstrip(n_str) + format(n_int, f'0{len(n_str)}')
 
 print(moveing_dir)
