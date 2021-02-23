@@ -30,14 +30,14 @@
 		],
 		"description": "Main function"
 	},
-	"Console": {
-		"prefix": "console",
+	"Console.": {
+		"prefix": "c.",
 		"body": [
 			"Console.",
 		],
-		"description": "Console"
+		"description": "Console."
 	},
-	"Assignment": {
+	"Value assignment": {
 		"prefix": "var",
 		"body": [
 			"${1:var} ${2:a} = $3",
@@ -50,32 +50,32 @@
 			"int",
 		],
 		"body": [
-			"int.Parse($1);$2",
+			"int.Parse($1)",
 		],
 		"description": "Int parse"
 	},
-	"WriteLine": {
-		"prefix": "cw",
-		"body": [
-			"${1:Console.}WriteLine($2);$3",
-		],
-		"description": "WriteLine"
-	},
-	"Write": {
+	"Console.Write": {
 		"prefix": "write",
 		"body": [
-			"Write($1);$2",
+			"${1:Console.}Write($2)",
 		],
-		"description": "Write"
+		"description": "Console.Write"
 	},
-	"ReadLine": {
+	"Console.WriteLine": {
+		"prefix": "cw",
+		"body": [
+			"${1:Console.}WriteLine($2)",
+		],
+		"description": "Console.WriteLine"
+	},
+	"Console.ReadLine": {
 		"prefix": "cr",
 		"body": [
-			"${1:Console.}ReadLine();$2",
+			"${1:Console.}ReadLine()",
 		],
-		"description": "ReadLine"
+		"description": "Console.ReadLine"
 	},
-	"Reading Template": {
+	"ReadLine Template": {
 		"prefix": "rt",
 		"body": [
 			"static string ReadSt() { return Console.ReadLine(); }",
@@ -87,40 +87,54 @@
 			"static long[] ReadLongAr(char sep = ' ') { return Array.ConvertAll(Console.ReadLine().Split(sep), e => long.Parse(e)); }",
 			"static double[] ReadDoubleAr(char sep = ' ') { return Array.ConvertAll(Console.ReadLine().Split(sep), e => double.Parse(e)); }",
 		],
-		"description": "Reading template"
+		"description": "ReadLine Template"
 	},
-	"Array": {
+	"Array.ConvertAll": {
 		"prefix": "aca",
 		"body": [
-			"Array.ConvertAll(${1:Console.}ReadLine().Split(), int.Parse);$2",
+			"Array.ConvertAll(${1:Console.}ReadLine().Split(), int.Parse)",
 		],
-		"description": "Array convert all"
+		"description": "Array.ConvertAll"
 	},
 	"Read Int Numbers": {
 		"prefix": "cri",
 		"body": [
-			"${1:Console.}ReadLine().Split().Select(int.Parse);$2",
+			"${1:Console.}ReadLine().Split().Select(int.Parse)",
 		],
 		"description": "Read int numbers"
 	},
 	"Read Int Array": {
 		"prefix": "cria",
 		"body": [
-			"${1:Console.}ReadLine().Split().Select(int.Parse).ToArray();$2",
+			"${1:Console.}ReadLine().Split().Select(int.Parse).ToArray()",
 		],
 		"description": "Read int array"
 	},
 	"Read Int List": {
 		"prefix": "cril",
 		"body": [
-			"${1:Console.}ReadLine().Split().Select(int.Parse).ToList();$2",
+			"${1:Console.}ReadLine().Split().Select(int.Parse).ToList()",
 		],
 		"description": "Read int list"
 	},
-	"Product": {
-		"prefix": "product",
+	"Split": {
+		"prefix": ".split",
 		"body": [
-			"Aggregate((now, next) => now * next)",
+			".Split()",
+		],
+		"description": "Split"
+	},
+	"Func": {
+		"prefix": "func",
+		"body": [
+			"Func<${1:int[]}> ${2:R} = () => ${3:Array.ConvertAll(Console.ReadLine().Split(), int.Parse);}",
+		],
+		"description": "Func"
+	},
+	"Product": {
+		"prefix": ".prod",
+		"body": [
+			".Aggregate((${1:now}, ${2:next}) => ${1:now} * ${2:next})",
 		],
 		"description": "Product"
 	},
@@ -131,11 +145,11 @@
 		],
 		"description": "Tuple"
 	},
-	"Join Array Contents": {
+	"string.Join": {
 		"prefix": "join",
 		"body": [
 			"string.Join(\" \", $1)",
 		],
-		"description": "Join array contents"
+		"description": "string.Join"
 	},
 }
