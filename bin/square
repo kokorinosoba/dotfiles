@@ -13,7 +13,7 @@ function getAltitude() {
 
 function padding() {
   local altitude=$(getAltitude "$1")
-  sips --padToHeightWidth "$altitude" "$altitude" --padColor FFFFFF "$1" | head -n 1
+  sips --padToHeightWidth "$altitude" "$altitude" --padColor FFFFFF "$1" 2> /dev/null | head -n 1
 }
 
 function isImage() {
