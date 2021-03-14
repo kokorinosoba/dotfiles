@@ -12,12 +12,12 @@ function getAltitude() {
 }
 
 function padding() {
-  local altitude=$(getAltitude $1)
+  local altitude=$(getAltitude "$1")
   sips --padToHeightWidth "$altitude" "$altitude" --padColor FFFFFF "$1" | head -n 1
 }
 
 function isImage() {
-  [[ "$(file $1)" =~ .*image\ data.* ]]
+  [[ "$(file "$1")" =~ .*image\ data.* ]]
 }
 
 echo -e "Now at: \e[34m$(pwd)\e[0m"
@@ -30,7 +30,7 @@ case $answer in
     exit 1 ;;
 esac
 
-for file in $(find . -type f)
+find . -type f | while read file
 do
   if isImage "$file"; then
     padding "$file"
