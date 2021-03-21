@@ -18,7 +18,7 @@ function getShortSide() {
 }
 
 function getFileSizeBytes() {
-  du -ab "$1" | awk '{ print $1 }'
+  ls -l "$1" | awk '{ print $5 }'
 }
 
 function convertImage() {
