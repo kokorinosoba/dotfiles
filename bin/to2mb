@@ -2,6 +2,8 @@
 
 cd $(dirname $0)
 
+TWO_MB=2000000
+
 function getWidthAndHeight() {
   sips --getProperty pixelWidth  "$1" | tail -n 1
   sips --getProperty pixelHeight "$1" | tail -n 1
@@ -15,10 +17,14 @@ function getShortSide() {
   getWidthAndHeight "$1" | awk 'BEGIN { min = 10000000 } { if (min > $2) min = $2; } END { print min; }'
 }
 
+function getFileSizeBytes() {
+  du -ab "$1" | awk '{ print $1 }'
+}
+
 function convertImage() {
   local totalPixels=$(getPixels "$1")
-  local imageSizeByte=$(du -ab "$1" | awk '{ print $1 }')
-  local totalPixelsAfter=$((2000000 * totalPixels / imageSizeByte)) # 2MBにするための全体のピクセル数を求める
+  local imageSizeBytes=$(getFileSizeBytes "$1")
+  local totalPixelsAfter=$((TWO_MB * totalPixels / imageSizeBytes)) # 2MBにするための全体のピクセル数を求める
   local shortSidePixels=$(getShortSide "$1")
   local longSidePixelsAfter=$((totalPixelsAfter / shortSidePixels)) # 2MBにするためのピクセル数を短辺で割り、長辺を求める
   sips --resampleHeightWidthMax "$longSidePixelsAfter" "$1" 2> /dev/null | head -n 1
@@ -41,6 +47,10 @@ esac
 find . -type f | while read file
 do
   if isImage "$file"; then
+    if [[ $(getFileSizeBytes "$file") -lt $TWO_MB ]]; then
+      # 画像が2MBより小さい場合は処理をスキップ
+      continue
+    fi
     convertImage "$file"
   fi
 done
