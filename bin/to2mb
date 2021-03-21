@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+cd $(dirname $0)
+
+function getWidthAndHeight() {
+  sips --getProperty pixelWidth  "$1" | tail -n 1
+  sips --getProperty pixelHeight "$1" | tail -n 1
+}
+
+function getPixels() {
+  getWidthAndHeight "$1" | awk 'BEGIN { pixels = 1 } { pixels *= $2; } END { print pixels; }'
+}
+
+function getShortSide() {
+  getWidthAndHeight "$1" | awk 'BEGIN { min = 10000000 } { if (min > $2) min = $2; } END { print min; }'
+}
+
+function convertImage() {
+  local totalPixels=$(getPixels "$1")
+  local imageSizeByte=$(du -ab "$1" | awk '{ print $1 }')
+  local totalPixelsAfter=$((2000000 * totalPixels / imageSizeByte)) # 2MBにするための全体のピクセル数を求める
+  local shortSidePixels=$(getShortSide "$1")
+  local longSidePixelsAfter=$((totalPixelsAfter / shortSidePixels)) # 2MBにするためのピクセル数を短辺で割り、長辺を求める
+  sips --resampleHeightWidthMax "$longSidePixelsAfter" "$1" 2> /dev/null | head -n 1
+}
+
+function isImage() {
+  [[ "$(file "$1")" =~ .*image\ data.* ]]
+}
+
+echo -e "Now at: \e[34m$(pwd)\e[0m"
+read -p "Do you want to process all images in the directory to be less than 2MB? [Y/n]: " answer
+
+case $answer in
+  "Y" | "y" | "yes" | "Yes" | "YES" ) ;;
+  * )
+    read -p "Canceled. Press any key to continue..."
+    exit 1 ;;
+esac
+
+find . -type f | while read file
+do
+  if isImage "$file"; then
+    convertImage "$file"
+  fi
+done
+
+read -p "Press any key to continue..."
