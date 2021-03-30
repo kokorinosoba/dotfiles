@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd $(dirname $0)
+cd "$(dirname "$0")"
 
 TWO_MB=2000000
 
@@ -22,11 +22,11 @@ function getFileSizeBytes() {
 }
 
 function convertImage() {
-  local totalPixels=$(getPixels "$1")
-  local imageSizeBytes=$(getFileSizeBytes "$1")
-  local totalPixelsAfter=$((TWO_MB * totalPixels / imageSizeBytes)) # 2MBにするための全体のピクセル数を求める
-  local shortSidePixels=$(getShortSide "$1")
-  local longSidePixelsAfter=$((totalPixelsAfter / shortSidePixels)) # 2MBにするためのピクセル数を短辺で割り、長辺を求める
+  local totalPixels="$(getPixels "$1")"
+  local imageSizeBytes="$(getFileSizeBytes "$1")"
+  local totalPixelsAfter="$((TWO_MB * totalPixels / imageSizeBytes))" # 2MBにするための全体のピクセル数を求める
+  local shortSidePixels="$(getShortSide "$1")"
+  local longSidePixelsAfter="$((totalPixelsAfter / shortSidePixels))" # 2MBにするためのピクセル数を短辺で割り、長辺を求める
   sips --resampleHeightWidthMax "$longSidePixelsAfter" "$1" 2> /dev/null | head -n 1
 }
 
@@ -34,20 +34,20 @@ function isImage() {
   [[ "$(file "$1")" =~ .*image\ data.* ]]
 }
 
-echo -e "Now at: \e[34m$(pwd)\e[0m"
-read -p "Do you want to process all images in the directory to be less than 2MB? [Y/n]: " answer
+printf "変換対象のフォルダ: \033[01;30;43m %s \033[0m\n" "$(pwd)"
+read -p "フォルダ内のすべての画像を2MB以下に変換しますか？ [yes/no]: " answer
 
-case $answer in
-  "Y" | "y" | "yes" | "Yes" | "YES" ) ;;
+case "$answer" in
+  "yes" | "Yes" | "YES" ) ;;
   * )
-    read -p "Canceled. Press any key to continue..."
+    read -p "キャンセルしました。何かキーを押してください..."
     exit 1 ;;
 esac
 
 find . -type f | while read file
 do
   if isImage "$file"; then
-    if [[ $(getFileSizeBytes "$file") -lt $TWO_MB ]]; then
+    if [[ "$(getFileSizeBytes "$file")" -lt "$TWO_MB" ]]; then
       # 画像が2MBより小さい場合は処理をスキップ
       continue
     fi
@@ -55,4 +55,4 @@ do
   fi
 done
 
-read -p "Press any key to continue..."
+read -p "何かキーを押してください..."
