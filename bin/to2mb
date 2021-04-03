@@ -10,12 +10,12 @@ function getWidthAndHeight() {
   sips --getProperty pixelHeight "$1" | tail -n 1
 }
 
-function getPixels() {
+function getTotalPixels() {
   getWidthAndHeight "$1" | awk 'BEGIN { pixels = 1 } { pixels *= $2; } END { print pixels; }'
 }
 
-function getShortSide() {
-  getWidthAndHeight "$1" | awk 'BEGIN { min = 10000000 } { if (min > $2) min = $2; } END { print min; }'
+function getLongSidePixels() {
+  getWidthAndHeight "$1" | awk 'BEGIN { max = 0 } { if (max < $2) max = $2; } END { print max; }'
 }
 
 function getFileSizeBytes() {
@@ -23,11 +23,9 @@ function getFileSizeBytes() {
 }
 
 function convertImage() {
-  local totalPixels="$(getPixels "$1")"
   local imageSizeBytes="$(getFileSizeBytes "$1")"
-  local totalPixelsAfter="$((TWO_MB * totalPixels / imageSizeBytes))" # 2MBにするための全体のピクセル数を求める
-  local shortSidePixels="$(getShortSide "$1")"
-  local longSidePixelsAfter="$((totalPixelsAfter / shortSidePixels))" # 2MBにするためのピクセル数を短辺で割り、長辺を求める
+  local longSidePixels="$(getLongSidePixels "$1")"
+  local longSidePixelsAfter="$((longSidePixels * TWO_MB / imageSizeBytes))"
   sips --resampleHeightWidthMax "$longSidePixelsAfter" "$1" --out "$2" 2> /dev/null | head -n 1
 }
 
@@ -50,7 +48,7 @@ do
   if isImage "$file"; then
     output_path="$(dirname "$file")/$OUTPUT_DIRNAME"
 
-    # アウトプット用のフォルダが存在しない場合は作成しておく
+    # アウトプット用のディレクトリーが存在しない場合は作成しておく
     mkdir -p "$output_path"
 
     # 画像が2MBより小さい場合はアウトプット用のディレクトリーにコピーして終了
