@@ -2,7 +2,8 @@
 
 cd "$(dirname "$0")"
 
-TWO_MB=2000000
+readonly TWO_MB=2000000
+readonly OUTPUT_DIRNAME="out2mb"
 
 function getWidthAndHeight() {
   sips --getProperty pixelWidth  "$1" | tail -n 1
@@ -27,7 +28,7 @@ function convertImage() {
   local totalPixelsAfter="$((TWO_MB * totalPixels / imageSizeBytes))" # 2MBにするための全体のピクセル数を求める
   local shortSidePixels="$(getShortSide "$1")"
   local longSidePixelsAfter="$((totalPixelsAfter / shortSidePixels))" # 2MBにするためのピクセル数を短辺で割り、長辺を求める
-  sips --resampleHeightWidthMax "$longSidePixelsAfter" "$1" 2> /dev/null | head -n 1
+  sips --resampleHeightWidthMax "$longSidePixelsAfter" "$1" --out "$2" 2> /dev/null | head -n 1
 }
 
 function isImage() {
@@ -47,11 +48,18 @@ esac
 find . -type f | while read file
 do
   if isImage "$file"; then
+    output_path="$(dirname "$file")/$OUTPUT_DIRNAME"
+
+    # アウトプット用のフォルダが存在しない場合は作成しておく
+    mkdir -p "$output_path"
+
+    # 画像が2MBより小さい場合はアウトプット用のディレクトリーにコピーして終了
     if [[ "$(getFileSizeBytes "$file")" -lt "$TWO_MB" ]]; then
-      # 画像が2MBより小さい場合は処理をスキップ
+      cp "$file" "$output_path"
       continue
     fi
-    convertImage "$file"
+
+    convertImage "$file" "$output_path"
   fi
 done
 
