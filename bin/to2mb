@@ -4,6 +4,7 @@ cd "$(dirname "$0")"
 
 readonly TWO_MB=2000000
 readonly OUTPUT_DIRNAME="out2mb"
+readonly SCALE="0.8"
 
 function getWidthAndHeight() {
   sips --getProperty pixelWidth  "$1" | tail -n 1
@@ -23,9 +24,12 @@ function getFileSizeBytes() {
 }
 
 function convertImage() {
+  local totalPixels="$(getTotalPixels "$1")"
   local imageSizeBytes="$(getFileSizeBytes "$1")"
+  local totalPixelsAfter="$((TWO_MB * totalPixels / imageSizeBytes))" # 2MBにするための全体のピクセル数を求める
+
   local longSidePixels="$(getLongSidePixels "$1")"
-  local longSidePixelsAfter="$((longSidePixels * TWO_MB / imageSizeBytes))"
+  local longSidePixelsAfter="$(bc <<< "scale=10; $longSidePixels / sqrt($totalPixels / $totalPixelsAfter) * $SCALE")"
   sips --resampleHeightWidthMax "$longSidePixelsAfter" "$1" --out "$2" 2> /dev/null | head -n 1
 }
 
@@ -46,6 +50,11 @@ esac
 find . -type f | while read file
 do
   if isImage "$file"; then
+    # アウトプット用のディレクトリー内のファイルでは処理をスキップする
+    if [[ "$file" =~ .*"$OUTPUT_DIRNAME".* ]]; then
+      continue
+    fi
+
     output_path="$(dirname "$file")/$OUTPUT_DIRNAME"
 
     # アウトプット用のディレクトリーが存在しない場合は作成しておく
