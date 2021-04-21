@@ -53,6 +53,7 @@ alias gbd='git branch -d' # delete merged branch (--delete)
 alias gbD='git branch -D' # delete branch by force
 alias gbr='git branch -r' # only remote branch (--remotes)
 alias gbv='git branch -v' # show branches commits' SHA-1 (-vv, --verbose)
+alias gbmv='git branch -m' # rename branch
 alias gbm='git branch --merged'
 alias gbnm='git branch --no-merged'
 alias gbdm='git branch --merged | grep -vE "^\*|^\s*master|^\s*develop|^\s*feature" | xargs git branch -d'
@@ -193,7 +194,7 @@ alias grbs='git rebase --skip'
 
 alias grmt='git remote'
 alias grmta='git remote add'
-alias grmtn='git remote rename'
+alias grmtmv='git remote rename'
 alias grmtrm='git remote remove'
 alias grmtset='git remote set-url'
 alias grmtu='git remote update'
