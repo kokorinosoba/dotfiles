@@ -2,6 +2,8 @@
 
 # cask packages install script
 packages=(
+  android-file-transfer
+  android-sdk
   android-studio
   appcleaner
   atom
