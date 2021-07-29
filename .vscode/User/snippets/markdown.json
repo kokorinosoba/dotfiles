@@ -27,8 +27,10 @@
 			"\t- $1",
 			"- Pending",
 			"\t- $2",
-			"- Share",
+			"- Feelings",
 			"\t- $3",
+			"- Share",
+			"\t- $4",
 		],
 		"description": "For morning meeting"
 	},
