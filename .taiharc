@@ -3,12 +3,11 @@
 alias pb='cd $HOME/Documents/photoback'
 alias plib='cd $HOME/Documents/photoback/src/Libraries'
 alias pareas='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp/Areas'
-alias peditor='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp/editor'
 alias pscripts='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp/scripts'
 
 alias pa='cd $HOME/Documents/PhotobackApp'
-alias palib='cd src/Libraries'
-alias cpenv='cp $HOME/Documents/PhotobackApp/environment.json'
+alias padev='cd $HOME/Documents/PhotobackApp/Develop'
+alias parel='cd $HOME/Documents/PhotobackApp/Release'
 alias gclpa='git clone --recurse-submodules https://github.com/contentsworks/PhotobackApp.git'
 
 alias bz='cd $HOME/Documents/bizphotoback'
@@ -16,7 +15,7 @@ alias blib='cd $HOME/Documents/bizphotoback/src/Libraries'
 alias bareas='cd $HOME/Documents/bizphotoback/src/WebApplications/biz.photoback.jp/Areas'
 alias beditor='cd $HOME/Documents/bizphotoback/src/WebApplications/biz.photoback.jp/editor'
 
-alias opf='cd $HOME/Documents/openplatform'
+alias op='cd $HOME/Documents/openplatform'
 alias olib='cd $HOME/Documents/openplatform/src/Libraries'
 
 alias meme='cd $HOME/Documents/memepaper'
