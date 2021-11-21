@@ -18,6 +18,7 @@ packages=(
   kindle
   macdown
   qlmarkdown
+  rstudio
   shiftit
   slack
   texshop

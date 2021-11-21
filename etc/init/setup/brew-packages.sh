@@ -27,6 +27,7 @@ packages=(
   poetry
   postgresql
   python
+  r
   rbenv
   rmtrash
   tree
