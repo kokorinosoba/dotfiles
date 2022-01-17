@@ -1,5 +1,6 @@
 {
     "bashBeautify.tabSize": 2,
+    "editor.bracketPairColorization.enabled": true,
     "editor.fontSize": 13,
     "editor.tabSize": 2,
     "editor.minimap.renderCharacters": false,
