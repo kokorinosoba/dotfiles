@@ -119,8 +119,12 @@ alias gfap='git fetch -a -p' # --all --prune
 alias gfp='git fetch -p'     # --prune
 alias gfo='git fetch origin' # gfo <branch>: possible to choose fetching remote branch
 
+alias gfsck='git fsck' # File System Consistency checK
+
 alias gg='git gui citool'
 alias 'gg!'='git gui citool --amend'
+
+alias ggcpa='git gc --prune=all'
 
 alias ginit='git init'
 
@@ -251,6 +255,8 @@ alias guisw='git update-index --skip-worktree'
 alias guinsw='git update-index --no-skip-worktree'
 alias guiau='git update-index --assume-unchanged'
 alias guinau='git update-index --no-assume-unchanged'
+
+alias gupf='git unpack-file'
 
 alias gur='git update-ref' # when deleting initial commit etc.
 
