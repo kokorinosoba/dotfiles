@@ -202,7 +202,7 @@ alias grmtv='git remote -v' # --verbose
 
 alias gr='git reset'
 alias grs='git reset --soft'
-alias grh='git reset && git reset --hard'
+alias grh='git add --all && git reset && git reset --hard'
 alias groh='git reset origin/$(git rev-parse --abbrev-ref @) --hard'
 alias gundo='git reset --soft @^'
 
