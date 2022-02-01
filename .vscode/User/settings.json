@@ -1,5 +1,6 @@
 {
     "bashBeautify.tabSize": 2,
+    "code-eol.color": "#666",
     "editor.bracketPairColorization.enabled": true,
     "editor.fontSize": 13,
     "editor.tabSize": 2,
