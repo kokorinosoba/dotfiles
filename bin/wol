@@ -4,5 +4,5 @@ DEVICE="P20003" # コンピューター名を入れる
 MAC="E4:54:E8:71:B6:66" # MACアドレスを入れる
 
 echo -e "\e[34m==>\e[0m Waking your computer"
-curl -s -d dev="$DEVICE" -d mac="$MAC" -d task=send http://192.168.101.22/index.php | grep "</td><td>" | sed -e 's/^[ \t]*//g' -e 's/<\/td><td>/\t/' -e 's/<[^>]*>//g'
+curl -s -X POST -d dev="$DEVICE" -d mac="$MAC" -d task=send http://192.168.101.22/index.php | grep "</td><td>" | sed -e 's/^[ \t]*//g' -e 's/<\/td><td>/\t/' -e 's/<[^>]*>//g'
 read -p "Press return key to continue..."
