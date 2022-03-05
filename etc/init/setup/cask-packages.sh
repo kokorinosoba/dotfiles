@@ -27,4 +27,4 @@ packages=(
   zotero
 )
 
-brew cask install ${packages[@]}
+brew install --cask ${packages[@]}
