@@ -1,9 +1,6 @@
 # call Prezto zprofile
 [[ -f $HOME/.zprezto/runcoms/zprofile ]] && source $HOME/.zprezto/runcoms/zprofile
 
-# call .bash_profile
-[[ -f $HOME/.pathrc ]] && source $HOME/.pathrc
-
 # call .aliasrc
 [[ -f $HOME/.aliasrc ]] && source $HOME/.aliasrc
 
