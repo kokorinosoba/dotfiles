@@ -14,7 +14,6 @@ packages=(
   google-chrome
   google-japanese-ime
   iterm2
-  jasper
   kindle
   macdown
   qlmarkdown
