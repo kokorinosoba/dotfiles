@@ -65,18 +65,19 @@
 # Mac initializing
 - Apple Music -> Account -> Sign in
 - System Preferences
+  - Share -> Change computer name
   - Apple ID -> Sign in
   - Trackpad -> Check all items
-  - Sound -> Show volume in menu bar
+  - Sound -> Show volume in menu bar & Always
   - Energy Saver -> Battery -> Turn display off after 5 minutes
   - Keyboard -> Input Sources -> Set ABC & Hiragana(Google)
-- Menu bar -> Battery -> Show Percentage
+  - Dock & Menu bar -> Battery -> Show Percentage
 - Iterm2 -> Preferences -> Profiles
   - General -> Command -> Command -> /usr/local/bin/fish
   - Colors -> Color Presets -> Japanesque
   - Text -> Font -> Liberation Mono for Powerline 16pt.
   - Window
-    - Transparency 75%
+    - Transparency 25
     - Style -> Full Screen
     - Screen -> No Preference
     - Space -> Current Space
