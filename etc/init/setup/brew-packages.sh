@@ -29,6 +29,7 @@ packages=(
   python
   r
   rbenv
+  trash-cli
   tree
   wget
   zsh
