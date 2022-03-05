@@ -1,9 +1,15 @@
-/.config/configstore/*
+/.config/.mono/
+/.config/Microsoft\\VisualStudio Services/
+/.config/NuGet/
+
 /.config/fish/*
 !/.config/fish/config.fish
 !/.config/fish/fish_variables
+
+/.config/iterm2/
 /.config/omf/
-/.config/NuGet/
 /.config/xbuild/
+
 /bin/youtube-dl
+
 test.*
