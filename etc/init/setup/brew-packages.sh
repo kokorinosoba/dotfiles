@@ -29,7 +29,6 @@ packages=(
   python
   r
   rbenv
-  rmtrash
   tree
   wget
   zsh
