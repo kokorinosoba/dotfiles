@@ -20,7 +20,6 @@ packages=(
   rstudio
   shiftit
   slack
-  texshop
   unity-hub
   visual-studio-code
   wireshark
