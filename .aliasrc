@@ -219,6 +219,8 @@ alias grl='git reflog'
 alias grm='git rm'
 alias grmc='git rm --cached'
 
+alias groot='cd $(git rev-parse --show-toplevel)' # change directory to git repository root
+
 alias gs='git status'
 alias gsi='git status --ignored'
 alias gss='git status -s'     # --short
