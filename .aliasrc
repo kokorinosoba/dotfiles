@@ -109,6 +109,7 @@ alias gdo='git diff --ours'
 alias gds='git diff --staged' # same meaning to (--cached)
 alias gdsst='git diff --staged --stat'
 alias gdsw='git diff --staged --word-diff'
+alias gdss='git diff --shortstat'
 alias gdt='git diff --theirs'
 alias gdtree='git diff-tree --no-commit-id --name-only -r' # show modified files
 alias gdw='git diff --word-diff'
