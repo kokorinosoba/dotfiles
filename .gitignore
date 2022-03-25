@@ -1,6 +1,7 @@
 /.config/.mono/
 /.config/Microsoft\\VisualStudio Services/
 /.config/NuGet/
+/.config/stetic/
 
 /.config/fish/*
 !/.config/fish/config.fish
