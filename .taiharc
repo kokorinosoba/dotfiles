@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 alias pb='cd $HOME/Documents/photoback'
-alias plib='cd $HOME/Documents/photoback/src/Libraries'
-alias pareas='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp/Areas'
-alias pscripts='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp/scripts'
+alias pblib='cd $HOME/Documents/photoback/src/Libraries'
+alias pbareas='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp/Areas'
+alias pbscripts='cd $HOME/Documents/photoback/src/WebApplications/www.photoback.jp/scripts'
 
 alias pa='cd $HOME/Documents/PhotobackApp'
 alias padev='cd $HOME/Documents/PhotobackApp/Develop'
@@ -11,16 +11,16 @@ alias parel='cd $HOME/Documents/PhotobackApp/Release'
 alias gclpa='git clone --recurse-submodules https://github.com/contentsworks/PhotobackApp.git'
 
 alias bz='cd $HOME/Documents/bizphotoback'
-alias blib='cd $HOME/Documents/bizphotoback/src/Libraries'
-alias bareas='cd $HOME/Documents/bizphotoback/src/WebApplications/biz.photoback.jp/Areas'
-alias beditor='cd $HOME/Documents/bizphotoback/src/WebApplications/biz.photoback.jp/editor'
+alias bzlib='cd $HOME/Documents/bizphotoback/src/Libraries'
+alias bzareas='cd $HOME/Documents/bizphotoback/src/WebApplications/biz.photoback.jp/Areas'
+alias bzeditor='cd $HOME/Documents/bizphotoback/src/WebApplications/biz.photoback.jp/editor'
 
 alias op='cd $HOME/Documents/openplatform'
-alias olib='cd $HOME/Documents/openplatform/src/Libraries'
+alias oplib='cd $HOME/Documents/openplatform/src/Libraries'
 
-alias meme='cd $HOME/Documents/memepaper'
-alias mlib='cd $HOME/Documents/memepaper/src/Libraries'
-alias mareas='cd $HOME/Documents/memepaper/src/WebApplications/www.memepaper.jp/Areas'
+alias mm='cd $HOME/Documents/memepaper'
+alias mmlib='cd $HOME/Documents/memepaper/src/Libraries'
+alias mmareas='cd $HOME/Documents/memepaper/src/WebApplications/www.memepaper.jp/Areas'
 
 alias diary='date "+%Y-%m-%d" | xargs -Idate touch date.md'
 alias gcdiary='date "+%Y-%m-%d" | xargs -Idate git commit -m ":sparkles: date.mdを追加"'
