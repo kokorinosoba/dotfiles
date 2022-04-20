@@ -14,6 +14,7 @@ packages=(
   ghostscript
   gibo
   git
+  git-lfs
   gnu-sed
   id3v2
   imagemagick
