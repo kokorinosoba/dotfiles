@@ -447,6 +447,8 @@ if [[ $(uname) ==  'Linux' ]]; then
   alias o='xdg-open .'
 else
   alias o='open .'
+  # open provisioning profiles directory
+  alias opp='open "$HOME/Library/MobileDevice/Provisioning Profiles/"'
 fi
 
 # open application alias
