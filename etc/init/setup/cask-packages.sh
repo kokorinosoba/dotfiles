@@ -17,6 +17,7 @@ packages=(
   kindle
   macdown
   qlmarkdown
+  rectangle
   rstudio
   shiftit
   slack
