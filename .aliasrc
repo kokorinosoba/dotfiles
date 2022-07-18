@@ -494,3 +494,7 @@ alias ps2eps='ps2eps -f --rotate=+'
 
 # app development
 alias symbolicatecrash='/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash'
+
+# swift compile
+alias s='swift'
+alias ssw='swift -suppress-warnings'
