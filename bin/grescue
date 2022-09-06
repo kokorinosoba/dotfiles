@@ -2,6 +2,7 @@
 
 # git reset --hard してしまったファイルを救い出す
 # ファイルを復元するには一度 git add している必要がある
+# https://thinca.hatenablog.com/entry/20120923/1348340730
 for sha1 in $(git fsck | grep "dangling" | awk '{ print $3 }');
 do
   git unpack-file $sha1
