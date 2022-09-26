@@ -3,7 +3,6 @@
     "code-eol.color": "#666",
     "editor.bracketPairColorization.enabled": true,
     "editor.fontSize": 13,
-    "editor.tabSize": 2,
     "editor.minimap.renderCharacters": false,
     "editor.minimap.showSlider": "always",
     "editor.multiCursorModifier": "ctrlCmd",
@@ -37,24 +36,13 @@
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
     "[csharp]": {
-        "editor.tabSize": 4,
         "editor.defaultFormatter": "ms-dotnettools.csharp"
-    },
-    "[java]": {
-        "editor.tabSize": 4
-    },
-    "[json]": {
-        "editor.tabSize": 4
-    },
-    "[python]": {
-        "editor.tabSize": 4
     },
     "[diagram]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": false
     },
     "[sql]": {
-        "editor.tabSize": 4,
         "editor.insertSpaces": false
     }
 }
