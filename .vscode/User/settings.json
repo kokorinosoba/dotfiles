@@ -41,6 +41,9 @@
         "editor.tabSize": 2,
         "editor.insertSpaces": false
     },
+    "[elm]": {
+        "editor.formatOnSave": true
+    },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
