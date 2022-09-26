@@ -42,6 +42,12 @@
         "editor.tabSize": 2,
         "editor.insertSpaces": false
     },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
     "[sql]": {
         "editor.insertSpaces": false
     }
