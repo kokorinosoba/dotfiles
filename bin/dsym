@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+# command to save zipped dsym file into current directory
+# reference: https://learn.microsoft.com/ja-jp/xamarin/ios/troubleshooting/questions/symbolicate-ios-crash
+
+usage() {
+  echo "usage: ${0##*/} <project_dir>" 1>&2
+  exit 1
+}
+
+if [[ $# -lt 1 ]] || [[ $# -gt 1 ]]; then
+  usage
+  exit 1
+fi
+
+if ! [[ -d "$1" ]]; then
+  echo "no such directory" 1>&2
+  exit 1
+fi
+
+current_dir="$(pwd)"
+
+project_dir="$1"
+project_dir_without_last_slash="${project_dir%/}"
+project_name="${project_dir_without_last_slash##*/}"
+
+dsym_name="${project_name}.app.dSYM"
+dsym_contained_dir="${project_dir}/bin/iPhone/Release"
+dsym_path="${dsym_contained_dir}/${dsym_name}"
+
+zipped_dsym_saving_path="${current_dir}/${dsym_name}.zip"
+
+if ! [[ -d "${dsym_path}" ]]; then
+  echo "no such dsym directory: ${dsym_path}" 1>&2
+  exit 1
+fi
+
+if [[ -f "${zipped_dsym_saving_path}" ]]; then
+  rm "${zipped_dsym_saving_path}"
+fi
+
+cd "${dsym_contained_dir}" && zip -r "${zipped_dsym_saving_path}" "${dsym_name}"
+
+open "${current_dir}"
