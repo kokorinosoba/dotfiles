@@ -69,6 +69,9 @@ end
 # path to android sdk
 set -x PATH $HOME/Library/Android/sdk/platform-tools $PATH
 
+# path to flutter
+set -x PATH $PATH $HOME/Applications/flutter/bin
+
 # make less avarable for colordiff
 set -x LESS -R
 
