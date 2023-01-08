@@ -72,6 +72,9 @@ set -x PATH $HOME/Library/Android/sdk/platform-tools $PATH
 # path to flutter
 set -x PATH $PATH $HOME/Applications/flutter/bin
 
+# path to flutter version management(fvm)
+set -x PATH $PATH $HOME/.pub-cache/bin
+
 # make less avarable for colordiff
 set -x LESS -R
 
