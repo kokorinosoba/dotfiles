@@ -13,9 +13,11 @@ packages=(
   docker
   google-chrome
   google-japanese-ime
+  hex-fiend
   iterm2
   kindle
   macdown
+  postman
   qlmarkdown
   rectangle
   rstudio
