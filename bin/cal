@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+declare -i sum=0
+declare -a array=()
+
+while (( $# > 0 ))
+do
+  case $1 in
+    [+-][0-9] | [+-][0-9][0-9] )
+      sum=$((sum + $1))
+      ;;
+    * )
+      array+=("$1")
+      ;;
+  esac
+  shift
+done
+
+function needs_ago() {
+  if [[ $1 -gt 0 ]]; then
+    echo ""
+  else
+    echo "ago"
+  fi
+}
+
+if [[ $sum -eq 0 ]]; then
+  /usr/bin/cal ${array[@]}
+else
+  # https://qiita.com/n_slender/items/a14551bb0ad604dcecd6
+  # date -d "$(date '+%Y%m01') 1 month ago" "+%Y%m%d"
+  abs=$((sum > 0 ? sum : -sum))
+  target_month_year=$(date -d "$(date '+%Y%m01') $abs month $(needs_ago $sum)" '+%m %Y')
+  /usr/bin/cal $target_month_year
+fi
