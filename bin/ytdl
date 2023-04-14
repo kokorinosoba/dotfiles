@@ -24,4 +24,4 @@ if ! [[ -d $DOWNLOAD_DIR ]]; then
 fi
 
 echo -e "\e[34m==>\e[0m Downloading..."
-${0%/*}/youtube-dl "$@" -o "$DOWNLOAD_DIR/%(title)s.%(ext)s"
+python3 ${0%/*}/youtube-dl "$@" -o "$DOWNLOAD_DIR/%(title)s.%(ext)s"
