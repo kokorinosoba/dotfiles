@@ -26,7 +26,6 @@ packages=(
   npm
   pipenv
   poetry
-  postgresql
   python
   r
   rbenv
