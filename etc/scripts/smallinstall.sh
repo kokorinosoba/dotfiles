@@ -14,7 +14,7 @@ cd $DOTFILES_DIR
 
 # install section
 $DOTFILES_BIN_DIR/deploy
-git submodule update --init .config/fish/functions/Fisher
+git submodule update --init .config/fish/functions/oh-my-fish
 git submodule update --init .config/fish/functions/Bash2FishAliasesSync
 $DOTFILES_SETUP_DIR/font-powerline.sh
 $DOTFILES_DIR/etc/init/setup/oh-my-fish.sh
