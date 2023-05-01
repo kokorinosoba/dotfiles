@@ -5,17 +5,22 @@
 # timezone setting
 set -g theme_date_timezone Asia/Tokyo
 
+# XDG Base Directory Setting
+# Use set -x (means "export") instead of export
+set -x XDG_CONFIG_HOME $HOME/.config
+set -x XDG_CACHE_HOME $HOME/.cache
+
 # call .aliasrc
-make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.aliasrc _B2F_ALIASES_FILE=$HOME/.config/fish/b2f_aliasrc.fish; and source $HOME/.config/fish/b2f_aliasrc.fish
+make -C $XDG_CONFIG_HOME/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.aliasrc _B2F_ALIASES_FILE=$XDG_CONFIG_HOME/fish/b2f_aliasrc.fish; and source $XDG_CONFIG_HOME/fish/b2f_aliasrc.fish
 
 # call .kokorc
 if [ (whoami) = "Kokorin" ];
-  make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.kokorc _B2F_ALIASES_FILE=$HOME/.config/fish/b2f_kokorc.fish; and source $HOME/.config/fish/b2f_kokorc.fish
+  make -C $XDG_CONFIG_HOME/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.kokorc _B2F_ALIASES_FILE=$XDG_CONFIG_HOME/fish/b2f_kokorc.fish; and source $XDG_CONFIG_HOME/fish/b2f_kokorc.fish
 end
 
 # call .taiharc
 if [ (whoami) = "taihara" -o (whoami) = "Aihara" ];
-  make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.taiharc _B2F_ALIASES_FILE=$HOME/.config/fish/b2f_taiharc.fish; and source $HOME/.config/fish/b2f_taiharc.fish
+  make -C $XDG_CONFIG_HOME/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.taiharc _B2F_ALIASES_FILE=$XDG_CONFIG_HOME/fish/b2f_taiharc.fish; and source $XDG_CONFIG_HOME/fish/b2f_taiharc.fish
 end
 
 # path to homebrew
@@ -23,7 +28,7 @@ source $XDG_CONFIG_HOME/fish/library.fish
 eval (eval (get_homebrew_executable) shellenv)
 
 # path to coreutils, findutils and gnu-sed
-set HOMEBREW_PREFIX "$(get_homebrew_prefix)"
+set HOMEBREW_PREFIX (get_homebrew_prefix)
 if [ -d $HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin ];
   set -x PATH "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin" "$PATH"
   set -x MANPATH "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnuman" "$MANPATH"
@@ -49,11 +54,6 @@ set -x PIPENV_IGNORE_VIRTUALENVS true
 
 # path to dotfiles/bin
 set -x PATH $HOME/dotfiles/bin $PATH
-
-# XDG Base Directory Setting
-# Use set -x (means "export") instead of export
-set -x XDG_CONFIG_HOME $HOME/.config
-set -x XDG_CACHE_HOME $HOME/.cache
 
 # path to nodebrew
 if [ -d $HOME/.nodebrew/current/bin ];
