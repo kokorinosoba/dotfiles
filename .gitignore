@@ -5,6 +5,7 @@
 
 /.config/fish/*
 !/.config/fish/config.fish
+!/.config/fish/library.fish
 !/.config/fish/fish_variables
 
 /.config/iterm2/
