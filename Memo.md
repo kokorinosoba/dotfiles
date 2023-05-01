@@ -68,10 +68,15 @@
   - Share -> Change computer name
   - Apple ID -> Sign in
   - Trackpad -> Check all items
-  - Sound -> Show volume in menu bar & Always
-  - Energy Saver -> Battery -> Turn display off after 5 minutes
+  - Control Center -> Sound -> Always Show in Menu Bar
+  - Control Center -> Battery -> Show in Control Center
+  - Control Center -> Battery -> Show in Control Center
+  - Control Center -> Battery -> Show Percentage
+  - Displays -> Automatically adjust brightness -> off
+  - Lock Screen -> Turn display off on battery when inactive > For 5 minutes
+  - Lock Screen -> Turn display off on power adapter when inactive > For 10 minutes
+  - Lock Screen -> Require password after screen saver begins or display is turned off > After 1 hour
   - Keyboard -> Input Sources -> Set ABC & Hiragana(Google)
-  - Dock & Menu bar -> Battery -> Show Percentage
 - Iterm2 -> Preferences -> Profiles
   - General -> Command -> Command -> /usr/local/bin/fish
   - Colors -> Color Presets -> Japanesque
