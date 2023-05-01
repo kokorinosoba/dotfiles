@@ -2,27 +2,26 @@
 
 set -u
 
-readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
-readonly BINDIR=$DOTDIR/bin
-readonly SETUPDIR=$DOTDIR/etc/init/setup
+source "$(dirname $0)/../library/library.sh"
 
-source $DOTDIR/etc/library/library.sh
+readonly DOTFILES_BIN_DIR="$(get_dotfiles_bin_directory)"
+readonly DOTFILES_SETUP_DIR="$(get_dotfiles_setup_directory)"
 
 ask_continue "deploying" && {
-  $SETUPDIR/vscode.sh
-  $SETUPDIR/iCloudDrive.sh
-  $BINDIR/deploy -f
+  $DOTFILES_SETUP_DIR/vscode.sh
+  $DOTFILES_SETUP_DIR/iCloudDrive.sh
+  $DOTFILES_BIN_DIR/deploy -f
 }
 
 ask_continue "brew initializing" && {
-  has brew || $SETUPDIR/homebrew.sh
-  has brew && $SETUPDIR/brew-packages.sh
-  has brew && $SETUPDIR/cask-packages.sh
+  has brew || $DOTFILES_SETUP_DIR/homebrew.sh
+  has brew && $DOTFILES_SETUP_DIR/brew-packages.sh
+  has brew && $DOTFILES_SETUP_DIR/cask-packages.sh
 }
 
 ask_continue "shell initializing" && {
-  $SETUPDIR/loginshells.sh
-  $SETUPDIR/defaultshell.sh
+  $DOTFILES_SETUP_DIR/loginshells.sh
+  $DOTFILES_SETUP_DIR/defaultshell.sh
 }
 
 ask_continue "atom initializing" && {
@@ -30,25 +29,25 @@ ask_continue "atom initializing" && {
 }
 
 ask_continue "npm initializing" && {
-  has npm && $SETUPDIR/npm-packages.sh
+  has npm && $DOTFILES_SETUP_DIR/npm-packages.sh
 }
 
 ask_continue "nvim initializing" && {
-  has /usr/local/bin/pip3 && $SETUPDIR/nvim.sh
+  has /usr/local/bin/pip3 && $DOTFILES_SETUP_DIR/nvim.sh
 }
 
 ask_continue "cpp initializing" && {
-  $SETUPDIR/c++.sh
+  $DOTFILES_SETUP_DIR/c++.sh
 }
 
 ask_continue "terminal initializing" && {
-  $SETUPDIR/terminal-solarized.sh
-  $SETUPDIR/iterm-japanesque.sh
-  $SETUPDIR/font-powerline.sh
+  $DOTFILES_SETUP_DIR/terminal-solarized.sh
+  $DOTFILES_SETUP_DIR/iterm-japanesque.sh
+  $DOTFILES_SETUP_DIR/font-powerline.sh
 }
 
 ask_continue "fish initializing" && {
-  has fish && $SETUPDIR/fish.sh
-  has fish && $SETUPDIR/oh-my-fish.sh
-  has fish && $SETUPDIR/omf-packages.sh
+  has fish && $DOTFILES_SETUP_DIR/fish.sh
+  has fish && $DOTFILES_SETUP_DIR/oh-my-fish.sh
+  has fish && $DOTFILES_SETUP_DIR/omf-packages.sh
 }

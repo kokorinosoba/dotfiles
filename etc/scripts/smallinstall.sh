@@ -2,18 +2,20 @@
 
 set -eu
 
-readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
-readonly BINDIR=$DOTDIR/bin
-readonly SETUPDIR=$DOTDIR/etc/init/setup
+source "$(dirname $0)/../library/library.sh"
 
-cd $DOTDIR
+readonly DOTFILES_DIR="$(get_dotfiles_directory)"
+readonly DOTFILES_BIN_DIR="$(get_dotfiles_bin_directory)"
+readonly DOTFILES_SETUP_DIR="$(get_dotfiles_setup_directory)"
+
+cd $DOTFILES_DIR
 
 [[ -d $HOME/.config ]] && echo ".config directory exists" && exit 1
 
 # install section
-$BINDIR/deploy
+$DOTFILES_BIN_DIR/deploy
 git submodule update --init .config/fish/functions/Fisher
 git submodule update --init .config/fish/functions/Bash2FishAliasesSync
-$SETUPDIR/font-powerline.sh
-$DOTDIR/etc/init/setup/oh-my-fish.sh
-$DOTDIR/etc/init/setup/omf-packages.sh
+$DOTFILES_SETUP_DIR/font-powerline.sh
+$DOTFILES_DIR/etc/init/setup/oh-my-fish.sh
+$DOTFILES_DIR/etc/init/setup/omf-packages.sh

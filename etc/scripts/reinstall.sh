@@ -2,10 +2,13 @@
 
 set -eu
 
-readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
-readonly BINDIR=$DOTDIR/bin
+source "$(dirname $0)/../library/library.sh"
 
-cd $DOTDIR
+readonly DOTFILES_DIR="$(get_dotfiles_directory)"
+readonly DOTFILES_BIN_DIR="$(get_dotfiles_bin_directory)"
+readonly DOTFILES_SETUP_DIR="$(get_dotfiles_setup_directory)"
+
+cd $DOTFILES_DIR
 
 if ! git diff --no-ext-diff --quiet ||
    ! git diff --no-ext-diff --cached --quiet ||
@@ -31,13 +34,13 @@ shift $((OPTIND - 1))
 
 
 # uninstall section
-$BINDIR/deploy -d
-cd $DOTDIR/..
-rm -rf $DOTDIR
+$DOTFILES_BIN_DIR/deploy -d
+cd $DOTFILES_DIR/..
+rm -rf $DOTFILES_DIR
 
 # install section
 git clone https://github.com/kokorinosoba/dotfiles.git
-cd $DOTDIR
+cd $DOTFILES_DIR
 
 if $recurse; then
   git submodule update --init --recursive
@@ -45,7 +48,7 @@ else
   git submodule update --init .config
 fi
 
-$BINDIR/deploy -f
-$DOTDIR/etc/init/setup/oh-my-fish.sh
-$DOTDIR/etc/init/setup/omf-packages.sh
+$DOTFILES_BIN_DIR/deploy -f
+$DOTFILES_SETUP_DIR/oh-my-fish.sh
+$DOTFILES_SETUP_DIR/omf-packages.sh
 git config commit.template .commit_template
