@@ -16,6 +16,10 @@ get_homebrew_executable() {
   echo "$(get_homebrew_prefix)/bin/brew"
 }
 
+get_dotfiles_directory() {
+  echo "$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')"
+}
+
 ask_continue() {
   local answer
   read -p "Continue $1? [Y/n]: " answer
