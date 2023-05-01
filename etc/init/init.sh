@@ -6,7 +6,7 @@ readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
 readonly BINDIR=$DOTDIR/bin
 readonly SETUPDIR=$DOTDIR/etc/init/setup
 
-source $DOTDIR/etc/library/lib.sh
+source $DOTDIR/etc/library/library.sh
 
 ask_continue "deploying" && {
   $SETUPDIR/vscode.sh
