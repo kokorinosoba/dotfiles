@@ -18,26 +18,25 @@ if [ (whoami) = "taihara" -o (whoami) = "Aihara" ];
   make -C $HOME/.config/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.taiharc _B2F_ALIASES_FILE=$HOME/.config/fish/b2f_taiharc.fish; and source $HOME/.config/fish/b2f_taiharc.fish
 end
 
-# path to /usr/local/bin
-set -x PATH /usr/local/bin $PATH
-
-# path to homebrew sbin
-set -x PATH /usr/local/sbin $PATH
+# path to homebrew
+source $XDG_CONFIG_HOME/fish/library.fish
+eval (eval (get_homebrew_executable) shellenv)
 
 # path to coreutils, findutils and gnu-sed
-if [ -d /usr/local/opt/coreutils/libexec/gnubin ];
-  set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
-  set -x MANPATH /usr/local/opt/coreutils/libexec/gnuman $MANPATH
+set HOMEBREW_PREFIX "$(get_homebrew_prefix)"
+if [ -d $HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin ];
+  set -x PATH "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin" "$PATH"
+  set -x MANPATH "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnuman" "$MANPATH"
 end
 
-if [ -d /usr/local/opt/findutils/libexec/gnubin ];
-  set -x PATH /usr/local/opt/findutils/libexec/gnubin $PATH
-  set -x MANPATH /usr/local/opt/findutils/libexec/gnuman $MANPATH
+if [ -d $HOMEBREW_PREFIX/opt/findutils/libexec/gnubin ];
+  set -x PATH "$HOMEBREW_PREFIX/opt/findutils/libexec/gnubin" "$PATH"
+  set -x MANPATH "$HOMEBREW_PREFIX/opt/findutils/libexec/gnuman" "$MANPATH"
 end
 
-if [ -d /usr/local/opt/gnu-sed/libexec/gnubin ];
-  set -x PATH /usr/local/opt/gnu-sed/libexec/gnubin $PATH
-  set -x MANPATH /usr/local/opt/gnu-sed/libexec/gnuman $MANPATH
+if [ -d $HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin ];
+  set -x PATH "$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin" "$PATH"
+  set -x MANPATH "$HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnuman" "$MANPATH"
 end
 
 # path to Xcode developer dir
