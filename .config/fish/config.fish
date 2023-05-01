@@ -48,11 +48,6 @@ set -x DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer
 set -x PIPENV_VENV_IN_PROJECT true
 set -x PIPENV_IGNORE_VIRTUALENVS true
 
-# path to tlmgr
-if [ -d /usr/local/texlive/2019/bin/x86_64-darwin ];
-  set -x PATH /usr/local/texlive/2019/bin/x86_64-darwin $PATH
-end
-
 # path to dotfiles/bin
 set -x PATH $HOME/dotfiles/bin $PATH
 
