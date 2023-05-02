@@ -12,6 +12,8 @@
 /.config/omf/
 /.config/xbuild/
 
+/.vscode/User/History/
+
 /bin/youtube-dl
 
 test.*
