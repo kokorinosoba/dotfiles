@@ -16,24 +16,24 @@ get_homebrew_executable() {
   echo "$(get_homebrew_prefix)/bin/brew"
 }
 
-get_dotfiles_directory() {
+__get_dotfiles_directory() {
   echo "$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')"
 }
 
-get_dotfiles_bin_directory() {
-  echo "$(get_dotfiles_directory)/bin"
+__get_dotfiles_bin_directory() {
+  echo "$(__get_dotfiles_directory)/bin"
 }
 
-get_dotfiles_setup_directory() {
-  echo "$(get_dotfiles_directory)/etc/init/setup"
+__get_dotfiles_setup_directory() {
+  echo "$(__get_dotfiles_directory)/etc/init/setup"
 }
 
 # 下記のような関数でDORFILES関連のパスの定数をexportする方法も検討したが、
 # 自動的にexportされることで挙動が不安定になる可能性を考慮して、個々の関数として定義することにした。
 # export_dotfiles_directories() {
-#   export DOTFILES_DIR="$(get_dotfiles_directory)"
-#   export DOTFILES_BIN_DIR="$(get_dotfiles_directory)/bin"
-#   export DOTFILES_SETUP_DIR="$(get_dotfiles_directory)/etc/init/setup"
+#   export DOTFILES_DIR="$(__get_dotfiles_directory)"
+#   export DOTFILES_BIN_DIR="$(__get_dotfiles_directory)/bin"
+#   export DOTFILES_SETUP_DIR="$(__get_dotfiles_directory)/etc/init/setup"
 # }
 
 ask_continue() {

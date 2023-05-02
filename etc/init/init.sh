@@ -4,8 +4,8 @@ set -u
 
 source "$(dirname $0)/../library/library.sh"
 
-readonly DOTFILES_BIN_DIR="$(get_dotfiles_bin_directory)"
-readonly DOTFILES_SETUP_DIR="$(get_dotfiles_setup_directory)"
+readonly DOTFILES_BIN_DIR="$(__get_dotfiles_bin_directory)"
+readonly DOTFILES_SETUP_DIR="$(__get_dotfiles_setup_directory)"
 
 ask_continue "deploying" && {
   $DOTFILES_SETUP_DIR/vscode.sh

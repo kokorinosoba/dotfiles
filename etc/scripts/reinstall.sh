@@ -4,9 +4,9 @@ set -eu
 
 source "$(dirname $0)/../library/library.sh"
 
-readonly DOTFILES_DIR="$(get_dotfiles_directory)"
-readonly DOTFILES_BIN_DIR="$(get_dotfiles_bin_directory)"
-readonly DOTFILES_SETUP_DIR="$(get_dotfiles_setup_directory)"
+readonly DOTFILES_DIR="$(__get_dotfiles_directory)"
+readonly DOTFILES_BIN_DIR="$(__get_dotfiles_bin_directory)"
+readonly DOTFILES_SETUP_DIR="$(__get_dotfiles_setup_directory)"
 
 cd $DOTFILES_DIR
 
