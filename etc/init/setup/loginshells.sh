@@ -1,22 +1,21 @@
 #!/usr/bin/env bash
 
-# set shells to /etc/shells script
-has() {
-  type $1 > /dev/null 2>&1
-}
+source "$(dirname $0)/../../library/library.sh"
+
+readonly HOMEBREW_BIN_DIR="$(get_homebrew_bin_directory)"
 
 addshell() {
-  local shell_name=$1
-  if grep -E "^/usr/local/bin/$shell_name$" /etc/shells > /dev/null; then
-    echo "'/usr/local/bin/$shell_name' is already in /etc/shells"
+  local shell_name="$1"
+  if grep -E "^$HOMEBREW_BIN_DIR/$shell_name$" /etc/shells > /dev/null; then
+    echo "'$HOMEBREW_BIN_DIR/$shell_name' is already in /etc/shells"
   else
-    echo "'/usr/local/bin/$shell_name' is not in /etc/shells"
-    echo "/usr/local/bin/$shell_name" | sudo tee -a /etc/shells
+    echo "'$HOMEBREW_BIN_DIR/$shell_name' is not in /etc/shells"
+    echo "$HOMEBREW_BIN_DIR/$shell_name" | sudo tee -a /etc/shells
   fi
 }
 
 for shell_name in bash zsh fish
 do
-  has /usr/local/bin/$shell_name || continue
-  addshell $shell_name
+  has "$HOMEBREW_BIN_DIR/$shell_name" || continue
+  addshell "$shell_name"
 done

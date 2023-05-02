@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-default_shell="/usr/local/bin/bash"
+source "$(dirname $0)/../../library/library.sh"
 
-if ! [[ $SHELL = $default_shell ]]; then
-  chsh -s $default_shell
+default_shell="$(get_homebrew_bin_directory)/bash"
+
+if ! [[ "$SHELL" = "$default_shell" ]]; then
+  chsh -s "$default_shell"
 fi

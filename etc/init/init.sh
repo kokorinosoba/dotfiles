@@ -33,7 +33,7 @@ ask_continue "npm initializing" && {
 }
 
 ask_continue "nvim initializing" && {
-  has /usr/local/bin/pip3 && $DOTFILES_SETUP_DIR/nvim.sh
+  $DOTFILES_SETUP_DIR/nvim.sh
 }
 
 ask_continue "cpp initializing" && {
