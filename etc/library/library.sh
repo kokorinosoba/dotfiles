@@ -12,6 +12,10 @@ get_homebrew_prefix() {
   fi
 }
 
+get_homebrew_bin_directory() {
+  echo "$(get_homebrew_prefix)/bin"
+}
+
 get_homebrew_executable() {
   echo "$(get_homebrew_prefix)/bin/brew"
 }
