@@ -10,3 +10,6 @@
 [submodule ".config/fish/functions/oh-my-fish"]
 	path = .config/fish/functions/oh-my-fish
 	url = https://github.com/oh-my-fish/oh-my-fish.git
+[submodule "hammerspoon-shiftit"]
+	path = hammerspoon-shiftit
+	url = https://github.com/peterklijn/hammerspoon-shiftit.git
