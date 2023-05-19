@@ -3,73 +3,30 @@
 set -eu
 trap usage ERR
 
-source "$(dirname $0)/../etc/library/library.sh"
-readonly DOTFILES_DIR="$(__get_dotfiles_directory)"
-
 usage() {
   echo "${0##*/} - easy getting started script"                      1>&2
   echo ""                                                            1>&2
   echo "Usage: ${0##*/} <command>"                                   1>&2
   echo ""                                                            1>&2
   echo "Commands:"                                                   1>&2
-  echo "    line      /Applications/LINE.app"                        1>&2
-  echo "    slack     /Applications/Slack.app"                       1>&2
-  echo "    kindle    /Applications/Kindle.app"                      1>&2
-  echo "    music     /System/Applications/Music.app"                1>&2
-  echo "    podcasts  /System/Applications/Podcasts.app"             1>&2
-  echo "    terminal  /System/Applications/Utilities/Terminal.app"   1>&2
   echo "    trello    https://trello.com"                            1>&2
-  echo "    zotero    /Applications/Zotero.app"                      1>&2
   echo "    atcoder   https://kenkoooo.com/atcoder/ and atcoder dir" 1>&2
-  echo "    dotfiles  dotfiles dir"                                  1>&2
   echo "    help      show help"                                     1>&2
   echo ""                                                            1>&2
   exit 1
 }
 
-line() {
-  open -a LINE
-}
-
-slack() {
-  open -a Slack
-}
-
-kindle() {
-  open -a Kindle
-}
-
-music() {
-  open -a Music
-}
-
-podcasts() {
-  open -a Podcasts
-}
-
-terminal() {
-  open -a Terminal
-}
-
 trello() {
-  open https://trello.com
-}
-
-zotero() {
-  open -a Zotero
+  open "https://trello.com"
 }
 
 atcoder() {
-  open https://kenkoooo.com/atcoder/#/table/kokorinosoba
-  atom $HOME/Documents/contests
+  open "https://kenkoooo.com/atcoder/#/table/kokorinosoba"
+  code "$HOME/Documents/contests"
 }
 
-dotfiles() {
-  atom $DOTDIR
-}
-
-if [[ $# -ne 1 ]] || [[ $1 == "help" ]]; then
+if [[ $# -ne 1 ]] || [[ "$1" == "help" ]]; then
   usage
 fi
 
-$1 2>/dev/null
+"$1" 2> /dev/null
