@@ -2,7 +2,8 @@
 
 set -eu
 
-readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
-cd $DOTDIR
+source "$(dirname $0)/../etc/library/library.sh"
+readonly DOTFILES_DIR="$(__get_dotfiles_directory)"
+cd "$DOTFILES_DIR"
 
-ln -f $DOTDIR/win/etc/settings.json $DOTDIR/../AppData/Local/Microsoft/Windows\ Terminal/settings.json
+ln -f "$DOTFILES_DIR/win/etc/settings.json" "$DOTFILES_DIR/../AppData/Local/Microsoft/Windows Terminal/settings.json"

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd $(dirname $0)
+cd "$(dirname $0)"
 
 function isImage() {
   [[ "$(file "$1")" =~ .*image\ data.* ]]

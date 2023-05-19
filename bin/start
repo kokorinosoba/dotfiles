@@ -3,7 +3,8 @@
 set -eu
 trap usage ERR
 
-readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
+source "$(dirname $0)/../etc/library/library.sh"
+readonly DOTFILES_DIR="$(__get_dotfiles_directory)"
 
 usage() {
   echo "${0##*/} - easy getting started script"                      1>&2

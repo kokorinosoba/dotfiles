@@ -2,8 +2,7 @@
 
 set -eu
 
-readonly DOTDIR=$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')
-source $DOTDIR/etc/library/lib.sh
+source "$(dirname $0)/../etc/library/library.sh"
 
 usage() {
   echo "${0##*/} - git remote url opening script" 1>&2
