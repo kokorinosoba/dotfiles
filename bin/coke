@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-
 # C Compile and Execute Shell
-# chmod +x cokeで実行権限を与える
-# ./cokeで実行可能
 
 set -e
 
@@ -12,26 +9,26 @@ usage() {
 }
 
 compile() {
-  gcc $1 -o ${1%.*}.o && ./${1%.*}.o
+  gcc "$1" -o "${1%.*}.o" && ./"${1%.*}.o"
 }
 
 force_compile() {
   echo "Recognized option f"
   echo "-------------------"
-  compile $1
+  compile "$1"
 }
 
 check_compile() {
   # オプション無しなら.oが存在するか確認して、あるなら.oのみを実行
-  if [[ -f ${1%.*}.o ]]; then
+  if [[ -f "${1%.*}.o" ]]; then
     echo ".o already exists"
     echo "-----------------"
-    ./${1%.*}.o
+    ./"${1%.*}.o"
   # .oがないならコンパイルと実行を行う
   else
     echo ".o does not exist"
     echo "-----------------"
-    compile $1
+    compile "$1"
   fi
 }
 
@@ -39,7 +36,7 @@ force=false
 
 while getopts fh opt &> /dev/null
 do
-  case $opt in
+  case "$opt" in
     # -f オプションを検知したら強制的にコンパイルと実行を行う
     f ) force=true ;;
     h ) usage ;;
@@ -50,7 +47,7 @@ done
 shift $((OPTIND - 1))
 
 if $force; then
-  force_compile $1
+  force_compile "$1"
 else
-  check_compile $1
+  check_compile "$1"
 fi

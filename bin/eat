@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-
 # Multifile Compile and Execute Shell
-# chmod +x eatで実行権限を与える
-# ./eatで実行可能
 
 set -eu
 
@@ -19,31 +16,31 @@ declare -a argv=()
 
 while (( $# > 0 ))
 do
-  case $1 in
+  case "$1" in
     -* )
-      if [[ $1 == "-f" || $1 == "--force" ]]; then
+      if [[ "$1" == "-f" || "$1" == "--force" ]]; then
         force=true
       else
         usage
       fi
       shift ;;
     * )
-      argv+=($1) # argv=("${argv[@]}" "$1")
+      argv+=("$1") # argv=("${argv[@]}" "$1")
       argc+=1 # ((++argc))
       shift ;;
   esac
 done
 
-if [[ $argc -lt 1 ]]; then
+if [[ "$argc" -lt 1 ]]; then
   echo "No input file" 1>&2
   usage
-elif [[ $argc -gt 1 ]]; then
+elif [[ "$argc" -gt 1 ]]; then
   echo "Too many files" 1>&2
   usage
 fi
 
 if $force; then
-  opt=-f
+  opt="-f"
 else
   opt=
 fi

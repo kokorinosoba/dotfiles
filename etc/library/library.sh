@@ -21,7 +21,7 @@ get_homebrew_executable() {
 }
 
 __get_dotfiles_directory() {
-  echo "$(cd $(dirname $0); pwd | sed -e 's/\(.*dotfiles\).*/\1/')"
+  echo "$(cd "$(dirname "$0")" || exit 1 ; pwd | sed -e 's/\(.*dotfiles\).*/\1/')"
 }
 
 __get_dotfiles_bin_directory() {
@@ -42,7 +42,7 @@ __get_dotfiles_setup_directory() {
 
 ask_continue() {
   local answer
-  read -p "Continue $1? [Y/n]: " answer
+  read -p "Continue $1? [Y/n]: " -r answer
 
   case "$answer" in
     "Y" | "y" | "yes" | "Yes" | "YES" ) ;;

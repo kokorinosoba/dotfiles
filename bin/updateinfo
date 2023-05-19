@@ -14,26 +14,26 @@ esac
 if ! type plutil &> /dev/null; then
   echo "Error: plutilコマンドが使えません。使えるようになったら出直してきてください。" 1>&2
   exit 1
-elif ! [[ -e $1 ]]; then
+elif ! [[ -e "$1" ]]; then
   echo "Error: \"$1\" は存在しません。" 1>&2
   exit 1
-elif ! [[ $1 =~ .*Info.plist$ ]]; then
+elif ! [[ "$1" =~ .*Info.plist$ ]]; then
   echo "Error: \"$1\" はInfo.plistではないようです。" 1>&2
   exit 1
 fi
 
-readonly INFO_PLIST_PATH=$1
+readonly INFO_PLIST_PATH="$1"
 
 # 更新内容を取得
-read -p "バージョン: " CFBundleShortVersionString
-read -p "ビルド番号: " CFBundleVersion
-read -p "FacebookAppID: " FacebookAppID
-read -p "FacebookDisplayName: " FacebookDisplayName
+read -p "バージョン: " -r CFBundleShortVersionString
+read -p "ビルド番号: " -r CFBundleVersion
+read -p "FacebookAppID: " -r FacebookAppID
+read -p "FacebookDisplayName: " -r FacebookDisplayName
 
 # 更新の確認
-read -p "上記の内容でInfo.plistを更新しますか? [Y/n]: " answer
+read -p "上記の内容でInfo.plistを更新しますか? [Y/n]: " -r answer
 
-case $answer in
+case "$answer" in
   "Y" | "y" | "yes" | "Yes" | "YES" ) ;;
   * )
     echo "キャンセルされました"
@@ -41,8 +41,8 @@ case $answer in
 esac
 
 # 更新コマンド
-plutil -replace "CFBundleShortVersionString" -string "$CFBundleShortVersionString" $INFO_PLIST_PATH
-plutil -replace "CFBundleVersion" -string "$CFBundleVersion" $INFO_PLIST_PATH
-plutil -replace "FacebookAppID" -string "$FacebookAppID" $INFO_PLIST_PATH
-plutil -replace "FacebookDisplayName" -string "$FacebookDisplayName" $INFO_PLIST_PATH
+plutil -replace "CFBundleShortVersionString" -string "$CFBundleShortVersionString" "$INFO_PLIST_PATH"
+plutil -replace "CFBundleVersion" -string "$CFBundleVersion" "$INFO_PLIST_PATH"
+plutil -replace "FacebookAppID" -string "$FacebookAppID" "$INFO_PLIST_PATH"
+plutil -replace "FacebookDisplayName" -string "$FacebookDisplayName" "$INFO_PLIST_PATH"
 echo "更新が完了しました！"

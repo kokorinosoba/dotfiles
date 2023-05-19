@@ -2,7 +2,7 @@
 
 set -eu
 
-source "$(dirname $0)/../etc/library/library.sh"
+source "$(dirname "$0")/../etc/library/library.sh"
 readonly DOTFILES_DIR="$(__get_dotfiles_directory)"
 cd "$DOTFILES_DIR"
 
@@ -17,26 +17,26 @@ usage() {
 }
 
 mklink() {
-  local dotfile=$1
-  if [[ -e $HOME/$dotfile ]]; then
+  local dotfile="$1"
+  if [[ -e "$HOME/$dotfile" ]]; then
     echo "Failed to create symlink to \$HOME/$dotfile"
   else
-    ln -s $DOTFILES_DIR/$dotfile $HOME &&
+    ln -s "$DOTFILES_DIR/$dotfile" "$HOME" &&
     echo "Created symlink to \$HOME/$dotfile"
   fi
 }
 
 oplink() {
-  local opt=$1
-  local dotfile=$2
-  ln -s $opt $DOTFILES_DIR/$dotfile $HOME &&
-  [[ $opt == "-f" ]] && echo "Created symlink to \$HOME/$dotfile"
+  local opt="$1"
+  local dotfile="$2"
+  ln -s "$opt" "$DOTFILES_DIR/$dotfile" "$HOME" &&
+  [[ "$opt" == "-f" ]] && echo "Created symlink to \$HOME/$dotfile"
 }
 
 rmlink() {
-  local dotfile=$1
-  if [[ -L $HOME/$dotfile ]]; then
-    unlink $HOME/$dotfile &&
+  local dotfile="$1"
+  if [[ -L "$HOME/$dotfile" ]]; then
+    unlink "$HOME/$dotfile" &&
     echo "Deleted symlink \$HOME/$dotfile"
   fi
 }
@@ -44,7 +44,7 @@ rmlink() {
 cmd="mklink"
 while getopts fdih opt &> /dev/null
 do
-  case $opt in
+  case "$opt" in
     d ) cmd="rmlink" ;;
     f ) cmd="oplink -f" ;;
     i ) cmd="oplink -i" ;;
@@ -57,12 +57,12 @@ shift $((OPTIND - 1))
 
 for dotfile in .??*
 do
-  [[ $dotfile == .git ]]        && continue
-  [[ $dotfile == .gitignore ]]  && continue
-  [[ $dotfile == .gitmodules ]] && continue
-  [[ $dotfile == .DS_Store ]]   && continue
+  [[ "$dotfile" == ".git" ]]        && continue
+  [[ "$dotfile" == ".gitignore" ]]  && continue
+  [[ "$dotfile" == ".gitmodules" ]] && continue
+  [[ "$dotfile" == ".DS_Store" ]]   && continue
 
-  $cmd $dotfile
+  $cmd "$dotfile"
 done
 
 exit 0

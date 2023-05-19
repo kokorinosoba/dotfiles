@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
-
 # Java Compile and Execute Shell
-# chmod +x juiceで実行権限を与える
-# ./juiceで実行可能
 
 set -e
 
@@ -12,26 +9,26 @@ usage() {
 }
 
 compile() {
-  javac ${1%.*}.java && java ${1%.*}
+  javac "${1%.*}.java" && java "${1%.*}"
 }
 
 force_compile() {
   echo "Recognized option f"
   echo "-------------------"
-  compile $1
+  compile "$1"
 }
 
 check_compile() {
   # オプション無しなら.classが存在するか確認して、あるなら.classのみを実行
-  if [[ -f ${1%.*}.class ]]; then
+  if [[ -f "${1%.*}.class" ]]; then
     echo ".class already exists"
     echo "---------------------"
-    java ${1%.*}
+    java "${1%.*}"
   # .classがないならコンパイルと実行を行う
   else
     echo ".class does not exist"
     echo "---------------------"
-    compile $1
+    compile "$1"
   fi
 }
 
@@ -39,7 +36,7 @@ force=false
 
 while getopts fh opt &> /dev/null
 do
-  case $opt in
+  case "$opt" in
     # -f オプションを検知したら強制的にコンパイルと実行を行う
     f ) force=true ;;
     h ) usage ;;
@@ -50,7 +47,7 @@ done
 shift $((OPTIND - 1))
 
 if $force; then
-  force_compile $1
+  force_compile "$1"
 else
-  check_compile $1
+  check_compile "$1"
 fi

@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-
 # C# Compile and Execute Shell
-# chmod +x cassisで実行権限を与える
-# ./cassisで実行可能
+
+set -e
 
 usage() {
   echo "Usage: ${0##*/} [-f] file" 1>&2
@@ -10,31 +9,31 @@ usage() {
 }
 
 compile() {
-  csc $1 -out:${1%.*}.o ; compile_status=$?
-  if [[ $compile_status == 0 ]]; then
+  csc "$1" -out:"${1%.*}.o" ; compile_status="$?"
+  if [[ "$compile_status" == 0 ]]; then
     echo "Compile completed"
     echo "-----------------"
-    mono ${1%.*}.o
+    mono "${1%.*}.o"
   fi
 }
 
 force_compile() {
   echo "Recognized option f"
   echo "-------------------"
-  compile $1
+  compile "$1"
 }
 
 check_compile() {
   # オプション無しなら.oが存在するか確認して、あるなら.oのみを実行
-  if [[ -f ${1%.*}.o ]]; then
+  if [[ -f "${1%.*}.o" ]]; then
     echo ".o already exists"
     echo "-----------------"
-    mono ${1%.*}.o
+    mono "${1%.*}.o"
   # .oがないならコンパイルと実行を行う
   else
     echo ".o does not exist"
     echo "-----------------"
-    compile $1
+    compile "$1"
   fi
 }
 
@@ -42,7 +41,7 @@ force=false
 
 while getopts fh opt &> /dev/null
 do
-  case $opt in
+  case "$opt" in
     # -f オプションを検知したら強制的にコンパイルと実行を行う
     f ) force=true ;;
     h ) usage ;;
@@ -53,7 +52,7 @@ done
 shift $((OPTIND - 1))
 
 if $force; then
-  force_compile $1
+  force_compile "$1"
 else
-  check_compile $1
+  check_compile "$1"
 fi

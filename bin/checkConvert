@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-cd "$(dirname $0)"
+cd "$(dirname "$0")" || exit 1
 
-function isImage() {
+function is_image() {
   [[ "$(file "$1")" =~ .*image\ data.* ]]
 }
 
 echo -e "検索対象のフォルダ: \033[34m$(pwd)\033[0m"
-read -p "変換された可能性のあるファイルを検索します。[Y/n]: " answer
+read -p "変換された可能性のあるファイルを検索します。[Y/n]: " -r answer
 
 case "$answer" in
   "Y" | "y" | "yes" | "Yes" | "YES" ) ;;
@@ -16,12 +16,12 @@ case "$answer" in
     exit 1 ;;
 esac
 
-find . -type f | while read file
+find . -type f | while read -r file
 do
-  if isImage "$file"; then
+  if is_image "$file"; then
     echo "$file" | tee -a checkConvertResult.txt
   fi
 done
 
-echo "検索が完了しました。検索結果の出力先: $(dirname $0)/checkConvertResult.txt"
+echo "検索が完了しました。検索結果の出力先: $(dirname "$0")/checkConvertResult.txt"
 read -p "何かキーを押してください..."

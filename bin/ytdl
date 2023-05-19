@@ -2,26 +2,26 @@
 
 set -eu
 
-DOWNLOAD_DIR=$HOME/Movies/YouTube
+DOWNLOAD_DIR="$HOME/Movies/YouTube"
 
 usage() {
   echo "Usage: ${0##*/} [OPTIONS] URL [URL...]" 1>&2
   exit 1
 }
 
-case $1 in
+case "$1" in
   "-h" | "--help" ) usage ;;
 esac
 
 if ! [[ -f ${0%/*}/youtube-dl ]]; then
   echo -e "\e[34m==>\e[0m Installing youtube-dl"
-  curl -L https://yt-dl.org/downloads/latest/youtube-dl -o ${0%/*}/youtube-dl
-  chmod +x ${0%/*}/youtube-dl
+  curl -L "https://yt-dl.org/downloads/latest/youtube-dl" -o "${0%/*}/youtube-dl"
+  chmod +x "${0%/*}/youtube-dl"
 fi
 
-if ! [[ -d $DOWNLOAD_DIR ]]; then
-  mkdir -p $DOWNLOAD_DIR && echo -e "\e[34m==>\e[0m $DOWNLOAD_DIR was created!"
+if ! [[ -d "$DOWNLOAD_DIR" ]]; then
+  mkdir -p "$DOWNLOAD_DIR" && echo -e "\e[34m==>\e[0m $DOWNLOAD_DIR was created!"
 fi
 
 echo -e "\e[34m==>\e[0m Downloading..."
-python3 ${0%/*}/youtube-dl "$@" -o "$DOWNLOAD_DIR/%(title)s.%(ext)s"
+python3 "${0%/*}/youtube-dl" "$@" -o "$DOWNLOAD_DIR/%(title)s.%(ext)s"

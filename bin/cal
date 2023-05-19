@@ -5,9 +5,9 @@ declare -a array=()
 
 while (( $# > 0 ))
 do
-  case $1 in
+  case "$1" in
     [+-][0-9] | [+-][0-9][0-9] )
-      sum=$((sum + $1))
+      sum=$((sum + "$1"))
       ;;
     * )
       array+=("$1")
@@ -17,7 +17,7 @@ do
 done
 
 function needs_ago() {
-  if [[ $1 -gt 0 ]]; then
+  if [[ "$1" -gt 0 ]]; then
     echo ""
   else
     echo "ago"
@@ -25,11 +25,13 @@ function needs_ago() {
 }
 
 if [[ $sum -eq 0 ]]; then
-  /usr/bin/cal ${array[@]}
+  /usr/bin/cal "${array[@]}"
 else
   # https://qiita.com/n_slender/items/a14551bb0ad604dcecd6
   # date -d "$(date '+%Y%m01') 1 month ago" "+%Y%m%d"
   abs=$((sum > 0 ? sum : -sum))
-  target_month_year=$(date -d "$(date '+%Y%m01') $abs month $(needs_ago $sum)" '+%m %Y')
+  target_month_year="$(date -d "$(date '+%Y%m01') $abs month $(needs_ago $sum)" '+%m %Y')"
+  # calコマンドは month year のようにスペース区切りで別々に渡す必要がある
+  # ダブルクォートを付けると変数展開された際に一つの引数として扱われてしまい、正常に動作しないため注意
   /usr/bin/cal $target_month_year
 fi
