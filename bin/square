@@ -16,6 +16,11 @@ function padding() {
   sips --padToHeightWidth "$altitude" "$altitude" --padColor FFFFFF "$1" 2> /dev/null | head -n 1
 }
 
+function resample() {
+  local max_height_width="300"
+  sips --resampleHeightWidthMax "$max_height_width" "$1" 2> /dev/null | head -n 1
+}
+
 function isImage() {
   [[ "$(file "$1")" =~ .*image\ data.* ]]
 }
