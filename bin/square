@@ -11,11 +11,13 @@ function getAltitude() {
   getWidthAndHeight "$1" | awk '{ if (max < $2) max = $2; } END { print max; }'
 }
 
+# 正方形の画像になるように白色でパディングする
 function padding() {
   local altitude=$(getAltitude "$1")
   sips --padToHeightWidth "$altitude" "$altitude" --padColor FFFFFF "$1" 2> /dev/null | head -n 1
 }
 
+# 縦横の最大サイズを指定してリサイズする
 function resample() {
   local max_height_width="300"
   sips --resampleHeightWidthMax "$max_height_width" "$1" 2> /dev/null | head -n 1
