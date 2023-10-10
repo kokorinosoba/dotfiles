@@ -3,5 +3,13 @@
     {
         "key": "ctrl+alt+w",
         "command": "editor.emmet.action.wrapIndividualLinesWithAbbreviation"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "type",
+        "args": {
+            "text": "\t"
+        },
+        "when": "editorTextFocus"
     }
 ]
