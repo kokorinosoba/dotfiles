@@ -10,7 +10,6 @@
 alias relogin='exec $SHELL -l'
 
 # external command aliases
-type rmtrash   &> /dev/null && alias trash='rmtrash' # use trash instead of rm
 type nvim      &> /dev/null && alias vim='nvim' && alias vi='nvim'
 type colordiff &> /dev/null && alias diff='colordiff -u' || alias diff='diff -u'
 
