@@ -407,7 +407,9 @@ alias ..='cd ..'
 alias gcd='cd $(git rev-parse --show-toplevel)'
 
 # ls alias
-if type /usr/local/opt/coreutils/libexec/gnubin/ls &> /dev/null; then
+if type /usr/local/opt/coreutils/libexec/gnubin/ls &> /dev/null ||
+   type /opt/homebrew/opt/coreutils/libexec/gnubin/ls &> /dev/null
+then
   alias ls='ls --color=auto --classify'
   alias ll='ls -lh --color=auto --classify'
   alias la='ls -lha --color=auto --classify'
