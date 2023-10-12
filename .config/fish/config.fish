@@ -73,7 +73,7 @@ set -x PATH $PATH $HOME/.pub-cache/bin
 set -x LESS -R
 
 # alias for fish
-alias relogin='exec /usr/local/bin/fish -l'
+alias relogin="exec $(get_homebrew_prefix)/bin/fish -l"
 
 # abbreviation for cd to last directory
 abbr --add --global - 'cd -'
