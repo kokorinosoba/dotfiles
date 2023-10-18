@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -eu
+
+usage() {
+  echo "Usage: ${0##*/} merge-commit-hash" 1>&2
+  exit 1
+}
+
+if [[ $# -ne 1 ]]; then
+  usage
+fi
+
+if ! git rev-parse "$1^2" &> /dev/null; then
+  echo "$1 is not a merge commit" 1>&2
+  usage
+fi
+
+git diff "$1^" "$1"
