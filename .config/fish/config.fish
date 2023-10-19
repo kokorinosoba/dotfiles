@@ -10,19 +10,6 @@ set -g theme_date_timezone Asia/Tokyo
 set -x XDG_CONFIG_HOME $HOME/.config
 set -x XDG_CACHE_HOME $HOME/.cache
 
-# call .aliasrc
-make -C $XDG_CONFIG_HOME/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.aliasrc _B2F_ALIASES_FILE=$XDG_CONFIG_HOME/fish/b2f_aliasrc.fish; and source $XDG_CONFIG_HOME/fish/b2f_aliasrc.fish
-
-# call .kokorc
-if [ (whoami) = "Kokorin" ];
-  make -C $XDG_CONFIG_HOME/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.kokorc _B2F_ALIASES_FILE=$XDG_CONFIG_HOME/fish/b2f_kokorc.fish; and source $XDG_CONFIG_HOME/fish/b2f_kokorc.fish
-end
-
-# call .taiharc
-if [ (whoami) = "taihara" -o (whoami) = "Aihara" ];
-  make -C $XDG_CONFIG_HOME/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.taiharc _B2F_ALIASES_FILE=$XDG_CONFIG_HOME/fish/b2f_taiharc.fish; and source $XDG_CONFIG_HOME/fish/b2f_taiharc.fish
-end
-
 # path to homebrew
 source $XDG_CONFIG_HOME/fish/library.fish
 eval (eval (get_homebrew_executable) shellenv)
@@ -72,7 +59,21 @@ set -x PATH $PATH $HOME/.pub-cache/bin
 # make less avarable for colordiff
 set -x LESS -R
 
-# alias for fish
+# alias settings
+## call .aliasrc
+make -C $XDG_CONFIG_HOME/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.aliasrc _B2F_ALIASES_FILE=$XDG_CONFIG_HOME/fish/b2f_aliasrc.fish; and source $XDG_CONFIG_HOME/fish/b2f_aliasrc.fish
+
+## call .kokorc
+if [ (whoami) = "Kokorin" ];
+  make -C $XDG_CONFIG_HOME/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.kokorc _B2F_ALIASES_FILE=$XDG_CONFIG_HOME/fish/b2f_kokorc.fish; and source $XDG_CONFIG_HOME/fish/b2f_kokorc.fish
+end
+
+## call .taiharc
+if [ (whoami) = "taihara" -o (whoami) = "Aihara" ];
+  make -C $XDG_CONFIG_HOME/fish/functions/Bash2FishAliasesSync sync _B2F_BASHRC=$HOME/.taiharc _B2F_ALIASES_FILE=$XDG_CONFIG_HOME/fish/b2f_taiharc.fish; and source $XDG_CONFIG_HOME/fish/b2f_taiharc.fish
+end
+
+## alias for fish
 alias relogin="exec $(get_homebrew_prefix)/bin/fish -l"
 
 # abbreviation for cd to last directory
