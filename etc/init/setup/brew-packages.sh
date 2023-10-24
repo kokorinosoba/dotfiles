@@ -32,6 +32,7 @@ packages=(
   trash-cli
   tree
   wget
+  xmlstarlet
   zsh
 )
 
