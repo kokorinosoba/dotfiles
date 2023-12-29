@@ -2,6 +2,7 @@
 
 packages=(
   todo
+  typescript
   run
   vue-cli
   gitmoji-cli
