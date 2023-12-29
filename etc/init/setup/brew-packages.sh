@@ -22,7 +22,6 @@ packages=(
   mono
   neovim
   nkf
-  nodebrew
   npm
   pipenv
   poetry
