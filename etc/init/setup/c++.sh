@@ -3,7 +3,7 @@
 source "$(dirname $0)/../../library/library.sh"
 
 readonly HOMEBREW_BIN_DIR="$(get_homebrew_bin_directory)"
-readonly COMPILER_VERSION=12
+readonly COMPILER_VERSION=13
 
 # settings required when including bits/stdc++.h
 if ! has "$HOMEBREW_BIN_DIR/gcc-$COMPILER_VERSION"; then
