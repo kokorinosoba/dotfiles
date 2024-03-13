@@ -220,6 +220,7 @@ alias grm='git rm'
 alias grmc='git rm --cached'
 
 alias groot='cd $(git rev-parse --show-toplevel)' # change directory to git repository root
+alias gtop='cd $(git rev-parse --show-superproject-working-tree --show-toplevel | head -1)' # change directory to git parent repository root
 
 alias gs='git status'
 alias gsi='git status --ignored'
