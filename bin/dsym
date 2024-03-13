@@ -24,7 +24,7 @@ project_dir_without_last_slash="${project_dir%/}"
 project_name="${project_dir_without_last_slash##*/}"
 
 dsym_name="${project_name}.app.dSYM"
-dsym_contained_dir="${project_dir}/bin/iPhone/Release"
+dsym_contained_dir="${project_dir}/bin/Release/net8.0-ios/ios-arm64"
 dsym_path="${dsym_contained_dir}/${dsym_name}"
 
 zipped_dsym_saving_path="${current_dir}/${dsym_name}.zip"
